@@ -1018,8 +1018,14 @@ if (Test-Path $guideDir) {
     }
 
     # 가이드 홈
+    # 탭 이름(=검색 결과 제목)은 guide.json 의 pageTitle 을 씁니다.
+    # 비어 있으면 "바이낸스 가이드 | 비트뉴스" 처럼 자동으로 만듭니다.
+    $gHomeTitle = $gCfg.section.pageTitle
+    if ([string]::IsNullOrWhiteSpace($gHomeTitle)) {
+        $gHomeTitle = '{0} | {1}' -f $gCfg.section.name, $siteName
+    }
     $idxFrag = Get-Content (Join-Path (Join-Path $guideDir 'pages') 'index.html') -Raw -Encoding UTF8
-    Write-GuidePage -File 'index' -Title ('{0} | {1}' -f $gCfg.section.name, $siteName) `
+    Write-GuidePage -File 'index' -Title $gHomeTitle `
                     -Desc $gCfg.section.description -Fragment $idxFrag -Current ''
     $guideUrls += 'index'
 
