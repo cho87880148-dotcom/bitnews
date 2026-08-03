@@ -1,0 +1,68 @@
+{
+  "_설명": [
+    "비트뉴스가 뉴스를 어디서 가져올지 정하는 파일입니다.",
+    "여기만 고치면 build.ps1 은 건드릴 필요가 없습니다.",
+    "enabled 를 false 로 바꾸면 그 출처는 수집하지 않습니다.",
+    "새 출처를 넣으려면 sources 목록에 같은 모양으로 한 덩어리를 추가하세요."
+  ],
+
+  "site": {
+    "name": "비트뉴스",
+    "tagline": "비트코인 뉴스 한눈에",
+    "description": "비트코인과 암호화폐 주요 뉴스를 한곳에 모았습니다. 블록미디어, 토큰포스트 등 국내 매체의 최신 기사를 실시간으로 업데이트합니다.",
+    "_baseUrl": "도메인이 정해지면 여기에 https://주소 를 넣으세요. 비워두면 상대경로로 동작합니다.",
+    "baseUrl": ""
+  },
+
+  "_키워드설명": [
+    "제목이나 요약에 아래 낱말이 하나라도 들어간 기사만 사이트에 싣습니다.",
+    "기사가 너무 적으면 낱말을 늘리고, 관련 없는 기사가 섞이면 줄이세요.",
+    "keywords 를 빈 목록 [] 으로 두면 걸러내지 않고 전부 가져옵니다."
+  ],
+  "keywords": [
+    "비트코인", "비트 코인", "BTC", "Bitcoin", "bitcoin",
+    "사토시", "반감기", "가상자산", "암호화폐", "코인",
+    "이더리움", "ETF", "블록체인", "스테이블코인", "USDT",
+    "업비트", "빗썸", "바이낸스"
+  ],
+
+  "sources": [
+    {
+      "name": "블록미디어",
+      "url": "https://www.blockmedia.co.kr/feed",
+      "site": "https://www.blockmedia.co.kr",
+      "lang": "ko",
+      "enabled": true
+    },
+    {
+      "name": "토큰포스트",
+      "url": "https://www.tokenpost.kr/rss",
+      "site": "https://www.tokenpost.kr",
+      "lang": "ko",
+      "enabled": true
+    },
+
+    {
+      "_참고": "아래는 영어 매체입니다. 제목이 영어로 그대로 나오므로 기본은 꺼두었습니다. 쓰려면 enabled 를 true 로 바꾸세요.",
+      "name": "Cointelegraph",
+      "url": "https://cointelegraph.com/rss",
+      "site": "https://cointelegraph.com",
+      "lang": "en",
+      "enabled": false
+    },
+    {
+      "name": "Decrypt",
+      "url": "https://decrypt.co/feed",
+      "site": "https://decrypt.co",
+      "lang": "en",
+      "enabled": false
+    },
+    {
+      "name": "Bitcoin.com",
+      "url": "https://news.bitcoin.com/feed/",
+      "site": "https://news.bitcoin.com",
+      "lang": "en",
+      "enabled": false
+    }
+  ]
+}

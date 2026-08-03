@@ -1,0 +1,19 @@
+# 줄바꿈을 LF 로 통일합니다.
+#
+# 왜 필요한가:
+#   윈도우는 줄 끝에 보이지 않는 문자(CR)를 하나 더 붙입니다.
+#   GitHub Actions 는 리눅스에서 돌아가는데, 거기서는 그 CR 이 명령어의 일부로
+#   취급돼서 "command not found" 같은 엉뚱한 오류가 납니다.
+#   그래서 저장소에 올라갈 때는 항상 LF 로 맞춥니다.
+* text=auto eol=lf
+
+# PDF·이미지 같은 파일은 손대면 깨지므로 그대로 둡니다.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary

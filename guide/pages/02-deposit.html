@@ -1,0 +1,114 @@
+      <h1 class="g-title">바이낸스 입금 방법</h1>
+      <p class="g-subtitle">입금주소·네트워크·MEMO 확인과 소액 테스트 순서</p>
+
+      <div class="g-intro">
+        <h2>입금의 핵심 원칙</h2>
+        <p>
+          받는 곳인 <strong>바이낸스에서 먼저 입금주소와 네트워크를 확인</strong>한 뒤,
+          보내는 거래소에서도 같은 코인·같은 네트워크를 선택합니다.
+          처음 사용하는 주소는 소액 테스트가 우선입니다.
+        </p>
+      </div>
+
+      {{CTA_CARD}}
+
+      <section class="g-sec">
+        <h2>한눈에 보는 순서</h2>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead><tr><th>단계</th><th>해야 할 일</th><th>핵심 확인</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>바이낸스에서 입금 코인 선택</td><td>Deposit → On-Chain Deposit</td></tr>
+              <tr><td>2</td><td>입금 네트워크 선택</td><td>보내는 거래소가 지원하는 동일 네트워크</td></tr>
+              <tr><td>3</td><td>주소와 MEMO 복사</td><td>앞·뒤 문자와 태그까지 확인</td></tr>
+              <tr><td>4</td><td>보내는 거래소에서 출금</td><td>수량·수수료·수취 거래소 확인</td></tr>
+              <tr><td>5</td><td>소액 테스트 후 본 전송</td><td>TxID와 입금 상태 확인</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>1. 바이낸스 입금주소 발급</h2>
+        <ol class="g-steps">
+          <li>
+            <strong>입금 메뉴 이동</strong>
+            <p>앱에서 Add Funds 또는 Deposit → On-Chain Deposit으로 이동하고 입금할 가상자산을 선택합니다.</p>
+          </li>
+          <li>
+            <strong>네트워크 선택</strong>
+            <p>
+              ERC20, TRC20, BEP20처럼 같은 코인에도 여러 네트워크가 있을 수 있습니다.
+              보내는 거래소가 지원하는 네트워크와 반드시 동일해야 합니다.
+            </p>
+          </li>
+          <li>
+            <strong>주소·MEMO 복사</strong>
+            <p>
+              주소를 직접 입력하지 말고 복사합니다. XRP·XLM 등 일부 자산은 MEMO 또는 태그가 필요하므로
+              둘 다 입력해야 합니다.
+            </p>
+          </li>
+        </ol>
+
+        <div class="g-note g-note--warn">
+          <strong>네트워크를 틀리면 자산을 잃을 수 있습니다.</strong>
+          수수료가 싸다는 이유로 임의의 네트워크를 고르면 안 됩니다. 호환성이 수수료보다 우선입니다.
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>2. 보내는 거래소에서 출금</h2>
+        <ul class="g-list">
+          <li>출금할 코인과 바이낸스 입금 코인이 같은지 확인합니다.</li>
+          <li>출금 네트워크와 바이낸스 입금 네트워크를 문자 단위로 비교합니다.</li>
+          <li>주소의 앞 4~6자리와 마지막 4~6자리를 비교합니다.</li>
+          <li>실제 도착 수량이 바이낸스 최소 입금 수량 이상인지 확인합니다.</li>
+          <li>국내 거래소를 이용한다면 계정주 확인·트래블룰 안내에 따라 수취 거래소와 본인 정보를 정확하게 입력합니다.</li>
+        </ul>
+      </section>
+
+      <section class="g-sec">
+        <h2>3. 입금 상태 확인</h2>
+        <ol class="g-steps">
+          <li>
+            <strong>보내는 거래소의 출금 상태 확인</strong>
+            <p>출금 신청만 접수되고 블록체인으로 전송되지 않았다면 TxID가 아직 생성되지 않을 수 있습니다.</p>
+          </li>
+          <li>
+            <strong>TxID와 네트워크 확인</strong>
+            <p>TxID가 생성되면 블록체인 확인이 진행됩니다. 네트워크별 필요한 확인 횟수를 충족한 뒤 바이낸스 잔액에 반영됩니다.</p>
+          </li>
+          <li>
+            <strong>미반영 시 점검</strong>
+            <p>
+              네트워크, 주소, MEMO, 최소 입금 수량과 바이낸스 지갑 점검 여부를 확인합니다.
+              같은 작업을 반복하기보다 기존 전송 상태를 먼저 확인합니다.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="g-sec">
+        <h2>자주 발생하는 실수</h2>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead><tr><th>실수</th><th>결과·해결</th></tr></thead>
+            <tbody>
+              <tr><td>수수료가 싼 네트워크를 임의 선택</td><td>받는 거래소가 지원하지 않으면 자산 손실 가능</td></tr>
+              <tr><td>MEMO·태그 누락</td><td>자동 반영되지 않을 수 있어 복구 절차가 필요</td></tr>
+              <tr><td>과거에 저장한 주소 사용</td><td>현재 입금 화면에서 주소를 다시 확인</td></tr>
+              <tr><td>최소 입금액보다 적게 전송</td><td>자동 반영이 제한될 수 있으므로 최소 수량 확인</td></tr>
+              <tr><td>전액을 첫 전송에 사용</td><td>소액 테스트 후 나머지 금액 전송</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>공식 안내 참고</h2>
+        <ul class="g-links">
+          <li><a href="https://www.binance.com/en/support/faq/detail/85a1c394ac1d489fb0bfac0ef2fceafd" target="_blank" rel="noopener nofollow">가상자산 입출금 방법</a></li>
+          <li><a href="https://www.binance.com/en/support/faq/list/2" target="_blank" rel="noopener nofollow">입출금 지원 센터</a></li>
+        </ul>
+      </section>

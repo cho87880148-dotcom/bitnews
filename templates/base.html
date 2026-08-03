@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  {{CANONICAL}}
+
+  <meta property="og:type" content="{{OG_TYPE}}" />
+  <meta property="og:site_name" content="{{SITE_NAME}}" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="{{TITLE}}" />
+  <meta property="og:description" content="{{DESCRIPTION}}" />
+  {{OG_IMAGE}}
+
+  <link rel="stylesheet" href="{{BASE}}assets/css/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="{{SITE_NAME}}" href="{{BASE}}feed.xml" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="{{BASE}}index.html">
+        <span class="logo-mark">₿</span>{{SITE_NAME}}
+      </a>
+      <p class="tagline">{{TAGLINE}}</p>
+      <a class="header-cta" href="{{BASE}}binance-guide/index.html">바이낸스 가이드</a>
+    </div>
+  </header>
+
+{{TICKER}}
+
+  <main class="container">
+{{CONTENT}}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-note">
+        {{SITE_NAME}}는 각 언론사가 공개한 RSS를 모아 보여주는 뉴스 모음 사이트입니다.
+        모든 기사의 저작권은 해당 언론사에 있으며, 제목과 요약만 인용하고 본문은 원문 링크로 연결합니다.
+      </p>
+      <p class="footer-meta">
+        마지막 업데이트 {{UPDATED}} · © {{YEAR}} {{SITE_NAME}}
+      </p>
+    </div>
+  </footer>
+
+  <script src="{{BASE}}assets/js/main.js"></script>
+</body>
+</html>

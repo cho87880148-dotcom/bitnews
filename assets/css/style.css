@@ -1,0 +1,694 @@
+/* =========================================================
+   비트뉴스 — 스타일
+
+   색을 바꾸고 싶으면 맨 아래가 아니라 바로 아래 :root 의
+   값만 고치면 사이트 전체에 한 번에 반영됩니다.
+   ========================================================= */
+
+/* ---------- 색과 크기 값 모음 ---------- */
+:root {
+  --bg:        #ffffff;
+  --bg-soft:   #f7f8fa;   /* 카드 배경 */
+  --text:      #16181d;
+  --text-weak: #5f6672;   /* 날짜, 출처 같은 보조 글자 */
+  --line:      #e4e7ec;
+  --accent:    #f7931a;   /* 비트코인 주황색 */
+  --accent-ink:#8a4d00;   /* 주황 배경 위에 올릴 진한 글자 */
+
+  --width: 1080px;
+  --radius: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #101216;
+    --bg-soft:   #181b21;
+    --text:      #e9ebef;
+    --text-weak: #9aa2b1;
+    --line:      #272b33;
+    --accent:    #f7931a;
+    --accent-ink:#ffcf8a;
+  }
+}
+
+/* ---------- 초기화 ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, p, ul, ol, figure { margin: 0; }
+ul { padding: 0; list-style: none; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", "Malgun Gothic", "맑은 고딕", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+.container {
+  max-width: var(--width);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* ---------- 머리말 ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  position: sticky;   /* 스크롤해도 위에 붙어 있습니다 */
+  top: 0;
+  z-index: 10;
+}
+.header-inner {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  min-height: 62px;
+  padding-block: 0.7rem;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8em;
+}
+.tagline {
+  color: var(--text-weak);
+  font-size: 0.9rem;
+}
+/* 가이드 섹션으로 보내는 버튼 (오른쪽 끝에 붙습니다) */
+.header-cta {
+  margin-left: auto;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  background: #f0b90b;      /* 바이낸스 금색 — 가이드 쪽과 맞춥니다 */
+  color: #1a1300;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.header-cta:hover { filter: brightness(1.08); }
+
+/* =========================================================
+   상단 속보 띠 (전광판처럼 왼쪽으로 흘러갑니다)
+   ========================================================= */
+.ticker {
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.ticker-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-block: 0.55rem;
+}
+
+.ticker-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 0 0 auto;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+/* 깜빡이는 점 — 살아있는 느낌을 줍니다 */
+.ticker-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  animation: blink 1.4s ease-in-out infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+
+/* 이 창 밖으로 나간 부분은 잘려서 안 보입니다 */
+.ticker-viewport {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+}
+
+/* 목록이 두 번 들어 있어서, 절반까지 밀고 처음으로 되돌아가면
+   끊긴 데 없이 계속 흘러가는 것처럼 보입니다 */
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  width: max-content;
+  animation: ticker-scroll 60s linear infinite;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+/* 마우스를 올리면 멈춰서 읽을 수 있게 합니다 */
+.ticker:hover .ticker-track { animation-play-state: paused; }
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 0 0 auto;
+  text-decoration: none;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+.ticker-item:hover { color: var(--accent); }
+.ticker-item img {
+  width: 34px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex: 0 0 auto;
+}
+.ticker-thumb-empty {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 24px;
+  border-radius: 4px;
+  background: var(--line);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.8rem;
+  flex: 0 0 auto;
+}
+
+/* 움직임을 불편해하는 사용자를 위해 흐름을 멈춥니다 */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+  .ticker-dot   { animation: none; }
+  .ticker-viewport { overflow-x: auto; }
+}
+
+/* =========================================================
+   맨 위 특집 구역 (왼쪽 탭 · 가운데 슬라이드 · 오른쪽 트렌딩)
+   ========================================================= */
+.featured {
+  display: grid;
+  grid-template-columns: 1fr 1.75fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+/* 화면이 좁아지면 가운데 슬라이드를 위로 올리고 한 줄로 세웁니다 */
+@media (max-width: 1000px) {
+  .featured { grid-template-columns: 1fr 1fr; }
+  .col-main { grid-column: 1 / -1; order: -1; }
+}
+@media (max-width: 660px) {
+  .featured { grid-template-columns: 1fr; }
+}
+
+.col {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem 1.2rem;
+  min-width: 0;   /* 안의 글이 길어도 칸을 밀어내지 않게 합니다 */
+}
+
+.col-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.col-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.45rem;
+  border-bottom: 2px solid var(--accent);
+}
+.col-nav { display: flex; gap: 0.3rem; }
+.nav-btn {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--bg);
+  color: var(--text-weak);
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- 탭 ---------- */
+.tabs {
+  display: flex;
+  gap: 0.15rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.tab {
+  flex: 1;
+  padding: 0.5rem 0.3rem;
+  border: 0;
+  background: none;
+  color: var(--text-weak);
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.tab.is-active {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- 작은 기사 목록 (탭 안 · 트렌딩) ---------- */
+.mini-list { display: none; }
+.mini-list.is-active,
+.rank-list { display: block; }
+
+.mini-list li + li { border-top: 1px solid var(--line); }
+.mini-list a {
+  display: flex;
+  gap: 0.7rem;
+  padding: 0.7rem 0;
+  text-decoration: none;
+}
+.mini-thumb {
+  position: relative;
+  flex: 0 0 auto;
+  width: 62px;
+  height: 50px;
+}
+.mini-thumb img {
+  width: 62px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.mini-thumb-empty {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 50px;
+  border-radius: 5px;
+  background: var(--line);
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+/* 순위 숫자 배지 — 썸네일 왼쪽 아래에 겹칩니다 */
+.rank-badge {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  min-width: 18px;
+  height: 18px;
+  padding-inline: 4px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  border-radius: 0 5px 0 5px;
+}
+/* 1~3위는 더 진하게 강조합니다 */
+.rank-list li:nth-child(-n+3) .rank-badge { background: #e2483d; }
+
+.mini-body { min-width: 0; }
+.mini-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.87rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.mini-list a:hover .mini-title { color: var(--accent); }
+.mini-meta {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  color: var(--text-weak);
+}
+
+/* 트렌딩은 4건만 보이고 나머지는 아래로 이어집니다 (자동으로 위로 올라갑니다) */
+.rank-viewport {
+  height: 268px;
+  overflow: hidden;
+}
+.rank-list { position: relative; }
+
+/* ---------- 가운데 슬라이드 ---------- */
+.slider { position: relative; overflow: hidden; border-radius: var(--radius); }
+.slides {
+  display: flex;
+  transition: transform 0.45s ease;
+}
+.slide {
+  position: relative;
+  flex: 0 0 100%;
+  text-decoration: none;
+  display: block;
+}
+.slide-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--line);
+}
+.slide-img-empty {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-size: 4rem;
+  font-weight: 800;
+}
+/* 사진 위에 글씨를 얹으므로 아래쪽을 어둡게 깔아 글자가 읽히게 합니다 */
+.slide-text {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2.5rem 1.2rem 1.1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.45) 55%, transparent);
+  color: #fff;
+}
+.slide-text h3 {
+  margin-top: 0.5rem;
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+.slide-meta {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.slider-dots {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.9rem;
+  display: flex;
+  gap: 0.35rem;
+}
+.slider-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  cursor: pointer;
+}
+.slider-dots button.is-active {
+  background: var(--accent);
+  width: 20px;
+  border-radius: 999px;
+}
+
+/* ---------- 목록 페이지 ---------- */
+main.container { padding-block: 2rem 3.5rem; }
+
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--text);
+}
+
+/* 카드가 화면 너비에 따라 1~3줄로 알아서 접힙니다 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+.card a { text-decoration: none; }
+
+.card-thumb {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;      /* 비율이 달라도 잘리며 꽉 채웁니다 */
+  background: var(--line);
+}
+/* 이미지가 없는 기사는 주황 기호로 대체합니다 */
+.card-thumb-empty {
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  background: var(--line);
+  color: var(--accent);
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1.1rem 1.2rem;
+  flex: 1;
+}
+.card-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  /* 제목이 길면 3줄에서 자릅니다 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-summary {
+  font-size: 0.9rem;
+  color: var(--text-weak);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  margin-top: auto;
+  padding-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-weak);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.source-badge {
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+/* ---------- 쪽 번호 ---------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 3rem;
+}
+.pagination a, .pagination span {
+  min-width: 2.4rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.pagination .current {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ---------- 기사 페이지 ---------- */
+.article {
+  max-width: 720px;
+  margin-inline: auto;
+}
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-weak);
+  margin-bottom: 1rem;
+}
+.breadcrumb a { text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+.article-title {
+  font-size: clamp(1.5rem, 4.5vw, 2.05rem);
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--text-weak);
+}
+.article-thumb {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-block: 1.5rem;
+}
+.article-summary {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-block: 1.5rem;
+}
+
+/* 원문으로 보내는 안내 상자 — 이 사이트의 핵심 약속입니다 */
+.source-box {
+  margin-block: 2rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+}
+.source-box p {
+  font-size: 0.88rem;
+  color: var(--text-weak);
+  margin-bottom: 0.9rem;
+}
+.source-link {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.source-link:hover { filter: brightness(1.08); }
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-block: 1.5rem;
+}
+.tag {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--text-weak);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-weak);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--accent); }
+
+/* ---------- 관련 기사 ---------- */
+.related {
+  max-width: 720px;
+  margin: 3.5rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+.related h2 { font-size: 1.05rem; margin-bottom: 1rem; }
+.related li { border-bottom: 1px solid var(--line); }
+.related a {
+  display: block;
+  padding: 0.8rem 0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.related a:hover { color: var(--accent); }
+.related .related-meta {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-weak);
+  margin-top: 0.15rem;
+}
+
+/* ---------- 꼬리말 ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--bg-soft);
+  padding-block: 2rem;
+}
+.footer-note {
+  font-size: 0.85rem;
+  color: var(--text-weak);
+  max-width: 700px;
+}
+.footer-meta {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: var(--text-weak);
+}
+
+/* ---------- 기사가 하나도 없을 때 ---------- */
+.empty {
+  padding: 4rem 1rem;
+  text-align: center;
+  color: var(--text-weak);
+}

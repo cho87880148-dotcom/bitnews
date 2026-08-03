@@ -1,0 +1,119 @@
+      <h1 class="g-title">바이낸스 선물거래</h1>
+      <p class="g-subtitle">USDⓈ-M·롱숏·격리교차·레버리지·청산 위험</p>
+
+      <div class="g-intro">
+        <h2>먼저 읽어주세요</h2>
+        <p>
+          선물거래는 가격 상승에 투자하는 롱과 하락에 투자하는 숏이 가능하지만,
+          <strong>레버리지·펀딩비·강제청산 위험</strong>이 있습니다.
+          처음에는 소액·낮은 배수로 주문 구조를 먼저 확인하세요.
+        </p>
+      </div>
+
+      <div class="g-note g-note--warn">
+        <strong>선물거래는 원금을 모두 잃을 수 있습니다.</strong>
+        레버리지를 쓰면 손실이 빠르게 확대되고, 가격이 청산가격에 닿으면 포지션이 강제로 종료됩니다.
+        감당 가능한 금액만 사용하세요.
+      </div>
+
+      {{CTA_CARD}}
+
+      <section class="g-sec">
+        <h2>한눈에 보는 순서</h2>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead><tr><th>단계</th><th>해야 할 일</th><th>핵심 확인</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>선물 계정 활성화</td><td>KYC·위험고지·퀴즈가 표시될 수 있음</td></tr>
+              <tr><td>2</td><td>USDT를 선물 계정으로 이체</td><td>Spot/Funding → USDⓈ-M Futures</td></tr>
+              <tr><td>3</td><td>거래 페어와 모드 선택</td><td>USDⓈ-M, BTCUSDT, 단방향·헤지</td></tr>
+              <tr><td>4</td><td>격리·교차와 레버리지 설정</td><td>포지션 위험 범위와 청산가격 확인</td></tr>
+              <tr><td>5</td><td>롱·숏 주문 및 TP/SL</td><td>수량·손절·익절·펀딩비 확인</td></tr>
+              <tr><td>6</td><td>포지션 종료</td><td>포지션과 남은 조건부 주문 모두 확인</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>1. 선물 계정과 자금 준비</h2>
+        <ul class="g-list">
+          <li>Futures 메뉴에서 USDⓈ-M 선물 계정을 활성화합니다.</li>
+          <li>현물 또는 Funding 계정의 USDT를 USDⓈ-M Futures 계정으로 내부 이체합니다.</li>
+          <li>선물 계정에는 감당 가능한 금액만 분리해 두는 것이 좋습니다.</li>
+        </ul>
+      </section>
+
+      <section class="g-sec">
+        <h2>2. 거래 설정 이해하기</h2>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead><tr><th>설정</th><th>의미</th><th>주의점</th></tr></thead>
+            <tbody>
+              <tr><td>Long / Short</td><td>상승 / 하락 방향 포지션</td><td>반대 방향 선택 시 손실 발생</td></tr>
+              <tr><td>Cross</td><td>선물 계정 잔액을 공통 증거금으로 사용</td><td>다른 포지션과 잔액에도 영향 가능</td></tr>
+              <tr><td>Isolated</td><td>포지션별 증거금 분리</td><td>배정 증거금이 부족하면 해당 포지션 청산 가능</td></tr>
+              <tr><td>Leverage</td><td>증거금 대비 더 큰 포지션 운용</td><td>높을수록 청산가격이 가까워질 수 있음</td></tr>
+              <tr><td>One-way / Hedge</td><td>순포지션 1개 / 롱·숏 동시 보유</td><td>반대 주문이 기존 포지션을 줄일 수 있음</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>3. 주문하기</h2>
+        <ol class="g-steps">
+          <li>
+            <strong>거래 페어 선택</strong>
+            <p>BTCUSDT Perpetual처럼 거래할 무기한 선물 상품을 선택합니다.</p>
+          </li>
+          <li>
+            <strong>시장가 또는 지정가 선택</strong>
+            <p>시장가는 빠른 체결, 지정가는 원하는 가격 통제가 목적입니다. 시장가에는 슬리피지, 지정가에는 미체결 위험이 있습니다.</p>
+          </li>
+          <li>
+            <strong>수량 입력</strong>
+            <p>증거금이 아니라 레버리지가 반영된 <strong>포지션 명목가치</strong>가 얼마인지 확인합니다.</p>
+          </li>
+          <li>
+            <strong>롱 또는 숏 선택</strong>
+            <p>상승 예상은 Buy/Long, 하락 예상은 Sell/Short입니다. 포지션 모드를 함께 확인합니다.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="g-sec">
+        <h2>4. 포지션 관리</h2>
+        <ul class="g-list">
+          <li>Entry Price, Mark Price, Liquidation Price, Margin Ratio와 미실현 손익을 확인합니다.</li>
+          <li>TP/SL로 손절·익절 조건을 설정하고 실제 등록됐는지 Open Orders에서 확인합니다.</li>
+          <li>무기한 선물은 현재 펀딩비율과 다음 정산시간을 확인합니다.</li>
+          <li>포지션 종료 후 남은 지정가·TP/SL 주문이 없는지 확인합니다.</li>
+        </ul>
+      </section>
+
+      <section class="g-sec">
+        <h2>자주 발생하는 실수</h2>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead><tr><th>실수</th><th>해결</th></tr></thead>
+            <tbody>
+              <tr><td>현물과 선물 화면 혼동</td><td>Futures·USDⓈ-M·Perpetual 표시 확인</td></tr>
+              <tr><td>레버리지 숫자만 보고 주문</td><td>수량과 포지션 명목가치를 함께 확인</td></tr>
+              <tr><td>교차 모드로 전체 잔액 노출</td><td>격리·교차의 영향 범위를 이해하고 선택</td></tr>
+              <tr><td>손절 주문 등록을 확인하지 않음</td><td>Positions와 Open Orders에서 실제 상태 확인</td></tr>
+              <tr><td>지정가 종료 주문 후 종료됐다고 판단</td><td>체결 전에는 포지션이 계속 유지됨</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>공식 안내 참고</h2>
+        <ul class="g-links">
+          <li><a href="https://www.binance.com/en/support/faq/detail/360039304272" target="_blank" rel="noopener nofollow">선물거래 입문</a></li>
+          <li><a href="https://www.binance.com/en/support/faq/detail/489c90b44dbe454d85fc4cbdca10dcb1" target="_blank" rel="noopener nofollow">롱·숏 안내</a></li>
+          <li><a href="https://www.binance.com/en/support/faq/detail/360033162192" target="_blank" rel="noopener nofollow">USDⓈ-M 레버리지·마진</a></li>
+          <li><a href="https://www.binance.com/en/support/faq/detail/360033779452" target="_blank" rel="noopener nofollow">선물 주문 유형</a></li>
+        </ul>
+      </section>
