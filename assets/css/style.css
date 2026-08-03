@@ -93,9 +93,19 @@ a { color: inherit; }
   color: var(--text-weak);
   font-size: 0.9rem;
 }
-/* 가이드 섹션으로 보내는 버튼 (오른쪽 끝에 붙습니다) */
-.header-cta {
+/* 주간정리 링크 — 오른쪽 묶음의 시작점입니다 */
+.header-link {
   margin-left: auto;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.header-link:hover { color: var(--accent); }
+
+/* 가이드 섹션으로 보내는 버튼 */
+.header-cta {
   padding: 0.45rem 0.95rem;
   border-radius: 999px;
   background: #f0b90b;      /* 바이낸스 금색 — 가이드 쪽과 맞춥니다 */
@@ -644,6 +654,116 @@ main.container { padding-block: 2rem 3.5rem; }
   text-decoration: none;
 }
 .back-link:hover { color: var(--accent); }
+
+/* =========================================================
+   주간 정리 (/weekly/) — 우리가 직접 쓴 글
+   기사 페이지(.article)를 물려받고 필요한 것만 더합니다.
+   ========================================================= */
+.wk-subtitle {
+  margin-top: 0.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-weak);
+  font-size: 0.95rem;
+}
+.wk-lead {
+  margin-top: 1.5rem;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  font-weight: 500;
+}
+
+/* 세 줄 요약 상자 — 글 맨 위에서 결론부터 보여줍니다 */
+.wk-summary {
+  margin: 1.75rem 0;
+  padding: 1.2rem 1.35rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+}
+.wk-summary h2 { font-size: 0.92rem; color: var(--accent); margin-bottom: 0.6rem; }
+.wk-summary ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.wk-summary li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.wk-summary li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.wk-sec { margin-top: 2.5rem; }
+.wk-sec h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--text);
+  margin-bottom: 1rem;
+}
+.wk-sec h3 { margin-top: 1.6rem; font-size: 1.05rem; font-weight: 700; }
+.wk-sec p { margin-top: 0.8rem; line-height: 1.85; }
+
+.wk-list { margin-top: 0.9rem; list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.wk-list li { position: relative; padding-left: 1.1rem; line-height: 1.75; }
+.wk-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* 초보자 설명 / 경고 상자 */
+.wk-note {
+  margin-top: 1.2rem;
+  padding: 1rem 1.2rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--text-weak);
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+.wk-note--warn { border-left-color: #e2483d; }
+.wk-note strong { color: var(--accent); }
+.wk-note--warn strong { color: #e2483d; }
+.wk-note a { color: var(--accent); }
+
+.wk-table-wrap { margin-top: 1.1rem; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+table.wk-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 420px; }
+.wk-table th, .wk-table td { padding: 0.7rem 0.95rem; text-align: left; }
+.wk-table thead th { background: var(--bg-soft); font-weight: 700; white-space: nowrap; }
+.wk-table tbody tr + tr td { border-top: 1px solid var(--line); }
+.wk-table td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+
+.wk-disclaimer {
+  margin-top: 2.5rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  color: var(--text-weak);
+  line-height: 1.7;
+}
+
+/* 목록 페이지 */
+.wk-intro { margin-bottom: 1.5rem; color: var(--text-weak); }
+.wk-card .card-body { padding-top: 1.2rem; }
+.wk-card-date { font-size: 0.78rem; color: var(--accent); font-weight: 700; }
 
 /* ---------- 관련 기사 ---------- */
 .related {

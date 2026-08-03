@@ -804,6 +804,108 @@ Write-Page -RelPath '404.html' -Title "페이지를 찾을 수 없습니다 | $s
 "@
 
 # =========================================================
+#  9-1. 주간 정리 섹션 (/weekly/)
+#
+#  weekly\posts\*.html 이 사람이 쓴 본문이고, 목차는 weekly\weekly.json 에 있습니다.
+#  글 아래에 붙는 "그 주 주요 기사" 목록은 from~to 날짜를 보고 자동으로 만듭니다.
+#  뉴스 쪽 껍데기(templates\base.html)를 그대로 씁니다 — 같은 사이트로 보여야 하니까요.
+# =========================================================
+$weeklyDir = Join-Path $root 'weekly'
+$weeklyUrls = @()
+
+if (Test-Path $weeklyDir) {
+    $wCfg = (Get-Content (Join-Path $weeklyDir 'weekly.json') -Raw -Encoding UTF8) | ConvertFrom-Json
+    $wOut = Join-Path $outPath $wCfg.section.dir
+    New-Item -ItemType Directory -Path $wOut -Force | Out-Null
+
+    $wPosts = @($wCfg.posts)
+
+    foreach ($post in $wPosts) {
+        $fragPath = Join-Path (Join-Path $weeklyDir 'posts') ($post.slug + '.html')
+        if (-not (Test-Path $fragPath)) {
+            Write-Host ("  주간 정리 본문 없음: {0}" -f $post.slug) -ForegroundColor DarkYellow
+            continue
+        }
+        $frag = Get-Content $fragPath -Raw -Encoding UTF8
+
+        # 이 글이 다루는 기간의 기사를 인기순으로 뽑아 아래에 붙입니다
+        $fromD = ConvertTo-Utc ($post.from + 'T00:00:00Z')
+        $toD   = (ConvertTo-Utc ($post.to + 'T00:00:00Z')).AddDays(1)
+        $inRange = @($byHot | Where-Object {
+            $d = ConvertTo-Utc $_.published
+            $d -ge $fromD -and $d -lt $toD
+        } | Select-Object -First 12)
+
+        $linkHtml = ''
+        if ($inRange.Count -gt 0) {
+            $rows = ($inRange | ForEach-Object {
+                '<li><a href="../news/{0}.html">{1}<span class="related-meta">{2} · {3}</span></a></li>' -f `
+                    $_.id, (Protect-Html $_.title), (Protect-Html $_.source), (Format-Kst (ConvertTo-Utc $_.published))
+            }) -join "`n          "
+            $linkHtml = @"
+
+    <section class="related">
+      <h2>이 기간의 주요 기사 $($inRange.Count)건</h2>
+      <ul>
+          $rows
+      </ul>
+    </section>
+"@
+        }
+
+        $content = @"
+    <article class="article wk-article">
+      <p class="breadcrumb"><a href="../index.html">$(Protect-Html $siteName)</a> › <a href="index.html">주간 정리</a></p>
+
+      <h1 class="article-title">$(Protect-Html $post.title)</h1>
+      <p class="wk-subtitle">$(Protect-Html $post.subtitle)</p>
+
+$frag
+
+      <a class="back-link" href="index.html">← 주간 정리 목록으로</a>
+    </article>$linkHtml
+"@
+
+        Write-Page -RelPath ('{0}/{1}.html' -f $wCfg.section.dir, $post.slug) `
+                   -Title ('{0} | {1}' -f $post.title, $siteName) `
+                   -Description $post.desc -Content $content -OgType 'article' `
+                   -BasePrefix '../' -Ticker $tickerSub
+        $weeklyUrls += $post.slug
+    }
+
+    # 주간 정리 목록 페이지
+    $cards = ($wPosts | ForEach-Object {
+        @"
+      <article class="card wk-card">
+        <a href="$($_.slug).html">
+          <div class="card-body">
+            <p class="wk-card-date">$(Protect-Html $_.subtitle)</p>
+            <h3 class="card-title">$(Protect-Html $_.title)</h3>
+            <p class="card-summary">$(Protect-Html (Limit-Text $_.desc 110))</p>
+          </div>
+        </a>
+      </article>
+"@
+    }) -join "`n"
+
+    $wIndex = @"
+    <h1 class="section-title">주간 정리</h1>
+    <p class="wk-intro">$(Protect-Html $wCfg.section.description)</p>
+    <div class="card-grid">
+$cards
+    </div>
+"@
+
+    Write-Page -RelPath ('{0}/index.html' -f $wCfg.section.dir) `
+               -Title ('주간 정리 | {0}' -f $siteName) `
+               -Description $wCfg.section.description -Content $wIndex `
+               -BasePrefix '../' -Ticker $tickerSub
+    $weeklyUrls += 'index'
+
+    Write-Host ("  주간 정리 {0}개 생성 (/{1}/)" -f $weeklyUrls.Count, $wCfg.section.dir)
+}
+
+# =========================================================
 #  9-2. 바이낸스 가이드 섹션 (/binance-guide/)
 #
 #  guide\ 폴더의 내용을 dist\binance-guide\ 로 만들어 냅니다.
@@ -988,6 +1090,10 @@ if ($baseUrl) {
     # 가이드 페이지도 검색엔진에 알립니다 (뉴스와 달리 잘 바뀌지 않으므로 monthly)
     foreach ($gu in $guideUrls) {
         [void]$urls.AppendLine("  <url><loc>$baseUrl/binance-guide/$gu.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>")
+    }
+    # 주간 정리는 우리가 직접 쓴 글이라 우선순위를 높게 둡니다
+    foreach ($wu in $weeklyUrls) {
+        [void]$urls.AppendLine("  <url><loc>$baseUrl/weekly/$wu.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>")
     }
     [void]$urls.AppendLine('</urlset>')
     Save-Text 'sitemap.xml' $urls.ToString()
