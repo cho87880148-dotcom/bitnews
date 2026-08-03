@@ -116,7 +116,12 @@ RSS 가 공개한 **제목과 요약만** 쓰고 본문은 싣지 않는다. 각
 
 **배포 완료. 자동 갱신 가동 중.**
 
-- 사이트: <https://cho87880148-dotcom.github.io/bitnews/>
+- 사이트: <https://coinfocus.co.kr/> (후이즈에서 산 도메인, 2026-08-03 연결)
+  - 옛 주소 `cho87880148-dotcom.github.io/bitnews` 는 301 로 자동 전환된다
+  - DNS: 후이즈 → A 레코드 4개(185.199.108~111.153) + www CNAME → `cho87880148-dotcom.github.io`
+  - **GitHub Actions 배포에서는 CNAME 파일이 필요 없다.** 저장소 Settings → Pages 의
+    Custom domain 설정만 쓰인다 (공식 문서 확인함). 그래서 build.ps1 은 CNAME 을 만들지 않는다.
+  - 도메인을 바꾸면 `sources.json` 의 `baseUrl` 도 반드시 함께 바꿀 것
 - 저장소: <https://github.com/cho87880148-dotcom/bitnews> (공개)
 - 기사 527건 / 목록 44쪽 / 가이드 7쪽 / sitemap 578개 주소
 - 리퍼럴: `https://www.binance.com/register?ref=HNEBXFA7` (코드 `HNEBXFA7`)

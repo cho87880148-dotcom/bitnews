@@ -570,9 +570,16 @@ function Write-Page {
         [string]$Ticker = ''
     )
 
+    # canonical 은 sitemap 에 적은 주소와 글자까지 똑같아야 합니다.
+    # 메인은 sitemap 에 "https://주소/" 로 넣으므로 index.html 을 떼어냅니다.
+    # (안 맞추면 검색엔진이 같은 페이지를 두 개로 보고 점수를 나눠 갖습니다)
     $canonical = ''
     if ($baseUrl) {
-        $canonical = '<link rel="canonical" href="{0}/{1}" />' -f $baseUrl, $RelPath
+        if ($RelPath -eq 'index.html') {
+            $canonical = '<link rel="canonical" href="{0}/" />' -f $baseUrl
+        } else {
+            $canonical = '<link rel="canonical" href="{0}/{1}" />' -f $baseUrl, $RelPath
+        }
     }
     # 공유 카드 이미지: 기사 사진이 있으면 그걸, 없으면 사이트 대표 이미지를 씁니다.
     # 대표 이미지는 주소가 완전해야 카카오톡·페이스북이 읽어갑니다(상대경로는 안 됨).

@@ -11,7 +11,7 @@
     "tagline": "비트코인 뉴스 한눈에",
     "description": "비트코인과 암호화폐 주요 뉴스를 한곳에 모았습니다. 블록미디어, 토큰포스트 등 국내 매체의 최신 기사를 실시간으로 업데이트합니다.",
     "_baseUrl": "사이트 실제 주소. 이게 있어야 sitemap.xml 과 feed.xml 이 만들어집니다. 나중에 직접 산 도메인을 붙이면 이 값을 그 주소로 바꾸세요.",
-    "baseUrl": "https://cho87880148-dotcom.github.io/bitnews"
+    "baseUrl": "https://coinfocus.co.kr"
   },
 
   "_키워드설명": [
