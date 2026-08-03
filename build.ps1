@@ -574,9 +574,18 @@ function Write-Page {
     if ($baseUrl) {
         $canonical = '<link rel="canonical" href="{0}/{1}" />' -f $baseUrl, $RelPath
     }
+    # 공유 카드 이미지: 기사 사진이 있으면 그걸, 없으면 사이트 대표 이미지를 씁니다.
+    # 대표 이미지는 주소가 완전해야 카카오톡·페이스북이 읽어갑니다(상대경로는 안 됨).
     $ogImageTag = ''
     if ($OgImage) {
         $ogImageTag = '<meta property="og:image" content="{0}" />' -f (Protect-Html $OgImage)
+    } elseif ($baseUrl) {
+        $ogImageTag = @'
+<meta property="og:image" content="{0}/assets/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+'@ -f $baseUrl
     }
 
     $html = $template
@@ -876,7 +885,18 @@ if (Test-Path $guideDir) {
 
         $html = $html.Replace('{{TITLE}}',       (Protect-Html $Title))
         $html = $html.Replace('{{DESCRIPTION}}', (Protect-Html $Desc))
+        $gOgImage = ''
+        if ($baseUrl) {
+            $gOgImage = @'
+<meta property="og:image" content="{0}/assets/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+'@ -f $baseUrl
+        }
+
         $html = $html.Replace('{{CANONICAL}}',   $canonical)
+        $html = $html.Replace('{{OG_IMAGE}}',    $gOgImage)
         $html = $html.Replace('{{SITE_NAME}}',   (Protect-Html $siteName))
         $html = $html.Replace('{{REF_LINK}}',    (Protect-Html $refLink))
         $html = $html.Replace('{{CTA_LABEL}}',   (Protect-Html $ctaLabel))
