@@ -127,6 +127,19 @@ RSS 가 공개한 **제목과 요약만** 쓰고 본문은 싣지 않는다. 각
 - 리퍼럴: `https://www.binance.com/register?ref=HNEBXFA7` (코드 `HNEBXFA7`)
 - GitHub Actions 가 **1시간마다** 수집 → 빌드 → Pages 배포. 실행 #2 에서 전 단계 성공 확인.
 
+### 주간 정리 자동화 (2026-08-03 시작, 8월 한 달 시험)
+- `generate-weekly.ps1` 이 Claude API 를 불러 주간 정리 초고를 만든다.
+  모델 `claude-opus-5`, 응답은 `output_config.format` 으로 JSON 고정(title/subtitle/desc/body_html).
+  1주차 글(`weekly/posts/2026-08-w1.html`)을 형식 본보기로 함께 보낸다 — 이게 문체 일관성의 핵심.
+- `.github/workflows/weekly-draft.yml` 이 **한국시간 월요일 07시**에 돌린다(cron `0 22 * * 0`).
+- **자동 발행이 아니다.** 초고를 만들어 Pull Request 로 올려두고, 사람이 Merge 해야 사이트에 올라간다.
+  사용자가 A안(승인 후 발행)을 골랐다. 8월만 시험하고 다시 판단하기로 했다.
+- API 키는 GitHub Secret `ANTHROPIC_API_KEY`. 코드나 파일에 절대 넣지 말 것.
+- 비용: 주당 약 $0.45 (입력 약 5만 토큰). 월 3천원 미만.
+- **프롬프트의 첫 번째 규칙이 "제공된 기사에 없는 숫자를 지어내지 말 것"이다.** 이걸 약하게 만들지 말 것 —
+  금융 사이트에서 틀린 숫자가 자동 발행되는 것이 이 구조의 유일한 실질적 위험이다.
+- 그만두려면 Actions 탭 → "주간 정리 초고" → Disable workflow.
+
 ### git 관련 주의
 - 워크플로가 매 실행마다 `data/articles.json` 을 **저장소에 되돌려 커밋**한다.
   그래서 로컬에서 작업하기 전에 **반드시 `git pull` 부터** 할 것.
