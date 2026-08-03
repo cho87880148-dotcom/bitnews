@@ -2,6 +2,10 @@
 # GitHub 서버도 스스로 만들어서 배포합니다.
 dist/
 
+# 주간 정리 글을 쓸 때만 쓰는 임시 글감입니다.
+# prepare-weekly-context.ps1 이 매번 새로 만듭니다.
+weekly/.work/
+
 # 윈도우가 폴더마다 자동으로 만드는 파일
 Thumbs.db
 desktop.ini
