@@ -556,6 +556,106 @@ $(New-SlideHtml $slideList)
 }
 
 # ---------------------------------------------------------
+#  구조화 데이터(JSON-LD)
+#
+#  "이 페이지는 뉴스 기사이고, 쓴 곳은 블록미디어고, 발행일은 언제다" 를
+#  검색엔진이 기계적으로 읽을 수 있게 적어두는 부분입니다. 화면에는 안 보입니다.
+#
+#  ★ 정직하게 적는 것이 중요합니다.
+#    기사 본문을 쓴 것은 언론사이므로 author 는 언론사로 적고,
+#    우리는 publisher(이 페이지를 낸 곳)로만 적습니다.
+#    isBasedOn 에 원문 주소를 넣어 "이 글은 저것을 근거로 한다"를 명시합니다.
+#    우리가 직접 쓴 주간 정리·가이드만 author 를 비트뉴스로 적습니다.
+# ---------------------------------------------------------
+function ConvertTo-JsonLdText {
+    param([string]$Text)
+    if ($null -eq $Text) { return '' }
+    # JSON 문자열 안에서 깨지지 않게, 그리고 </script> 로 태그가 닫히지 않게 처리합니다
+    $t = $Text -replace '\\', '\\' -replace '"', '\"'
+    $t = $t -replace "`r", '' -replace "`n", ' '
+    $t = $t -replace '</', '<\/'
+    return $t
+}
+
+function New-JsonLd {
+    param(
+        [string]$Kind,          # website | list | news | weekly | guide | guideIndex
+        [string]$Url,           # 이 페이지의 전체 주소 (baseUrl 없으면 빈 값)
+        [string]$Headline = '',
+        [string]$Description = '',
+        [string]$Image = '',
+        [string]$DatePublished = '',
+        [string]$AuthorName = '',
+        [string]$BasedOn = '',
+        $Crumbs = @()           # @( @{name=''; url=''} , ... )
+    )
+
+    # 주소가 없으면 구조화 데이터를 넣지 않습니다. 반쪽짜리보다 없는 게 낫습니다.
+    if (-not $baseUrl) { return '' }
+
+    $pub = '"publisher":{"@type":"Organization","name":"' + (ConvertTo-JsonLdText $siteName) + '","url":"' + $baseUrl + '/","logo":{"@type":"ImageObject","url":"' + $baseUrl + '/assets/img/og-image.png"}}'
+
+    $blocks = New-Object System.Collections.ArrayList
+
+    switch ($Kind) {
+        'website' {
+            [void]$blocks.Add('{"@context":"https://schema.org","@type":"WebSite","name":"' + (ConvertTo-JsonLdText $siteName) + '","url":"' + $baseUrl + '/","description":"' + (ConvertTo-JsonLdText $Description) + '","inLanguage":"ko-KR"}')
+            [void]$blocks.Add('{"@context":"https://schema.org","@type":"Organization","name":"' + (ConvertTo-JsonLdText $siteName) + '","url":"' + $baseUrl + '/","logo":"' + $baseUrl + '/assets/img/og-image.png"}')
+        }
+        'list' {
+            [void]$blocks.Add('{"@context":"https://schema.org","@type":"CollectionPage","name":"' + (ConvertTo-JsonLdText $Headline) + '","url":"' + $Url + '","description":"' + (ConvertTo-JsonLdText $Description) + '","inLanguage":"ko-KR",' + $pub + '}')
+        }
+        'news' {
+            # 본문을 쓴 곳은 언론사다 — author 에 언론사를 적고 원문을 isBasedOn 으로 밝힌다
+            $s = '{"@context":"https://schema.org","@type":"NewsArticle","headline":"' + (ConvertTo-JsonLdText $Headline) + '"'
+            $s += ',"description":"' + (ConvertTo-JsonLdText $Description) + '"'
+            $s += ',"url":"' + $Url + '","mainEntityOfPage":"' + $Url + '"'
+            if ($DatePublished) { $s += ',"datePublished":"' + $DatePublished + '"' }
+            if ($Image)         { $s += ',"image":["' + (ConvertTo-JsonLdText $Image) + '"]' }
+            if ($AuthorName)    { $s += ',"author":{"@type":"Organization","name":"' + (ConvertTo-JsonLdText $AuthorName) + '"}' }
+            if ($BasedOn)       { $s += ',"isBasedOn":"' + (ConvertTo-JsonLdText $BasedOn) + '"' }
+            $s += ',"inLanguage":"ko-KR",' + $pub + '}'
+            [void]$blocks.Add($s)
+        }
+        'weekly' {
+            # 우리가 직접 쓴 글이다
+            $s = '{"@context":"https://schema.org","@type":"NewsArticle","headline":"' + (ConvertTo-JsonLdText $Headline) + '"'
+            $s += ',"description":"' + (ConvertTo-JsonLdText $Description) + '"'
+            $s += ',"url":"' + $Url + '","mainEntityOfPage":"' + $Url + '"'
+            if ($DatePublished) { $s += ',"datePublished":"' + $DatePublished + '"' }
+            $s += ',"image":["' + $baseUrl + '/assets/img/og-image.png"]'
+            $s += ',"author":{"@type":"Organization","name":"' + (ConvertTo-JsonLdText $siteName) + '"}'
+            $s += ',"inLanguage":"ko-KR",' + $pub + '}'
+            [void]$blocks.Add($s)
+        }
+        { $_ -in 'guide', 'guideIndex' } {
+            $t = if ($Kind -eq 'guideIndex') { 'CollectionPage' } else { 'Article' }
+            $s = '{"@context":"https://schema.org","@type":"' + $t + '","headline":"' + (ConvertTo-JsonLdText $Headline) + '"'
+            $s += ',"description":"' + (ConvertTo-JsonLdText $Description) + '"'
+            $s += ',"url":"' + $Url + '","mainEntityOfPage":"' + $Url + '"'
+            $s += ',"image":["' + $baseUrl + '/assets/img/og-image.png"]'
+            $s += ',"author":{"@type":"Organization","name":"' + (ConvertTo-JsonLdText $siteName) + '"}'
+            $s += ',"inLanguage":"ko-KR",' + $pub + '}'
+            [void]$blocks.Add($s)
+        }
+    }
+
+    # 검색 결과에 "비트뉴스 › 가이드 › 바이낸스 가입 방법" 처럼 경로를 보여줍니다
+    if (@($Crumbs).Count -gt 0) {
+        $items = @()
+        $pos = 1
+        foreach ($c in @($Crumbs)) {
+            $items += '{"@type":"ListItem","position":' + $pos + ',"name":"' + (ConvertTo-JsonLdText $c.name) + '","item":"' + $c.url + '"}'
+            $pos++
+        }
+        [void]$blocks.Add('{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[' + ($items -join ',') + ']}')
+    }
+
+    if ($blocks.Count -eq 0) { return '' }
+    return (($blocks | ForEach-Object { '  <script type="application/ld+json">' + $_ + '</script>' }) -join "`n")
+}
+
+# ---------------------------------------------------------
 #  페이지 하나를 만들어 파일로 씁니다
 # ---------------------------------------------------------
 function Write-Page {
@@ -567,7 +667,8 @@ function Write-Page {
         [string]$OgType = 'website',
         [string]$OgImage = '',
         [string]$BasePrefix = '',  # 하위 폴더면 '../'
-        [string]$Ticker = ''
+        [string]$Ticker = '',
+        [string]$JsonLd = ''
     )
 
     # canonical 은 sitemap 에 적은 주소와 글자까지 똑같아야 합니다.
@@ -605,6 +706,7 @@ function Write-Page {
     $html = $html.Replace('{{TAGLINE}}',     (Protect-Html $cfg.site.tagline))
     $html = $html.Replace('{{BASE}}',        $BasePrefix)
     $html = $html.Replace('{{TICKER}}',      $Ticker)
+    $html = $html.Replace('{{JSONLD}}',      $JsonLd)
     $html = $html.Replace('{{CONTENT}}',     $Content)
     $html = $html.Replace('{{UPDATED}}',     $updatedLabel)
     $html = $html.Replace('{{YEAR}}',        $nowUtc.AddHours(9).Year.ToString())
@@ -622,8 +724,11 @@ function New-Card {
     $href = '{0}news/{1}.html' -f $BasePrefix, $A.id
     $pub = ConvertTo-Utc $A.published
 
+    # alt 는 이미지 검색 유입과 이미지가 안 뜰 때를 위해 기사 제목을 넣습니다.
+    # (속보 띠·작은 목록의 썸네일은 바로 옆에 제목이 있어 장식이므로 비워둡니다)
     if ($A.image) {
-        $thumb = '<img class="card-thumb" src="{0}" alt="" loading="lazy" />' -f (Protect-Html $A.image)
+        $thumb = '<img class="card-thumb" src="{0}" alt="{1}" loading="lazy" />' -f `
+                    (Protect-Html $A.image), (Protect-Html (Limit-Text $A.title 100))
     } else {
         $thumb = '<div class="card-thumb-empty">₿</div>'
     }
@@ -690,10 +795,12 @@ for ($p = 1; $p -le $totalPages; $p++) {
         $pager = "`n      <nav class=`"pagination`">`n        " + ($links -join "`n        ") + "`n      </nav>"
     }
 
-    if ($p -eq 1) { $heading = '최신 뉴스' } else { $heading = "최신 뉴스 — {0}페이지" -f $p }
+    # 목록 페이지에도 h1 이 하나 있어야 합니다. 검색엔진이 "이 페이지가 무엇에 관한
+    # 것인가"를 읽는 자리입니다. 보이는 모양은 그대로 두고 태그만 h1 으로 씁니다.
+    if ($p -eq 1) { $heading = '비트코인 최신 뉴스' } else { $heading = "비트코인 최신 뉴스 — {0}페이지" -f $p }
 
     $content = @"
-$featured    <h2 class="section-title">$heading</h2>
+$featured    <h1 class="section-title">$heading</h1>
     <div class="card-grid">
 $cards
     </div>$pager
@@ -707,8 +814,14 @@ $cards
         $pageTitle = "$siteName — 최신 뉴스 ${p}페이지"
     }
 
+    # 첫 페이지는 사이트 전체 정보를, 나머지 쪽은 목록 정보를 알려줍니다
+    $listUrl = ''
+    if ($baseUrl) { $listUrl = if ($p -eq 1) { "$baseUrl/" } else { "$baseUrl/$relPath" } }
+    $listKind = if ($p -eq 1) { 'website' } else { 'list' }
+    $listLd = New-JsonLd -Kind $listKind -Url $listUrl -Headline $heading -Description $cfg.site.description
+
     Write-Page -RelPath $relPath -Title $pageTitle -Description $cfg.site.description `
-               -Content $content -OgType 'website' -Ticker $tickerRoot
+               -Content $content -OgType 'website' -Ticker $tickerRoot -JsonLd $listLd
 }
 
 Write-Host ("  목록 페이지 {0}쪽 생성" -f $totalPages)
@@ -721,7 +834,8 @@ foreach ($a in $articles) {
 
     $thumb = ''
     if ($a.image) {
-        $thumb = '<img class="article-thumb" src="{0}" alt="" />' -f (Protect-Html $a.image)
+        $thumb = '<img class="article-thumb" src="{0}" alt="{1}" />' -f `
+                    (Protect-Html $a.image), (Protect-Html (Limit-Text $a.title 100))
     }
 
     $authorPart = ''
@@ -782,11 +896,26 @@ foreach ($a in $articles) {
     </article>$relHtml
 "@
 
+    # 이 기사 페이지의 구조화 데이터.
+    # 본문을 쓴 곳은 언론사이므로 author 는 언론사로, 원문은 isBasedOn 으로 밝힙니다.
+    $newsLd = ''
+    if ($baseUrl) {
+        $newsUrl = "$baseUrl/news/$($a.id).html"
+        $newsLd = New-JsonLd -Kind 'news' -Url $newsUrl `
+                    -Headline $a.title -Description (Limit-Text $a.summary 155) `
+                    -Image $a.image -DatePublished $pub.ToString('o') `
+                    -AuthorName $a.source -BasedOn $a.link `
+                    -Crumbs @(
+                        @{ name = $siteName; url = "$baseUrl/" },
+                        @{ name = '뉴스';    url = $newsUrl }
+                    )
+    }
+
     Write-Page -RelPath ('news/{0}.html' -f $a.id) `
                -Title ('{0} | {1}' -f $a.title, $siteName) `
                -Description (Limit-Text $a.summary 155) `
                -Content $content -OgType 'article' -OgImage $a.image `
-               -BasePrefix '../' -Ticker $tickerSub
+               -BasePrefix '../' -Ticker $tickerSub -JsonLd $newsLd
 }
 
 Write-Host ("  기사 페이지 {0}개 생성" -f $articles.Count)
@@ -866,10 +995,31 @@ $frag
     </article>$linkHtml
 "@
 
+        # 주간 정리 제목은 이미 그 자체로 길고 구체적입니다.
+        # 여기에 "| 비트뉴스"까지 붙이면 30자를 넘겨 검색 결과에서 뒤가 잘립니다.
+        $wTitle = $post.title
+        if ($wTitle.Length -gt 30) {
+            Write-Host ("  주의: 주간 정리 제목이 {0}자입니다({1}). 검색 결과에서 잘릴 수 있습니다." -f `
+                        $wTitle.Length, $post.slug) -ForegroundColor DarkYellow
+        }
+
+        $weeklyLd = ''
+        if ($baseUrl) {
+            $wUrl = "$baseUrl/$($wCfg.section.dir)/$($post.slug).html"
+            $weeklyLd = New-JsonLd -Kind 'weekly' -Url $wUrl `
+                          -Headline $post.title -Description $post.desc `
+                          -DatePublished ((ConvertTo-Utc ($post.published + 'T00:00:00Z')).ToString('o')) `
+                          -Crumbs @(
+                              @{ name = $siteName; url = "$baseUrl/" },
+                              @{ name = '주간 정리'; url = "$baseUrl/$($wCfg.section.dir)/index.html" },
+                              @{ name = $post.title; url = $wUrl }
+                          )
+        }
+
         Write-Page -RelPath ('{0}/{1}.html' -f $wCfg.section.dir, $post.slug) `
-                   -Title ('{0} | {1}' -f $post.title, $siteName) `
+                   -Title $wTitle `
                    -Description $post.desc -Content $content -OgType 'article' `
-                   -BasePrefix '../' -Ticker $tickerSub
+                   -BasePrefix '../' -Ticker $tickerSub -JsonLd $weeklyLd
         $weeklyUrls += $post.slug
     }
 
@@ -1004,7 +1154,21 @@ if (Test-Path $guideDir) {
 '@ -f $baseUrl
         }
 
+        # 가이드 페이지의 구조화 데이터 — 이건 우리가 직접 쓴 글입니다
+        $gLd = ''
+        if ($baseUrl) {
+            $gUrl = '{0}/{1}/{2}.html' -f $baseUrl, $gCfg.section.dir, $File
+            $gCrumbs = @(
+                @{ name = $siteName; url = "$baseUrl/" },
+                @{ name = $gCfg.section.name; url = ('{0}/{1}/index.html' -f $baseUrl, $gCfg.section.dir) }
+            )
+            if ($File -ne 'index') { $gCrumbs += @{ name = $Title; url = $gUrl } }
+            $gLd = New-JsonLd -Kind $(if ($File -eq 'index') { 'guideIndex' } else { 'guide' }) `
+                     -Url $gUrl -Headline $Title -Description $Desc -Crumbs $gCrumbs
+        }
+
         $html = $html.Replace('{{CANONICAL}}',   $canonical)
+        $html = $html.Replace('{{JSONLD}}',      $gLd)
         $html = $html.Replace('{{OG_IMAGE}}',    $gOgImage)
         $html = $html.Replace('{{SITE_NAME}}',   (Protect-Html $siteName))
         $html = $html.Replace('{{REF_LINK}}',    (Protect-Html $refLink))

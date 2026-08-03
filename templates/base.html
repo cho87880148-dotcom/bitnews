@@ -22,6 +22,10 @@
 
   <link rel="stylesheet" href="{{BASE}}assets/css/style.css" />
   <link rel="alternate" type="application/rss+xml" title="{{SITE_NAME}}" href="{{BASE}}feed.xml" />
+
+  <!-- 구조화 데이터: 이 페이지가 무엇인지 검색엔진이 기계적으로 읽는 부분입니다.
+       사람 눈에는 안 보입니다. build.ps1 의 New-JsonLd 가 만듭니다. -->
+{{JSONLD}}
 </head>
 <body>
 
