@@ -114,13 +114,26 @@ RSS 가 공개한 **제목과 요약만** 쓰고 본문은 싣지 않는다. 각
 
 ## 현재 상태 (2026-08-03 기준)
 
-- 기사 524건 / 목록 44쪽 / 가이드 7쪽, 로컬에서 정상 동작 확인
-- 리퍼럴: `https://www.binance.com/register?ref=HNEBXFA7` (코드 `HNEBXFA7`)
+**배포 완료. 자동 갱신 가동 중.**
 
-**아직 안 된 것 — 다음에 할 일:**
-1. git 설치 (이 PC에 없음) → GitHub 가입 → 저장소 만들어 올리기
-2. Settings → Pages → Source 를 **GitHub Actions** 로 (이때부터 1시간마다 자동 갱신)
-3. 확인한 주소를 `sources.json` 의 `baseUrl` 에 입력 → **이걸 해야 sitemap.xml / feed.xml 이 생성됨**
-4. 구글 서치콘솔 · 네이버 서치어드바이저에 사이트맵 제출
-5. (선택) 도메인 연결, og 이미지(1200×630) 제작
-6. 애드센스는 아직 신청하지 말 것 — 요약 위주라 "콘텐츠 불충분"으로 반려될 유형
+- 사이트: <https://cho87880148-dotcom.github.io/bitnews/>
+- 저장소: <https://github.com/cho87880148-dotcom/bitnews> (공개)
+- 기사 527건 / 목록 44쪽 / 가이드 7쪽 / sitemap 578개 주소
+- 리퍼럴: `https://www.binance.com/register?ref=HNEBXFA7` (코드 `HNEBXFA7`)
+- GitHub Actions 가 **1시간마다** 수집 → 빌드 → Pages 배포. 실행 #2 에서 전 단계 성공 확인.
+
+### git 관련 주의
+- 워크플로가 매 실행마다 `data/articles.json` 을 **저장소에 되돌려 커밋**한다.
+  그래서 로컬에서 작업하기 전에 **반드시 `git pull` 부터** 할 것.
+  안 하면 push 가 거부되고 `data/articles.json` 충돌이 난다.
+- 충돌나면 그 파일은 `git checkout --ours` 로 원격 것을 취하고 `.\build.ps1` 을 다시 돌리면 된다
+  (build.ps1 이 링크 기준으로 병합하므로 기사가 사라지지 않는다).
+- `.gitattributes` 로 줄바꿈을 LF 로 고정해두었다. 지우지 말 것 —
+  CRLF 가 섞이면 리눅스에서 워크플로 셸 명령이 깨진다.
+
+**다음에 할 일:**
+1. 구글 서치콘솔 · 네이버 서치어드바이저에 소유확인 + `sitemap.xml` 제출
+2. (선택) 도메인 연결 — 바꾸면 `sources.json` 의 `baseUrl` 도 함께 수정하고 검색엔진 재등록
+3. (선택) og 이미지(1200×630) 제작 → `assets/img/og-image.png`
+4. 애드센스는 아직 신청하지 말 것 — 요약 위주라 "콘텐츠 불충분"으로 반려될 유형.
+   2~3개월 운영 + 직접 쓴 글을 추가한 뒤에 시도할 것
