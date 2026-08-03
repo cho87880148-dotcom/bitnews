@@ -12,6 +12,8 @@
 #
 #  그만두고 싶으면:
 #    Actions 탭 → 왼쪽에서 "주간 정리 초고" → 오른쪽 "..." → Disable workflow
+#
+#  검토 요청에 뜨는 안내문은 .github/weekly-pr-body.md 에 있습니다.
 # =========================================================
 
 name: 주간 정리 초고
@@ -43,35 +45,40 @@ jobs:
       - name: 저장소 내려받기
         uses: actions/checkout@v4
 
-      - name: 주차 이름 정하기
+      - name: 주차 이름 정하고 중복 확인
         id: meta
+        shell: pwsh
         run: |
-          # 한국시간 기준으로 "2026-08-w2" 같은 이름을 만듭니다
-          SLUG=$(TZ=Asia/Seoul date +'%Y-%m-w'$(( ($(TZ=Asia/Seoul date +%-d) + 6) / 7 )))
-          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
-          echo "branch=weekly/$SLUG" >> "$GITHUB_OUTPUT"
-          echo "date=$(TZ=Asia/Seoul date +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
-
-      - name: 이미 만들어진 글인지 확인
-        id: check
-        run: |
-          if [ -f "weekly/posts/${{ steps.meta.outputs.slug }}.html" ]; then
-            echo "이미 있는 글입니다. 건너뜁니다."
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-          fi
+          $kst = (Get-Date).ToUniversalTime().AddHours(9)
+          $weekNo = [math]::Ceiling($kst.Day / 7.0)
+          $slug = '{0:yyyy-MM}-w{1}' -f $kst, $weekNo
+          $exists = Test-Path "weekly/posts/$slug.html"
+          Write-Host "주차 이름: $slug   이미 있음: $exists"
+          "slug=$slug"            | Out-File $env:GITHUB_OUTPUT -Append -Encoding utf8
+          "branch=weekly/$slug"   | Out-File $env:GITHUB_OUTPUT -Append -Encoding utf8
+          "skip=$($exists.ToString().ToLower())" | Out-File $env:GITHUB_OUTPUT -Append -Encoding utf8
 
       - name: 초고 생성 (Claude API)
-        if: steps.check.outputs.skip == 'false'
+        if: steps.meta.outputs.skip == 'false'
         shell: pwsh
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           ./generate-weekly.ps1 -Days ${{ github.event.inputs.days || '7' }} -Slug '${{ steps.meta.outputs.slug }}'
 
+      - name: 생성된 제목 읽기
+        id: post
+        if: steps.meta.outputs.skip == 'false'
+        shell: pwsh
+        run: |
+          $cfg = (Get-Content 'weekly/weekly.json' -Raw -Encoding UTF8) | ConvertFrom-Json
+          $title = $cfg.posts[0].title
+          if ([string]::IsNullOrWhiteSpace($title)) { throw '새 글 제목을 읽지 못했습니다.' }
+          Write-Host "제목: $title"
+          "title=$title" | Out-File $env:GITHUB_OUTPUT -Append -Encoding utf8
+
       - name: 사이트가 정상적으로 만들어지는지 확인
-        if: steps.check.outputs.skip == 'false'
+        if: steps.meta.outputs.skip == 'false'
         shell: pwsh
         run: |
           # 글을 넣고 빌드가 깨지지 않는지 미리 확인합니다.
@@ -79,47 +86,26 @@ jobs:
           ./build.ps1
 
       - name: 검토 요청(Pull Request) 올리기
-        if: steps.check.outputs.skip == 'false'
+        if: steps.meta.outputs.skip == 'false'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLUG: ${{ steps.meta.outputs.slug }}
+          BRANCH: ${{ steps.meta.outputs.branch }}
+          TITLE: ${{ steps.post.outputs.title }}
         run: |
           git config user.name  "bitnews-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git checkout -b "${{ steps.meta.outputs.branch }}"
+          git checkout -b "$BRANCH"
           # dist 는 .gitignore 로 빠지므로 원고와 목차만 올라갑니다
           git add weekly/
-          git commit -m "주간 정리 초고: ${{ steps.meta.outputs.slug }}"
-          git push origin "${{ steps.meta.outputs.branch }}"
-
-          TITLE=$(python3 -c "import json;print(json.load(open('weekly/weekly.json'))['posts'][0]['title'])")
-
+          git commit -m "주간 정리 초고: $SLUG"
+          git push origin "$BRANCH"
           gh pr create \
             --title "주간 정리 검토: $TITLE" \
-            --body "$(cat <<'BODY'
-## 검토하고 [Merge] 를 누르면 사이트에 올라갑니다
-
-Claude 가 지난 한 주 기사를 읽고 쓴 초고입니다. **아직 사이트에 올라가지 않았습니다.**
-
-### 읽어보실 때 확인할 것
-
-- [ ] **숫자가 맞는가** — 가격, 금액, 지수 같은 수치가 기사와 어긋나지 않는지
-- [ ] **없는 이야기를 지어내지 않았는가** — 기사에 없는 사건이나 인물이 끼어들지 않았는지
-- [ ] **단정하지 않았는가** — "~때문이다" 라고 못박은 곳이 없는지
-- [ ] **투자 권유처럼 읽히지 않는가** — 사라, 팔아라로 읽힐 표현이 없는지
-
-### 어떻게 하나요
-
-- **괜찮다** → 아래 초록색 **Merge pull request** 클릭 → 몇 분 뒤 사이트에 반영됩니다
-- **고칠 데가 있다** → 이 화면에 댓글로 적어두시거나, Claude Code 에서 말씀해주세요
-- **이번 주는 안 올린다** → 오른쪽 아래 **Close pull request**
-
-바뀐 파일에서 `weekly/posts/...html` 을 누르면 글 전체를 볼 수 있습니다.
-BODY
-)" \
+            --body-file .github/weekly-pr-body.md \
             --base main \
-            --head "${{ steps.meta.outputs.branch }}"
+            --head "$BRANCH"
 
       - name: 건너뛴 경우 안내
-        if: steps.check.outputs.skip == 'true'
+        if: steps.meta.outputs.skip == 'true'
         run: echo "이번 주 글이 이미 있어서 새로 만들지 않았습니다."
