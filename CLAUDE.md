@@ -43,9 +43,15 @@
 | `assets/css/style.css` | 뉴스 쪽 스타일 (색은 맨 위 `:root`) |
 | `assets/js/main.js` | 슬라이드·탭·트렌딩 롤링 |
 | `guide/` | 바이낸스 가이드 소스 (`guide.json` + `pages/*.html`) |
+| `weekly/` | 주간 정리 소스 (`weekly.json` + `posts/*.html`). `.work/` 는 임시 글감 |
 | `data/articles.json` | **누적 기사. 지우면 과거 기사 페이지 전부 소멸** |
 | `dist/` | 생성 결과물. **직접 고치지 말 것** (매 빌드마다 삭제 후 재생성) |
 | `.github/workflows/update.yml` | 1시간마다 자동 수집 → GitHub Pages 배포 |
+| `.github/workflows/weekly-draft.yml` | 월요일 07시 주간 정리 초고 → PR (자동 발행 아님) |
+| `.github/weekly-instructions.md` | **주간 정리 글쓰기 규칙 전부.** 문체를 바꾸려면 여기 |
+
+페이지 제목(브라우저 탭 = 구글 검색 결과의 파란 제목)은 한글 30자를 넘으면 잘린다.
+가이드 첫 화면 제목은 `guide/guide.json` 의 `pageTitle` 에 있다.
 
 ---
 
@@ -127,18 +133,38 @@ RSS 가 공개한 **제목과 요약만** 쓰고 본문은 싣지 않는다. 각
 - 리퍼럴: `https://www.binance.com/register?ref=HNEBXFA7` (코드 `HNEBXFA7`)
 - GitHub Actions 가 **1시간마다** 수집 → 빌드 → Pages 배포. 실행 #2 에서 전 단계 성공 확인.
 
-### 주간 정리 자동화 (2026-08-03 시작, 8월 한 달 시험)
-- `generate-weekly.ps1` 이 Claude API 를 불러 주간 정리 초고를 만든다.
-  모델 `claude-opus-5`, 응답은 `output_config.format` 으로 JSON 고정(title/subtitle/desc/body_html).
-  1주차 글(`weekly/posts/2026-08-w1.html`)을 형식 본보기로 함께 보낸다 — 이게 문체 일관성의 핵심.
-- `.github/workflows/weekly-draft.yml` 이 **한국시간 월요일 07시**에 돌린다(cron `0 22 * * 0`).
-- **자동 발행이 아니다.** 초고를 만들어 Pull Request 로 올려두고, 사람이 Merge 해야 사이트에 올라간다.
-  사용자가 A안(승인 후 발행)을 골랐다. 8월만 시험하고 다시 판단하기로 했다.
+### 주간 정리 자동화 (2026-08-03 구축, 8월 한 달 시험)
+
+**한국시간 월요일 07시**(`.github/workflows/weekly-draft.yml`, cron `0 22 * * 0`)에
+Claude Code 가 지난 한 주 기사를 **조사한 뒤** 초고를 쓴다.
+
+흐름:
+1. `prepare-weekly-context.ps1` — 이번 주 기사를 `weekly/.work/` 세 파일로 추림
+   (`index.md` 목록 / `full.md` 전문요약 / `topics.md` 화제순위).
+   `data/articles.json` 은 1MB 넘어 통째로 읽으면 맥락 창을 다 쓴다. 그래서 미리 거른다.
+2. `anthropics/claude-code-action@v1` — `--model claude-opus-5 --max-turns 40`,
+   도구 `Read,Grep,Glob,Write,Bash`. 규칙은 **`.github/weekly-instructions.md`** 에 전부 있다.
+   문체·섹션 구성·숫자 검증 규칙을 고치려면 그 파일만 고치면 된다.
+3. `apply-weekly-meta.ps1` — Claude 가 쓴 `weekly/.work/meta.json` 을 `weekly.json` 목차에 등록
+4. `build.ps1` 로 빌드가 깨지지 않는지 확인 → 통과해야 PR 을 올린다
+5. PR 생성 (본문은 `.github/weekly-pr-body.md`)
+
+**자동 발행이 아니다.** 사람이 Merge 해야 올라간다(사용자가 A안 선택).
+`meta.json` 의 `verified` 에 확인한 수치와 근거 기사 id 를 남기게 해서 검토를 쉽게 했다.
+
 - API 키는 GitHub Secret `ANTHROPIC_API_KEY`. 코드나 파일에 절대 넣지 말 것.
-- 비용: 주당 약 $0.45 (입력 약 5만 토큰). 월 3천원 미만.
-- **프롬프트의 첫 번째 규칙이 "제공된 기사에 없는 숫자를 지어내지 말 것"이다.** 이걸 약하게 만들지 말 것 —
-  금융 사이트에서 틀린 숫자가 자동 발행되는 것이 이 구조의 유일한 실질적 위험이다.
+- 비용 주당 $1~3. 한 번 부르고 마는 방식($0.45)도 `generate-weekly.ps1` 로 남겨뒀다 —
+  비싸다고 하면 워크플로의 3~4번 단계를 그 스크립트 호출로 바꾸면 된다.
+- **지시서의 핵심은 "글에 넣는 모든 수치를 full.md 에서 grep 으로 확인하라"이다.**
+  이걸 약하게 만들지 말 것 — 금융 사이트에서 틀린 숫자가 나가는 게 이 구조의 유일한 실질적 위험이다.
 - 그만두려면 Actions 탭 → "주간 정리 초고" → Disable workflow.
+
+### 워크플로 YAML 을 고칠 때 ★
+`run: |` / `prompt: |` 블록 안의 줄은 **블록 첫 줄보다 얕게 들여쓰면 안 된다.**
+heredoc 본문을 블록 안에 넣었다가 YAML 이 통째로 깨진 적이 있다. 그러면 GitHub 에서
+워크플로가 아예 실행되지 않고, **오류 알림도 안 온다.** 긴 본문은 별도 `.md` 파일로 빼고
+`--body-file` 로 넘길 것. 고친 뒤에는 `GET /repos/{owner}/{repo}/actions/workflows` 로
+`state: active` 인지 확인하면 YAML 유효성을 검증할 수 있다.
 
 ### git 관련 주의
 - 워크플로가 매 실행마다 `data/articles.json` 을 **저장소에 되돌려 커밋**한다.
