@@ -1,5 +1,38 @@
 [
   {
+    "id": "2ff6e911c5",
+    "title": "XRP 레저 계정 상반기 약 49만개 늘었다",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/384183",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "정민석",
+    "published": "2026-08-03T06:57:05.0000000Z",
+    "summary": "리플(XRP) 레저의 계정이 2026년 상반기 약 49만개 늘었다. 비트코이니스트(Bitcoinist)는 XRP 레저가 2026년 상반기에 약 49만개의 계정을 추가했다고 보도했다. 앞서 본지는 XRP 레저 지갑 주소가 800만개를 넘어섰다고... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/4aor152814.png",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "d068bd3739",
+    "title": "‘비트코인=변동성’은 옛말⋯ 코스피, 올해 비트코인보다 15%P 더 흔들렸다",
+    "link": "https://www.blockmedia.co.kr/archives/1123495?utm_source=general&utm_medium=rss",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "양원모 기자",
+    "published": "2026-08-03T06:50:21.0000000Z",
+    "summary": "[블록미디어 양원모 기자] 국내 증시가 올해 비트코인(BTC)보다 더 큰 변동성을 기록한 것으로 나타났다. 인공지능(AI) 반도체 열풍으로 삼성전자와 SK하이닉스에 투자자금이 쏠리면서 코스피의 일일 수익률 변동성이 비트코인(BTC)을 앞질렀다. 그간 ‘변동성의 대명사’로 불리던 비트코인보다 한국 증시가 더 출렁였다는 점에서 시장 구조 변화에 관심이 쏠린다. 3일(현지시각) 블룸버그가 집계한 시장 데이터에 따르면 올해 코스피의 일일 수익률 변동성은 63%로 비트코인(BTC)의 48%보다 [...]",
+    "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-151206-scaled.jpg",
+    "categories": [
+      "금융·증권",
+      "디지털 자산",
+      "CMC",
+      "etf",
+      "디지털자산",
+      "레버리지"
+    ]
+  },
+  {
     "id": "6f65cb9525",
     "title": "콜드카드 해킹 여파에 비트코인 약세…매크로 호재도 무반응",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/384175",
@@ -262,20 +295,6 @@
     ]
   },
   {
-    "id": "aadb3b2c61",
-    "title": "[롱/숏] 롱 쌓는 개인, 숏 늘리는 고래… 솔라나·도지는 ‘극단 약세’, 지캐시는 ‘극단 강세’",
-    "link": "https://www.blockmedia.co.kr/archives/1123456",
-    "source": "블록미디어",
-    "sourceSite": "https://www.blockmedia.co.kr",
-    "author": "",
-    "published": "2026-08-03T04:08:33Z",
-    "summary": "[블록미디어 양원모 기자] 비트코인 가격이 약세를 보이는 가운데 디지털자산 파생시장에서 개인 투자자와 고래 투자자의 시각이 뚜렷하게 엇갈렸다. 주요 거래소 개인 투자자들은 롱 포지션을 유지한 반면, 고래 계정은 숏에 베팅하며 시장 전반에 경계감이 남아 있는 모습이다. 3일(현지시각) 코인글래스의 4시간 기준 테이커 매수·매도 거래량에 따르면 롱 거래 규모는 32억1000만달러(약 4조5884억원)로 전체 45.06%를 차지했다. 반면 숏 거래량은 39억1000만달러(약",
-    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-130432.jpg",
-    "categories": [
-      "마켓"
-    ]
-  },
-  {
     "id": "0b77ce5292",
     "title": "[롱/숏] 롱 쌓는 개인, 숏 늘리는 고래… 솔라나·도지는 ‘극단 약세’, 지캐시는 ‘극단 강세’",
     "link": "https://www.blockmedia.co.kr/archives/1123456?utm_source=general&utm_medium=rss",
@@ -292,6 +311,20 @@
       "롱",
       "바이낸스",
       "바이비트"
+    ]
+  },
+  {
+    "id": "aadb3b2c61",
+    "title": "[롱/숏] 롱 쌓는 개인, 숏 늘리는 고래… 솔라나·도지는 ‘극단 약세’, 지캐시는 ‘극단 강세’",
+    "link": "https://www.blockmedia.co.kr/archives/1123456",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "",
+    "published": "2026-08-03T04:08:33Z",
+    "summary": "[블록미디어 양원모 기자] 비트코인 가격이 약세를 보이는 가운데 디지털자산 파생시장에서 개인 투자자와 고래 투자자의 시각이 뚜렷하게 엇갈렸다. 주요 거래소 개인 투자자들은 롱 포지션을 유지한 반면, 고래 계정은 숏에 베팅하며 시장 전반에 경계감이 남아 있는 모습이다. 3일(현지시각) 코인글래스의 4시간 기준 테이커 매수·매도 거래량에 따르면 롱 거래 규모는 32억1000만달러(약 4조5884억원)로 전체 45.06%를 차지했다. 반면 숏 거래량은 39억1000만달러(약",
+    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-130432.jpg",
+    "categories": [
+      "마켓"
     ]
   },
   {
@@ -713,20 +746,6 @@
     ]
   },
   {
-    "id": "64a30359cf",
-    "title": "스트래티지 또 비트코인 매도하나…299.843BTC 이동 포착",
-    "link": "https://www.blockmedia.co.kr/archives/1123390",
-    "source": "블록미디어",
-    "sourceSite": "https://www.blockmedia.co.kr",
-    "author": "",
-    "published": "2026-08-03T00:49:48Z",
-    "summary": "[블록미디어 명정선 기자] 스트래티지(전 마이크로스트래티지)가 보유한 것으로 추정되는 지갑에서 약 1900만달러 규모의 비트코인이 이동하면서 추가 매도 가능성에 시장의 관심이 쏠리고 있다. 온체인 분석 플랫폼 온체인 렌즈(Onchain Lens)는 2일(현지시각) 마이크로스트래티지와 연관된 지갑이 299.843BTC를 새로운 주소로 전송했다고 밝혔다. 이동된 물량의 가치는 약 1891만달러에 달한다. 온체인 데이터에 따르면 해당 수신 주소는 과거 갤럭시 디지털과 바이낸스, 코인베이스 등 주요",
-    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-094321.png",
-    "categories": [
-      "디지털 자산"
-    ]
-  },
-  {
     "id": "02bdb0f1b2",
     "title": "스트래티지 또 비트코인 매도하나…299.843BTC 이동 포착",
     "link": "https://www.blockmedia.co.kr/archives/1123390?utm_source=general&utm_medium=rss",
@@ -743,6 +762,20 @@
       "매도 가능성",
       "비트코인",
       "스트래티지"
+    ]
+  },
+  {
+    "id": "64a30359cf",
+    "title": "스트래티지 또 비트코인 매도하나…299.843BTC 이동 포착",
+    "link": "https://www.blockmedia.co.kr/archives/1123390",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "",
+    "published": "2026-08-03T00:49:48Z",
+    "summary": "[블록미디어 명정선 기자] 스트래티지(전 마이크로스트래티지)가 보유한 것으로 추정되는 지갑에서 약 1900만달러 규모의 비트코인이 이동하면서 추가 매도 가능성에 시장의 관심이 쏠리고 있다. 온체인 분석 플랫폼 온체인 렌즈(Onchain Lens)는 2일(현지시각) 마이크로스트래티지와 연관된 지갑이 299.843BTC를 새로운 주소로 전송했다고 밝혔다. 이동된 물량의 가치는 약 1891만달러에 달한다. 온체인 데이터에 따르면 해당 수신 주소는 과거 갤럭시 디지털과 바이낸스, 코인베이스 등 주요",
+    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-094321.png",
+    "categories": [
+      "디지털 자산"
     ]
   },
   {
