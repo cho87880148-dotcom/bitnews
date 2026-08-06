@@ -216,6 +216,23 @@ $siteName = $cfg.site.name
 $baseUrl  = ($cfg.site.baseUrl -replace '/+$', '')   # 끝의 / 는 떼어냅니다
 $keywords = @($cfg.keywords)
 
+# ---------------------------------------------------------
+#  ★ [임시 · 광고 승인용] 첫 화면에만 다른 상호와 사업자 정보를 보여줍니다
+#
+#  적용 범위: dist\index.html **한 장뿐**입니다.
+#  기사 페이지·목록 2쪽 이후·가이드·주간정리는 그대로 "비트뉴스" 로 나옵니다.
+#  og:site_name, RSS 제목, 구조화 데이터의 발행처 이름도 "비트뉴스" 그대로입니다
+#  (사람 눈에 안 보이는 값이라 건드리지 않았습니다).
+#
+#  ▶ 승인받은 뒤 되돌리는 법 — 아래 두 줄을 빈 문자열 '' 로 바꾸고 .\build.ps1 실행.
+#    $tempHomeBrand   = ''
+#    $tempHomeBizInfo = ''
+#    그러면 첫 화면도 자동으로 "비트뉴스" 로 돌아가고 사업자 정보 줄은 사라집니다.
+#    (templates\base.html 이나 이 아래 코드는 손댈 필요 없습니다)
+# ---------------------------------------------------------
+$tempHomeBrand   = 'Novacent'
+$tempHomeBizInfo = 'Company : Novacent | CEO : Hyunho Jo | Business Registration Number : 186-14-02804'
+
 Write-Host ''
 Write-Host "  $siteName 사이트 생성 시작" -ForegroundColor Yellow
 Write-Host ''
@@ -696,7 +713,20 @@ function Write-Page {
 '@ -f $baseUrl
     }
 
+    # 화면에 보이는 상호(로고·푸터)와 사업자 정보 줄.
+    # 첫 화면에만 임시 상호를 쓰고, 나머지 페이지는 전부 원래 사이트 이름입니다.
+    $brand   = $siteName
+    $bizInfo = ''
+    if ($RelPath -eq 'index.html' -and $tempHomeBrand) {
+        $brand = $tempHomeBrand
+        if ($tempHomeBizInfo) {
+            $bizInfo = '      <p class="footer-meta">' + (Protect-Html $tempHomeBizInfo) + '</p>'
+        }
+    }
+
     $html = $template
+    $html = $html.Replace('{{BRAND}}',       (Protect-Html $brand))
+    $html = $html.Replace('{{BIZINFO}}',     $bizInfo)
     $html = $html.Replace('{{TITLE}}',       (Protect-Html $Title))
     $html = $html.Replace('{{DESCRIPTION}}', (Protect-Html $Description))
     $html = $html.Replace('{{CANONICAL}}',   $canonical)
@@ -808,7 +838,11 @@ $cards
 
     if ($p -eq 1) {
         $relPath = 'index.html'
-        $pageTitle = "$siteName — $($cfg.site.tagline)"
+        # 첫 화면 제목(브라우저 탭 = 검색 결과의 파란 제목).
+        # 상호만 임시값으로 바꾸고 "비트코인 뉴스 한눈에" 는 그대로 둡니다 —
+        # 이 뒷부분이 첫 화면이 검색에 잡히는 핵심 낱말입니다.
+        $homeBrand = if ($tempHomeBrand) { $tempHomeBrand } else { $siteName }
+        $pageTitle = "$homeBrand — $($cfg.site.tagline)"
     } else {
         $relPath = "page-$p.html"
         $pageTitle = "$siteName — 최신 뉴스 ${p}페이지"
