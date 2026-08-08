@@ -1,12 +1,248 @@
 [
   {
+    "id": "c9985e8666",
+    "title": "3년 잠자던 이더리움 고래 움직였다…크라켄 입금 포착",
+    "link": "https://www.blockmedia.co.kr/archives/1125593?utm_source=general&utm_medium=rss",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "이정화 기자",
+    "published": "2026-08-08T03:19:25.0000000Z",
+    "summary": "[블록미디어 이정화 기자] 3년 가까이 잠들어 있던 이더리움(ETH) 고래 지갑이 최근 활동을 재개했다. 8일 온체인 데이터 분석 서비스 AI모니터링(Ai Monitoring)에 따르면 주소 ‘0x7C5…77b86’의 이더리움 고래 지갑에서 7일 크라켄으로 7323 이더리움을 입금했다. 이 지갑은 2022년 2월 15일부터 3월 21일 사이에 평균 2723.2달러에 2만3834.17 이더리움을 인출해 로켓풀(Rocket Pool)에 스테이킹한 이력이 있다. 현재 해당 지갑의 총 자산 가치는 [...]",
+    "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/06/20260604-060337.png",
+    "categories": [
+      "디지털 자산",
+      "고래 지갑",
+      "로켓풀",
+      "매도 압력",
+      "이더리움",
+      "크라켄"
+    ]
+  },
+  {
+    "id": "91313f66cc",
+    "title": "이더리움 EIP-8363 “스테이킹 보상 축소” …탈중앙화 훼손 논쟁",
+    "link": "https://www.blockmedia.co.kr/archives/1125555?utm_source=general&utm_medium=rss",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "이정화 기자",
+    "published": "2026-08-08T03:11:48.0000000Z",
+    "summary": "[블록미디어 이정화 기자] 이더리움 네트워크의 스테이킹 보상을 점진적으로 줄이는 내용의 개선 제안 EIP-8363(Tapered Issuance Burn)이 커뮤니티 내에서 격렬한 논쟁을 불러일으키고 있다. 이더리움 재단 연구원 저스틴 드레이크(Justin Drake)와 ETHCC 공동 설립자 제롬 드 타이시(Jerome de Tychey) 등이 제안한 이 안건은 이더리움이 지분증명(PoS) 방식으로 전환한 ‘더 머지(The Merge)’ 이후 가장 큰 경제 모델 논쟁 중 하나로 평가받는다. [...]",
+    "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/07/20260730-170103.webp",
+    "categories": [
+      "디지털 자산",
+      "테크",
+      "EIP-8363",
+      "디파이",
+      "스테이킹",
+      "이더리움"
+    ]
+  },
+  {
+    "id": "dc3ee308c2",
+    "title": "[오후 시세브리핑] 암호화폐 시장 혼조세… 비트코인 64,883달러, 이더리움 1,912달러",
+    "link": "https://www.tokenpost.kr/news/briefing/386920",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "김미래",
+    "published": "2026-08-08T03:01:02.0000000Z",
+    "summary": "암호화폐 시장이 혼조세를 보이는 가운데 비트코인과 이더리움은 모두 24시간 기준 소폭 상승했다. 비트코인 점유율은 확대된 반면 이더리움 점유율은 함께 높아졌고, 파생상품 거래량은 늘어 단기 매매 수요도 함께 확대됐다. 주요 시세 토큰포스트마켓에 따르면 2026년 8월 8일 오전 11시 58분(KST) 기준 비트코인은 전날 대비 0.80% 상승한 64,883.42달러(약 9,159만 원)에 거래되고 있다. 이더리움은 전날 대비 0.52% 오른 1,912.06달러(약 269만 원)를 기록했다. 상위권 알트코인 가격 변동 상위권 알트코인은 등락이 엇갈리고 있다. XRP +0.03%▲, BNB -0.26%▼, 솔라나 +1.59%▲, 트론 +0.22%▲, 도지코인 +0.97%▲, 하이퍼리퀴드... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/i7r71arlqk.png",
+    "categories": [
+      "브리핑"
+    ]
+  },
+  {
+    "id": "194199a40d",
+    "title": "미 재무부, 이란에 경제 폭격…코인 거래소 2곳 강력 제재",
+    "link": "https://www.blockmedia.co.kr/archives/1125558?utm_source=general&utm_medium=rss",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "James Jung 기자",
+    "published": "2026-08-08T02:11:58.0000000Z",
+    "summary": "[블록미디어 James Jung 기자] 미국 정부가 이란의 그림자 금융 시스템과 연계된 디지털 자산 거래소를 대상으로 추가 제재를 단행, 경제적 압박을 강화했다. 7일(현지시각) 미 재무부는 이란이 경제 재재 회피에 사용해 온 디지털자산 거래소 두 곳을 블랙리스트에 올렸다. 이들 기관은 이란 정권을 위해 수십억 달러를 세탁하고 이슬람혁명수비대(IRGC)를 지원했다. 이란 금융 시스템이 수억 달러 상당의 자금을 이동시키는 것을 [...]",
+    "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/01/20260111-135636.jpg",
+    "categories": [
+      "해외 정책",
+      "CMC"
+    ]
+  },
+  {
+    "id": "284fe50e06",
+    "title": "리플(XRP), CLARITY법 연기로 1.02달러대 가격 방어 중",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/386906",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "류하진",
+    "published": "2026-08-08T01:19:44.0000000Z",
+    "summary": "리플(XRP), 달러선 지지 시험대…CLARITY법 표결 연기에 단기 불확실성 확대리플(XRP)이 8일 현재 1.02달러대에서 거래되며 핵심 지지선 방어에 안간힘을 쓰고 있다. 미국 상원의 암호화폐 규제 법안 표결이 8월 휴회기 이후로 연기되면서 단기 가격 촉매가 사라진 가운데, 기관 투자자 자금 이탈 조짐까지 겹쳐 투자자들의 불안감이 커지는 모양새다.XRP, 1.05달러 지지선 붕괴…1.00달러가 마지노선코인마켓캡 데이터에 따르면 한국시간 8일 오전 기준 XRP 가격은 1.0255달러로, 24시간 전 대비 1.03% 하락했다. 주간 기준으로는 3.57% 떨어졌으며, 30일 및 60일 수익률도 각각 -6.17%, -11.01%로 부진한 흐름이 이어지고 있다.시장의 관심은... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/uvkqel8lju.png",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "b478b4be45",
+    "title": "모건스탠리, 비트코인 4억달러 보유…ETF 출시후 지속 매입",
+    "link": "https://www.blockmedia.co.kr/archives/1125531?utm_source=general&utm_medium=rss",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "이정화 기자",
+    "published": "2026-08-08T01:10:16.0000000Z",
+    "summary": "[블록미디어 이정화 기자] 월가의 대표적 금융기관 모건스탠리가 비트코인 보유량을 지속적으로 늘리고 있다. 최근 시장 변동성에도 불구하고 꾸준한 매수세로 주목 받고 있다. 7일(현지시각) 유투데이에 따르면 모건스탠리는 지난 4월 비트코인 ETF를 출시한 뒤 지속적으로 비트코인 투자를 확대하고 있다. 아캄 인텔리전스(Arkham Intelligence) 데이터에 따르면 이 은행은 지난 3일 연속 비트코인 보유량을 늘려, 현재 보유한 비트코인 가치는 약 4억달러로 [...]",
+    "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/05/20260529-230332.jpg",
+    "categories": [
+      "금융·증권",
+      "디지털 자산",
+      "CMC",
+      "디지털자산",
+      "모건스탠리",
+      "비트코인"
+    ]
+  },
+  {
+    "id": "c49dbcc94b",
+    "title": "솔라나, 무기한 선물 미결제약정 5억 달러 돌파하며 네트워크 업그레이드 효과 본격화",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/386902",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "서지우",
+    "published": "2026-08-08T01:01:31.0000000Z",
+    "summary": "솔라나 시장 분석: 무기한 선물 미결제약정 5억 달러 돌파, 네트워크 업그레이드 효과 본격화솔라나(SOL)가 74달러 선에서 안정세를 보이는 가운데, 무기한 선물 시장의 미결제약정(Open Interest)이 5억 달러를 돌파하며 9개월래 최고치를 기록했다. 업계에서는 7월 진행된 네트워크 업그레이드와 생태계 확장이 주요 요인으로 작용했다고 분석하고 있다.8일 오전 1시 기준 솔라나는 73.67달러에 거래되며 지난 24시간 동안 1.50% 상승했다. 시가총액은 428억 7,900만 달러로 암호화폐 시장 점유율 1.94%를 차지하며 7위를 유지하고 있다. 24시간 거래량은 16억 2,900만 달러로 전일 대비 8.50% 증가했다.무기한 선물 미결제약정 5억 달러... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/0bfsg3omnj.png",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "d7069cfce8",
+    "title": "[이더 옵션 데일리] 미결제약정 43억3252만 달러…1950달러 콜옵션 거래량 선두",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/386900",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "최윤서",
+    "published": "2026-08-08T00:51:13.0000000Z",
+    "summary": "이더리움 옵션 시장은 상승 방향의 포지션 우위가 이어지고 있다. 다만 전체 포지션 규모가 줄어들며 공격적인 확장보다는 신중한 조정 흐름이 감지됐다.8일 오전 9시 50분 코인글래스 집계에 따르면 이더리움 옵션 미결제약정(OI)은 총 43억3252만 달러로 집계됐다. 전일(45억9168만 달러) 대비 5.64% 감소했다. 이더리움 옵션 거래량은 약 8억4733만 달러로 집계됐다.미결제약정 구성은 콜옵션 61.75%, 풋옵션 38.25%로 나타났다. 24시간 거래량 기준으로는 콜옵션 56.03%, 풋옵션 43.97%로 집계됐다.OI에서는 콜옵션이 뚜렷한 우위를 보이며 중기 포지션이 상승 방향에 더 많이 배치된 모습이다. 거래량에서도 콜옵션 비중이 풋옵션을 앞서... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/51at5toakm.png",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "4ebba18735",
+    "title": "[비트 옵션 데일리] 미결제약정 255억120만 달러…6만2000 달러 풋옵션 거래량 1위",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/386896",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "최윤서",
+    "published": "2026-08-08T00:41:07.0000000Z",
+    "summary": "비트코인 옵션 시장의 중기 포지션은 여전히 상승 쪽에 무게가 실려 있다. 다만 하루 거래는 방향성이 팽팽하게 맞서며 단기 경계감도 함께 드러났다.8일 오전 9시 40분 코인글래스 집계에 따르면 비트코인 옵션 미결제약정(OI)은 총 255억120만 달러로 집계됐다. 전일(267억3084만 달러) 대비 4.60% 감소했다. 비트코인 옵션 거래량은 약 28억3787만 달러로 집계됐다.미결제약정 구성은 콜옵션 60.25%, 풋옵션 39.75%로 나타났다. 24시간 거래량 기준으로는 콜옵션 50.04%, 풋옵션 49.96%로 집계됐다.OI에서는 콜옵션이 뚜렷하게 우위를 보이며 중기 포지션이 상승 방향에 더 많이 배치된 모습이다. 반면 거래량에서는 콜옵션과 풋옵션 비중이... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/4t7ld16lfq.png",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "2e3bdacf96",
+    "title": "블랙록, 이번 주 비트코인 7320개 매집",
+    "link": "https://www.blockmedia.co.kr/archives/1125546?utm_source=general&utm_medium=rss",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "이정화 기자",
+    "published": "2026-08-08T00:40:48.0000000Z",
+    "summary": "[블록미디어 이정화 기자] 블랙록이 운용 중인 비트코인 ETF(상장지수펀드)를 통해 이번 주 총 7320개 비트코인을 매입했다. 7일(현지시각) 온체인 렌즈(ONCHAIN LENS)에 따르면 블랙록의 비트코인 ETF(IBIT)는 이날 코인베이스 프라임(Coinbase Prime)에서 1840개 비트코인을 인출했다. 해당 인출을 포함한 이번 주 누적 매집 규모는 7320개로 집계됐다. 블랙록의 지속적 매집은 기관 수요가 견조하다는 신호로 해석된다. 단기 가격 영향은 유동성, 매도 압력 및 [...]",
+    "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/04/20260414-194253.jpg",
+    "categories": [
+      "디지털 자산",
+      "etf",
+      "기관 투자",
+      "블랙록",
+      "비트코인",
+      "코인베이스"
+    ]
+  },
+  {
+    "id": "cbc47f257c",
+    "title": "[선물 고수 PICK] 비트코인 달러마진 계좌 2.80%p 감소...코인마진 포지션 2.05%p 축소",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/386895",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "최윤서",
+    "published": "2026-08-08T00:15:33.0000000Z",
+    "summary": "■ 주요 종목 롱 포지션 현황8일 오전 9시 15분 코인글래스에 따르면 포지션 기준 코인 담보에서는 비트코인 롱 비중이 65.67%로 전일 대비 2.05%p 낮아졌다. 해당 마진군 최대 변동폭이 2.05%p로 집계돼 비트코인의 축소 흐름이 가장 뚜렷했다. 이더리움 코인 담보 롱 비중은 69.08%로 1.63%p 상승해 소폭 확대됐다.USDT 담보 포지션에서는 도지코인이 75.57%로 1.30%p 올라 변동이 크지 않은 가운데 상대적으로 상승폭이 컸다. 솔라나는 64.50%로 0.76%p 상승했고 비트코인은 60.61%로 0.52%p 하락했다. XRP는 62.04%로 0.05%p 낮아져 전일과 큰 차이가 없었다.■ 롱 포지션 보유 계좌 비중계좌 기준 USDT 담보에서는 비트코인 롱 보유 계좌... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/ty5bgweyxa.jpg",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "8c5676ed68",
+    "title": "[DEX 리포트] 하루 거래량 113억1000만 달러...급등 1위는 '맨서'",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/386893",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "강이안",
+    "published": "2026-08-08T00:03:23.0000000Z",
+    "summary": "이날 탈중앙화 거래소(DEX)에서 가장 주목받은 거래쌍은 케이트코인(CATE/SOL), 캐시캣(CASHCAT/WETH), 누트(NOOT/SOL)이다.8일 오전 9시 2분 덱스 스크리너에 따르면 DEX 트렌딩 1위 거래쌍은 케이트코인(CATE/SOL)으로, 0.03552달러에 거래되며 24시간 기준 17% 상승했다.2위는 캐시캣(CASHCAT/WETH)으로 7.12% 하락한 0.09446달러에 거래됐다. 3위는 누트(NOOT/SOL)으로 424% 급등한 0.0001628달러를 기록 중이다.급등(Gainers) & 급락(Losers)가장 크게 오른 거래쌍은 맨서(MANCER/WETH)으로 24시간 기준 951% 상승했다. 이어 버트홀(BUTTHOLE/ANTHROPIC)는 261% 상승했으며,…",
+    "image": "https://f1.tokenpost.kr/2026/08/7wq6ukjg4f.png",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "3fb4011a70",
+    "title": "“클래리티가 비트코인을 움직인다” …주말 ‘워싱턴 비공개 협상’ 주목해야",
+    "link": "https://www.blockmedia.co.kr/archives/1125538?utm_source=general&utm_medium=rss",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "이정화 기자",
+    "published": "2026-08-08T00:00:59.0000000Z",
+    "summary": "[블록미디어 이정화 기자] 미국 상원에서 클래리티 법안 심사는 9월로 연기됐다. 그러나 이번 주말 워싱턴에서 벌어질 물밑 협상이 비트코인 가격을 크게 움직일 수 있다는 분석이 나왔다. 7일(현지시각) 비인트립토와 엘리노아 테렛 코인 전문 기자에 따르면 상원의 공식 휴가가 시작되는 월요일까지 공화당과 민주당 간에 비공개 협상이 진행될 가능성이 높다. 🚨NEW: Leader Thune’s office is telling crypto industry leaders [...]",
+    "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/06/20260623-093714.png",
+    "categories": [
+      "분석과 전망",
+      "해외 정책",
+      "CMC",
+      "미국 상원",
+      "비트코인",
+      "스테이블코인"
+    ]
+  },
+  {
+    "id": "8d288e78c8",
+    "title": "서클 7% 급등, 은행 인가와 Arc 메인넷 출시 기대에 투자자 집중",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/386890",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "정민석",
+    "published": "2026-08-07T23:01:59.0000000Z",
+    "summary": "서클(CRCL) 7% 급등, 은행 인가와 Arc 메인넷 출시 기대감에 투자자 주목서클 인터넷 그룹(Circle Internet Group, CRCL)이 주요 규제 인가와 블록체인 인프라 확장 소식에 힘입어 7% 이상 급등하며 투자자들의 관심을 끌고 있다. 번스타인(Bernstein)이 목표주가 140달러를 제시하며 강력한 매수 의견을 내놓은 가운데, 서클의 USDC 생태계 성장과 Arc 퍼블릭 메인넷 출시 계획이 주가 상승을 견인했다. 4일(현지시간) 뉴욕증권거래소(NYSE)에서 CRCL은 66.67달러에 거래를 마감했으며, 장중 최고 68.40달러까지 상승했다.번스타인, 목표주가 140달러 제시하며 장기 수익 전망 강조번스타인은 서클에 대해 '아웃퍼폼(Outperform)' 등급을... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/4hv1mei5tv.jpg",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "ac32a2e30a",
+    "title": "비트마인, 이더리움 매집에도 주가 약세 지속",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/386888",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "이도현",
+    "published": "2026-08-07T23:01:37.0000000Z",
+    "summary": "비트마인, 이더리움 매집과 자사주 매입에도 주가 약세비트마인 이머전 테크놀로지스(BMNR)는 공격적인 이더리움(ETH) 매집과 대규모 자사주 매입을 이어가고 있음에도 불구하고 여전히 주가가 약세를 보이고 있다. 최근 비트코인이 6만 5천 달러 선을 회복하며 암호화폐 관련 주식들이 상승했으나, BMNR의 주가는 여전히 연초 대비 44% 하락한 상태이다.현재 BMNR은 장중 약 18.82달러에 거래되고 있으며 이는 전 거래일 종가인 18.3달러보다 상승한 수치다. 하지만 장 마감 후에는 약간 하락하여 18.37달러로 거래되고 있다. 주간 최고가는 19.30달러, 최저가는 18.13달러를 기록하며 거래량은 2,783만 주를 넘었다. 52주 최고가는 71.74달러,... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/nciwe7c1do.png",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
     "id": "f9916f2724",
     "title": "트럼프 미디어, 크립토닷컴과 맺은 계약 줄줄이 중단",
     "link": "https://www.blockmedia.co.kr/archives/1125526?utm_source=general&utm_medium=rss",
     "source": "블록미디어",
     "sourceSite": "https://www.blockmedia.co.kr",
     "author": "이정화 기자",
-    "published": "2026-08-07T22:50:04.0000000Z",
+    "published": "2026-08-07T22:50:04Z",
     "summary": "[블록미디어 이정화 기자] 도널드 트럼프 미국 대통령이 소유한 기업이 크립토닷컴과의 디지털자산 관련 계약을 해지하고 있다고 7일(현지시각) 월스트리트저널이 보도했다. 트루스 소셜을 운영하는 트럼프 미디어는 크립토닷컴과 추진 중이던 재무 구축 계약, ETF 판매 계약 등을 해지할 계획이다. 예측 시장을 트루스 소셜에 통합하는 계획도 중단됐다. 트루스 소셜은 보수 성향 사용자 중심의 소셜 네트워크 플랫폼으로, 정치적 발언과 소통의 도구로 [...]",
     "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2024/12/트럼프-크립토.png",
     "categories": [
@@ -25,7 +261,7 @@
     "source": "토큰포스트",
     "sourceSite": "https://www.tokenpost.kr",
     "author": "최윤서",
-    "published": "2026-08-07T21:55:56.0000000Z",
+    "published": "2026-08-07T21:55:56Z",
     "summary": "13일* 액시오스에 따르면 도널드 트럼프 대통령의 회사 트럼프 미디어 & 테크놀로지 그룹(TMTG)이 가상자산 거래소 크립토닷컴과 추진하던 두 건의 거래를 접고, 에너지 기업 TAE와의 합병에 집중하기로 했다. 당초 64억달러 규모의 크로노스(CRO) 재무딜과 '트루스 소셜' 내 예측시장 도입 계획이 모두 흔들리면서, 시장의 시선은 트럼프 미디어의 사업 우선순위 변경에 쏠리고 있다.TMTG 임시 최고경영자 케빈 맥거번은 회사가 크립토닷컴, 특수목적회사 요크빌 어퀴지션(Yorkville Acquisition Corp)과 함께 추진한 거래를 철회한다고 밝혔다. 세 회사는 '시장 상황'과 '사업 및 이해관계자 우선순위 변화'가 결정 배경이라고 설명했다.... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/xflvz7j3cd.png",
     "categories": [
@@ -39,7 +275,7 @@
     "source": "토큰포스트",
     "sourceSite": "https://www.tokenpost.kr",
     "author": "강이안",
-    "published": "2026-08-07T21:33:33.0000000Z",
+    "published": "2026-08-07T21:33:33Z",
     "summary": "토큰포스트의 '오늘의 토큰운세'는 투자 참고용이 아닌 심리적 환기와 재미를 위해 제공되는 콘텐츠입니다. 실제 시장 상황이나 기술적 분석과는 무관하며, 어떠한 형태의 투자 조언도 아님을 명시합니다. 성공적인 투자를 기원합니다. [편집자주] 오늘 시장은 공포 심리가 지배하며 비트코인이 6만 5천 달러 안팎에서 등락을 거듭하고 있습니다. 투자 지수는 크게 움츠러든 상태로, 무리한 추격 매수보다는 기존 포지션을 점검하고 리스크를 관리하는 것이 필요한 때입니다. 운세에 의존하기보다는 냉정한 판단으로 시장에 임하는 것이 좋겠습니다. 🐭 쥐띠 — 변동성 파도, 균형 유지 1960년생 (대표지수 39점) 오늘은 시장 변동성이 크게... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/4ocei5gnee.jpg",
     "categories": [
@@ -53,7 +289,7 @@
     "source": "블록미디어",
     "sourceSite": "https://www.blockmedia.co.kr",
     "author": "심영재 특파원",
-    "published": "2026-08-07T21:10:15.0000000Z",
+    "published": "2026-08-07T21:10:15Z",
     "summary": "[멕시코=심영재 특파원] 뉴욕 디지털자산(가상자산) 시장은 비트코인이 장중 6만5000달러를 넘어서는 등 완만한 상승 흐름을 보였다. 미국 고용지표를 둘러싼 통화정책 기대와 대규모 고래 매집이 매수 심리를 뒷받침한 가운데 숏 포지션 청산이 가격 반등을 증폭시켰다. 다만 비트코인 BIP 110을 둘러싼 네트워크 분열 논쟁과 미국 디지털자산 시장구조 법안인 클래리티법안(CLARITY Act) 처리 지연 그리고 중동 긴장에 따른 유가 상승은 추가 [...]",
     "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/08/20260808-060836.jpg",
     "categories": [
@@ -72,7 +308,7 @@
     "source": "토큰포스트",
     "sourceSite": "https://www.tokenpost.kr",
     "author": "김하린",
-    "published": "2026-08-07T20:25:55.0000000Z",
+    "published": "2026-08-07T20:25:55Z",
     "summary": "미국 재무부가 이란 정권의 자금세탁과 제재 회피에 관여한 혐의로 디지털 자산 거래소 2곳에 제재를 부과했다. 군사적 긴장이 이어지는 가운데, 미국이 가상자산을 통한 ‘우회 자금 흐름’을 정조준한 셈이다.13일(현지시간) 미 재무부 해외자산통제국(OFAC)은 쉘빗(Shelbit)과 아반 테더(Aban Tether)를 제재 명단에 올렸다고 밝혔다. OFAC는 이들 거래소가 ‘불법 암호화폐 활동’과 ‘제재 회피’를 도왔고, 그 수익이 이란 혁명수비대(IRGC)를 지원하는 데 쓰였다고 설명했다. 함께 이란 국적의 시아바시 카이반푸르(Siavash Kayvanpour)와 그와 연결된 지갑, 기업들도 제재 대상이 됐다.스콧 베선트 미 재무장관은 “우리는 경제적 압박을 계속... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/2ijsqurpjw.jpg",
     "categories": [
@@ -3530,20 +3766,6 @@
     ]
   },
   {
-    "id": "2f684294f8",
-    "title": "운용자산 60억달러 메모리 ETF, 비트코인 성장세 추격",
-    "link": "https://www.tokenpost.kr/news/market/385872",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "서지우",
-    "published": "2026-08-05T14:57:41Z",
-    "summary": "라운드힐 메모리 ETF가 출시 5주 만에 운용자산 60억 달러(약 8조5740억원)를 넘기며 비트코인 현물 ETF와 비슷한 초기 성장세를 보였다. 라운드힐은 AI 인프라 투자 확대와 메모리 수요에 대한 관심이 상품 성장의 배경이라고 설명했다. 라운드힐 인베스트먼츠(Roundhill Investments)는 라운드힐 메모리 ETF(DRAM)가 2026년 4월 2일 시카고옵션거래소 BZX(Cboe BZX)에서 거래를 시작했다고 밝혔다. 고대역폭메모리(HBM)와 D램(DRAM), 낸드(NAND)를 생산하거나 공급하는 글로벌 기업에 투자하며 운용보수는 연 0.65%다. 라운드힐은 이 상품을 첫 메모리 주식 ETF로 소개했다. 로이터는 이 상품이 출시 5주 만에 운용자산 60억 달러를... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/uosjaqg8z6.jpg",
-    "categories": [
-      "마켓"
-    ]
-  },
-  {
     "id": "bb75ba8c88",
     "title": "3200억달러 스테이블코인 보상 규제 논쟁 본격화",
     "link": "https://www.tokenpost.kr/news/policy/385871",
@@ -3555,6 +3777,20 @@
     "image": "https://f1.tokenpost.kr/2026/08/oprs7xjnxc.png",
     "categories": [
       "정책"
+    ]
+  },
+  {
+    "id": "2f684294f8",
+    "title": "운용자산 60억달러 메모리 ETF, 비트코인 성장세 추격",
+    "link": "https://www.tokenpost.kr/news/market/385872",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "서지우",
+    "published": "2026-08-05T14:57:41Z",
+    "summary": "라운드힐 메모리 ETF가 출시 5주 만에 운용자산 60억 달러(약 8조5740억원)를 넘기며 비트코인 현물 ETF와 비슷한 초기 성장세를 보였다. 라운드힐은 AI 인프라 투자 확대와 메모리 수요에 대한 관심이 상품 성장의 배경이라고 설명했다. 라운드힐 인베스트먼츠(Roundhill Investments)는 라운드힐 메모리 ETF(DRAM)가 2026년 4월 2일 시카고옵션거래소 BZX(Cboe BZX)에서 거래를 시작했다고 밝혔다. 고대역폭메모리(HBM)와 D램(DRAM), 낸드(NAND)를 생산하거나 공급하는 글로벌 기업에 투자하며 운용보수는 연 0.65%다. 라운드힐은 이 상품을 첫 메모리 주식 ETF로 소개했다. 로이터는 이 상품이 출시 5주 만에 운용자산 60억 달러를... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/uosjaqg8z6.jpg",
+    "categories": [
+      "마켓"
     ]
   },
   {
@@ -8195,6 +8431,20 @@
     ]
   },
   {
+    "id": "399c57b9c4",
+    "title": "[파생시황] 비트코인 숨 고르기에 롱·숏 ‘동반 타격’… 1억달러 연쇄 청산",
+    "link": "https://www.blockmedia.co.kr/archives/1123427",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "",
+    "published": "2026-08-03T03:10:34Z",
+    "summary": "[블록미디어 양원모 기자] 비트코인이 6만3000달러선에서 숨 고르기에 들어가자 파생시장도 방향을 잃었다. 상승을 기대한 투자자도, 하락에 베팅한 투자자도 모두 손실을 입었다. 시장이 어느 한쪽으로 기울지 못한 채 변동성만 키우는 모습이다. 3일(현지시각) 코인글래스에 따르면 최근 24시간 동안 디지털자산 시장에서 발생한 청산 규모는 1억301만달러(약 1473억원)를 기록했다. 청산된 투자자는 5만410명이다. 롱 포지션 청산은 5171만달러(약 740억원), 숏 포지션 청산은 5130만달러(약",
+    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-120352.jpg",
+    "categories": [
+      "마켓"
+    ]
+  },
+  {
     "id": "9e42180067",
     "title": "[파생시황] 비트코인 숨 고르기에 롱·숏 ‘동반 타격’… 1억달러 연쇄 청산",
     "link": "https://www.blockmedia.co.kr/archives/1123427?utm_source=general&utm_medium=rss",
@@ -8211,20 +8461,6 @@
       "숏",
       "청산",
       "코인글래스"
-    ]
-  },
-  {
-    "id": "399c57b9c4",
-    "title": "[파생시황] 비트코인 숨 고르기에 롱·숏 ‘동반 타격’… 1억달러 연쇄 청산",
-    "link": "https://www.blockmedia.co.kr/archives/1123427",
-    "source": "블록미디어",
-    "sourceSite": "https://www.blockmedia.co.kr",
-    "author": "",
-    "published": "2026-08-03T03:10:34Z",
-    "summary": "[블록미디어 양원모 기자] 비트코인이 6만3000달러선에서 숨 고르기에 들어가자 파생시장도 방향을 잃었다. 상승을 기대한 투자자도, 하락에 베팅한 투자자도 모두 손실을 입었다. 시장이 어느 한쪽으로 기울지 못한 채 변동성만 키우는 모습이다. 3일(현지시각) 코인글래스에 따르면 최근 24시간 동안 디지털자산 시장에서 발생한 청산 규모는 1억301만달러(약 1473억원)를 기록했다. 청산된 투자자는 5만410명이다. 롱 포지션 청산은 5171만달러(약 740억원), 숏 포지션 청산은 5130만달러(약",
-    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-120352.jpg",
-    "categories": [
-      "마켓"
     ]
   },
   {
