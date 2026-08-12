@@ -18,7 +18,9 @@
 param(
     [string]$OutDir = 'dist',
     [int]$PerPage = 12,      # 한 페이지에 보여줄 기사 수
-    [int]$KeepMax = 2000     # 보관할 최대 기사 수 (오래된 것부터 버립니다)
+    [int]$KeepMax = 480      # 보관할 최대 기사 수 (오래된 것부터 버립니다)
+                             # 480 = 목록 40쪽 x 12건. 2026-08-12 에 2000 에서 낮췄습니다.
+                             # 주간 정리가 링크한 기사는 이 상한을 넘겨도 보존합니다(4번 항목).
 )
 
 $ErrorActionPreference = 'Stop'
@@ -329,9 +331,29 @@ if ($store.Count -eq 0) {
 # =========================================================
 #  4. 최신순 정렬 · 오래된 것 버리기 · 보관
 # =========================================================
-$articles = @($store.Values |
-    Sort-Object { (ConvertTo-Utc $_.published) } -Descending |
-    Select-Object -First $KeepMax)
+# 주간 정리 글이 근거로 링크한 기사는 오래돼도 버리지 않습니다.
+# 버리면 그 링크가 404 가 되는데, 주간 정리는 우리가 직접 쓴 글이라 가장 아깝습니다.
+$pinned = @{}
+$postsDir = Join-Path (Join-Path $root 'weekly') 'posts'
+if (Test-Path $postsDir) {
+    foreach ($f in (Get-ChildItem -Path $postsDir -Filter '*.html')) {
+        $html = [System.IO.File]::ReadAllText($f.FullName, [System.Text.Encoding]::UTF8)
+        foreach ($m in [regex]::Matches($html, '\.\./news/([0-9a-f]+)\.html')) {
+            $pinned[$m.Groups[1].Value] = $true
+        }
+    }
+}
+
+$sorted   = @($store.Values | Sort-Object { (ConvertTo-Utc $_.published) } -Descending)
+$articles = @($sorted | Select-Object -First $KeepMax)
+
+$keptIds = @{}
+foreach ($a in $articles) { $keptIds[$a.id] = $true }
+$rescued = @($sorted | Where-Object { $pinned[$_.id] -and -not $keptIds[$_.id] })
+if ($rescued.Count -gt 0) {
+    $articles = @($articles) + @($rescued)
+    Write-Host ("  주간 정리가 링크한 기사 {0}건은 상한을 넘겨도 보존했습니다" -f $rescued.Count) -ForegroundColor DarkCyan
+}
 
 Write-Host ''
 Write-Host ("  새로 추가 {0}건 / 전체 보관 {1}건" -f $newCount, $articles.Count) -ForegroundColor Green

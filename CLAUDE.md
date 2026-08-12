@@ -47,7 +47,7 @@
 | `data/articles.json` | **누적 기사. 지우면 과거 기사 페이지 전부 소멸** |
 | `dist/` | 생성 결과물. **직접 고치지 말 것** (매 빌드마다 삭제 후 재생성) |
 | `.github/workflows/update.yml` | 1시간마다 자동 수집 → GitHub Pages 배포 |
-| `.github/workflows/weekly-draft.yml` | 월요일 07시 주간 정리 초고 → PR (자동 발행 아님) |
+| `.github/workflows/weekly-draft.yml` | **껐다(disabled_manually).** 주간 정리는 수동 발행 — 아래 참고 |
 | `.github/weekly-instructions.md` | **주간 정리 글쓰기 규칙 전부.** 문체를 바꾸려면 여기 |
 
 페이지 제목(브라우저 탭 = 구글 검색 결과의 파란 제목)은 한글 30자를 넘으면 잘린다.
@@ -145,10 +145,35 @@ RSS 가 공개한 **제목과 요약만** 쓰고 본문은 싣지 않는다. 각
 - 리퍼럴: `https://www.binance.com/register?ref=HNEBXFA7` (코드 `HNEBXFA7`)
 - GitHub Actions 가 **1시간마다** 수집 → 빌드 → Pages 배포. 실행 #2 에서 전 단계 성공 확인.
 
-### 주간 정리 자동화 (2026-08-03 구축, 8월 한 달 시험)
+### ★ 주간 정리 — 자동화는 껐다. 지금은 수동이다 (2026-08-12 전환)
 
-**한국시간 월요일 07시**(`.github/workflows/weekly-draft.yml`, cron `0 22 * * 0`)에
-Claude Code 가 지난 한 주 기사를 **조사한 뒤** 초고를 쓴다.
+`weekly-draft.yml` 은 **`disabled_manually` 상태다.** 월요일에 아무것도 자동으로 일어나지 않는다.
+사용자가 매주 월요일 "주간정리 올려줘"라고 지시하면 **세션에서 직접 쓴다.** 절차는 아래 "수동 발행 절차".
+
+왜 껐는지, 자동화가 어디서 세 번 막혔는지는 **`worklog/2026-08-12.md`** 에 전부 있다.
+다시 켜기 전에 그 일지를 먼저 읽을 것. **켜면 주당 $4 가 API 종량제로 청구된다.**
+
+#### 수동 발행 절차 (2026-08-12 에 이 순서로 2주차 글을 발행했다)
+
+```powershell
+git pull                                    # 봇이 articles.json 을 계속 커밋하므로 필수
+.\prepare-weekly-context.ps1 -Days 7        # weekly\.work\ 3개 파일 생성
+# → .github\weekly-instructions.md 를 읽고 그대로 따라 원고 작성
+#   weekly\posts\<slug>.html + weekly\.work\meta.json 두 개를 만든다
+.\apply-weekly-meta.ps1 -Slug '2026-08-w2' -From '2026-08-05' -To '2026-08-12'
+.\build.ps1                                 # 제목 30자 경고 여기서 잡힌다
+# → 사용자에게 보여주고 승인받은 뒤
+git add weekly/ ; git commit ; git push      # push = 발행 (update.yml 이 push 에도 돈다)
+```
+
+주의할 점 세 가지:
+- `apply-weekly-meta.ps1` 은 **같은 slug 가 이미 있으면 그냥 건너뛴다.** 제목을 고치려면
+  `weekly/weekly.json` 을 직접 Edit 해야 한다.
+- `git add` 는 **`weekly/` 만** 할 것. `build.ps1` 이 `data/articles.json` 을 건드리는데,
+  그건 봇 담당이라 `git checkout -- data/articles.json` 으로 되돌린다.
+- 슬러그는 `2026-08-w2` 꼴. 주차는 `ceil(일/7)` 이다.
+
+#### 껐지만 남겨둔 자동화 구조 (다시 켤 때 참고)
 
 흐름:
 1. `prepare-weekly-context.ps1` — 이번 주 기사를 `weekly/.work/` 세 파일로 추림
@@ -165,8 +190,12 @@ Claude Code 가 지난 한 주 기사를 **조사한 뒤** 초고를 쓴다.
 `meta.json` 의 `verified` 에 확인한 수치와 근거 기사 id 를 남기게 해서 검토를 쉽게 했다.
 
 - API 키는 GitHub Secret `ANTHROPIC_API_KEY`. 코드나 파일에 절대 넣지 말 것.
-- 비용 주당 $1~3. 한 번 부르고 마는 방식($0.45)도 `generate-weekly.ps1` 로 남겨뒀다 —
-  비싸다고 하면 워크플로의 3~4번 단계를 그 스크립트 호출로 바꾸면 된다.
+- **비용 실측은 주당 $1~3 이 아니라 $3.87 이었다** (2026-08-12, 43턴 12분).
+  이 지갑은 세션에서 수동으로 쓸 때와 **별개다** — 수동은 사용자 구독으로 나가고 추가 청구가 없다.
+  이 차이 때문에 수동으로 전환했다. 한 번 부르고 마는 방식($0.45)도 `generate-weekly.ps1` 로 남겨뒀다.
+- 다시 켤 때 **반드시 필요한 것 두 개**: `permissions:` 에 `id-token: write`,
+  그리고 `github_token: ${{ secrets.GITHUB_TOKEN }}` (앱 미설치 우회). 둘 다 이미 넣어뒀다.
+  남은 것은 `--max-turns` 를 40 → 80 으로 올리는 일뿐이다. 40 이면 글을 다 써놓고 실패한다.
 - **지시서의 핵심은 "글에 넣는 모든 수치를 full.md 에서 grep 으로 확인하라"이다.**
   이걸 약하게 만들지 말 것 — 금융 사이트에서 틀린 숫자가 나가는 게 이 구조의 유일한 실질적 위험이다.
 - 그만두려면 Actions 탭 → "주간 정리 초고" → Disable workflow.
