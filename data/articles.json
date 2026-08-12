@@ -1,12 +1,45 @@
 [
   {
+    "id": "be6d31ef4b",
+    "title": "시바이누 미결제약정, 거래소 10곳 중 8곳서 감소",
+    "link": "https://www.tokenpost.kr/news/market/389386",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "이도현",
+    "published": "2026-08-12T13:00:55.0000000Z",
+    "summary": "시바이누(SHIB) 파생상품 미결제약정이 주요 거래소 10곳 중 8곳에서 감소했다. 거래량도 더 빠르게 줄면서 신규 레버리지 유입보다 기존 포지션을 정리하는 흐름이 강해진 것으로 나타났다. 유투데이(U.Today)는 12일 시바이누 파생상품 미결제약정이 조사 대상 거래소 10곳 가운데 8곳에서 줄었다고 전했다. 미결제약정이 증가한 거래소는 비트유닉스(Bitunix)와 HTX뿐이었다. 거래소별 감소율은 △OKX 3.37% △쿠코인(KuCoin) 11.31% △게이트(Gate) 2.02% △비트겟(Bitget) 2.12% △MEXC 4.08%였다. dYdX와 LBank, WhiteBIT에서도 감소세가 나타났다. 파생상품 거래량은 미결제약정보다 큰 폭으로 위축됐다. 쿠코인의 시바이누 파생상품... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/qp45uzd8cm.jpg",
+    "categories": [
+      "마켓"
+    ]
+  },
+  {
+    "id": "78c3f36a40",
+    "title": "비트코인 6만4000달러로 상승…美 CPI 예상 부합에 주식·채권도 강세",
+    "link": "https://www.blockmedia.co.kr/archives/1127054?utm_source=general&utm_medium=rss",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "이정화 기자",
+    "published": "2026-08-12T13:00:36.0000000Z",
+    "summary": "[블록미디어 이정화 기자] 비트코인(BTC)이 6만4000달러선을 회복, 상승 흐름을 이어가고 있다. 미국 소비자물가지수(CPI)가 시장 예상에 부합하면서 연방준비제도(Fed·연준)의 금리 인상 우려가 완화됐다. 주식과 채권도 동반 상승하며 위험자산 투자심리가 개선됐다. 비트코인은 12일(현지시각) 뉴욕시간 오전 8시45 기준 전날보다 0.6% 오른 6만4045.41달러를 기록했다. 이더리움(ETH)은 1.5% 상승한 1908.06달러에 거래됐다. 美 CPI 예상 부합…금리인상 베팅 후퇴 미국의 물가 상승세가 시장에 안도감을 줬다. [...]",
+    "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/07/20260730-115150.png",
+    "categories": [
+      "디지털 자산",
+      "CMC",
+      "cpi",
+      "금리 인상",
+      "미국 소비자물가지수",
+      "비트코인"
+    ]
+  },
+  {
     "id": "2c9c4844db",
     "title": "6만6000 SOL, 와이즈 자체 검증인 노드 편입",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/389371",
     "source": "토큰포스트",
     "sourceSite": "https://www.tokenpost.kr",
     "author": "김미래",
-    "published": "2026-08-12T12:41:39.0000000Z",
+    "published": "2026-08-12T12:41:39Z",
     "summary": "일본 상장사 와이즈(WIZE·$3664)가 SBI VC 트레이드에 보관 중인 솔라나(SOL) 약 6만6000개를 자체 검증인 노드 운용에 연결했다. 거래소 보관 체계를 유지하면서 특정 검증인 노드를 통해 운용하는 구조다. 와이즈는 SBI홀딩스(SBI Holdings) 산하 암호화폐 거래소 SBI VC 트레이드(SBI VC Trade)와 협력해 해당 물량을 자체 검증인 노드에 편입했다. 코인포스트는 보관 중인 SOL에서 기존 스테이킹 보상과 검증인 노드 보상이 함께 발생하는 구조라고 보도했다. 이번 협력은 자산 보관과 검증인 운용을 나눠 맡는 방식이다. SBI VC 트레이드가 SOL을 보관하고, 와이즈는 해당 물량을 자사 검증인 노드에 연결해 운용한다. 통상 거래소에... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/8un9jynxd0.jpg",
     "categories": [
@@ -20,7 +53,7 @@
     "source": "토큰포스트",
     "sourceSite": "https://www.tokenpost.kr",
     "author": "김민준",
-    "published": "2026-08-12T12:39:55.0000000Z",
+    "published": "2026-08-12T12:39:55Z",
     "summary": "마라톤디지털(MARA Holdings·$MARA)이 비트코인(BTC) 1만8750개를 담보로 설정한 대출 원금이 총 7억5000만 달러(약 1조590억원)라고 공개했다. 신규 자금은 일반 기업 목적과 인공지능(AI)·전력 인프라 확장에 활용한다. 마스비트는 12일 마라톤디지털의 최근 분기 미국 증권거래위원회(SEC) 공시를 토대로 두 건의 비트코인 담보 대출이 모두 인출됐다고 전했다. 대출에는 기존 신용한도 재조정분과 신규 차입분이 함께 포함됐다. 코인베이스 크레딧(Coinbase Credit) 대출은 기존 1억5000만 달러(약 2118억원) 신용한도 재조정분과 신규 자금 3억 달러(약 4236억원)로 구성됐다. Two Prime Lending은 별도로 3억 달러를 제공했다. 두... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/p9v3q1kcni.jpg",
     "categories": [
@@ -776,20 +809,6 @@
     ]
   },
   {
-    "id": "d2e5dfe10b",
-    "title": "이더리움 2만5000개 분할 매수 주문…고래 2곳 공매도 축소",
-    "link": "https://www.tokenpost.kr/news/market/389054",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "정민석",
-    "published": "2026-08-12T05:09:59Z",
-    "summary": "대형 지갑 2곳이 공매도 노출을 줄인 뒤 이더리움(ETH) 2만5000개, 4715만8000달러(약 666억원) 규모의 시간가중평균가격(TWAP) 매수 주문을 시작했다. 트레이딩비츠(TradingBeats)는 12일 오전 두 지갑이 이더리움 계약의 TWAP 매수 주문을 동시에 집행하기 시작했다고 밝혔다. 발행 시점까지 약 1만100개, 1902만5000달러(약 269억원)가 체결돼 전체 주문의 40.4%가 완료됐다. 남은 주문은 1만4900개, 2811만7000달러(약 397억원) 규모다. 지갑별 계획 물량은 0x66f가 이더리움 1만8000개, 0x1ee7이 7000개다. 현재 체결률은 각각 43.6%와 32%다. 두 지갑은 앞서 보유하던 공매도 노출을 줄인 뒤 매수 방향으로 전환했다. 0x1ee7은…",
-    "image": "https://f1.tokenpost.kr/2026/08/fw2n63ip61.jpg",
-    "categories": [
-      "마켓"
-    ]
-  },
-  {
     "id": "47e5578bbc",
     "title": "176만4400달러 순유출…블랙록 이더리움 ETF는 유입",
     "link": "https://www.tokenpost.kr/news/market/389055",
@@ -799,6 +818,20 @@
     "published": "2026-08-12T05:09:59Z",
     "summary": "미국 이더리움(ETH) 현물 상장지수펀드(ETF)에서 8월 11일(현지시간) 176만4400달러(약 25억원)가 순유출됐다. 블랙록과 피델리티 상품의 자금 흐름은 엇갈렸다. 소소밸류(SoSoValue) 데이터에 따르면, 블랙록의 이더리움 현물 ETF ETHA에는 56만3800달러(약 8억원)가 순유입됐다. ETHA의 누적 순유입액은 116억2600만달러(약 16조4000억원)로 집계됐다. 피델리티의 이더리움 현물 ETF FETH에서는 232만8300달러(약 33억원)가 순유출됐다. FETH의 누적 순유입액은 21억1900만달러(약 3조원)다. FETH의 유출액이 전체 순유출 규모보다 컸지만 ETHA의 유입이 이를 일부 상쇄했다. 이더리움 현물 ETF 전체 순자산가치는 104억7900만달러(약... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/s5ryb4mdrt.jpg",
+    "categories": [
+      "마켓"
+    ]
+  },
+  {
+    "id": "d2e5dfe10b",
+    "title": "이더리움 2만5000개 분할 매수 주문…고래 2곳 공매도 축소",
+    "link": "https://www.tokenpost.kr/news/market/389054",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "정민석",
+    "published": "2026-08-12T05:09:59Z",
+    "summary": "대형 지갑 2곳이 공매도 노출을 줄인 뒤 이더리움(ETH) 2만5000개, 4715만8000달러(약 666억원) 규모의 시간가중평균가격(TWAP) 매수 주문을 시작했다. 트레이딩비츠(TradingBeats)는 12일 오전 두 지갑이 이더리움 계약의 TWAP 매수 주문을 동시에 집행하기 시작했다고 밝혔다. 발행 시점까지 약 1만100개, 1902만5000달러(약 269억원)가 체결돼 전체 주문의 40.4%가 완료됐다. 남은 주문은 1만4900개, 2811만7000달러(약 397억원) 규모다. 지갑별 계획 물량은 0x66f가 이더리움 1만8000개, 0x1ee7이 7000개다. 현재 체결률은 각각 43.6%와 32%다. 두 지갑은 앞서 보유하던 공매도 노출을 줄인 뒤 매수 방향으로 전환했다. 0x1ee7은…",
+    "image": "https://f1.tokenpost.kr/2026/08/fw2n63ip61.jpg",
     "categories": [
       "마켓"
     ]
@@ -4408,20 +4441,6 @@
     ]
   },
   {
-    "id": "8febf3346a",
-    "title": "앵커리지디지털, 4개 네트워크 자산 8건 지원 추가",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/387695",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "김미래",
-    "published": "2026-08-10T13:33:26Z",
-    "summary": "앵커리지디지털(Anchorage Digital)이 아발란체·이더리움·솔라나·스텔라루멘 등 4개 네트워크의 디지털 자산 8건을 지원 목록에 추가했다. 포사이트뉴스는 한국시간 10일 오후 10시28분 앵커리지디지털이 신규 자산 지원을 발표했다고 전했다. 대상은 △아발란체(AVAX) 네트워크의 Securitize Corp(SECZ) △이더리움(ETH) 네트워크의 Anvil(ANVL)·King Protocol(KING)·Nomina(NOM) △솔라나(SOL) 네트워크의 Dabba Network(DBT)·Securitize Corp·TYTL(TYTL) △스텔라루멘(XLM) 네트워크의 Alts ABF(PC000)다. Securitize Corp는 같은 티커로 아발란체와 솔라나에서 각각 지원 대상에 포함됐다. 발표된…",
-    "image": "",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "58467bf75f",
     "title": "MARA, 비트코인 2만880개 팔아 15억달러 확보",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/387694",
@@ -4431,6 +4450,20 @@
     "published": "2026-08-10T13:33:26Z",
     "summary": "MARA($MARA)가 2026년 1분기 비트코인(BTC) 2만880개를 매각해 약 15억달러(약 2조1150억원)의 현금을 확보했다. 비트코인을 장기 보유 자산으로 운용해 온 채굴업체가 재무 유동성과 인공지능(AI) 인프라 투자를 위해 보유 자산을 현금화한 사례다. MARA는 1분기 10-Q 보고서에서 비트코인 매각 규모와 자금 운용 방침을 공개했다. 10-Q는 미국 상장사가 분기 실적과 재무정보를 공시할 때 제출하는 보고서다. 3월 31일 기준 MARA의 비트코인 보유량은 3만5303개였다. 회사는 비트코인을 장기 보유 자산인 동시에 운영자금과 성장 투자에 활용할 수 있는 유동성 재원으로 관리한다고 밝혔다. MARA는 3월 4일부터 25일까지 비트코인... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/wwzbbblw38.jpg",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "8febf3346a",
+    "title": "앵커리지디지털, 4개 네트워크 자산 8건 지원 추가",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/387695",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "김미래",
+    "published": "2026-08-10T13:33:26Z",
+    "summary": "앵커리지디지털(Anchorage Digital)이 아발란체·이더리움·솔라나·스텔라루멘 등 4개 네트워크의 디지털 자산 8건을 지원 목록에 추가했다. 포사이트뉴스는 한국시간 10일 오후 10시28분 앵커리지디지털이 신규 자산 지원을 발표했다고 전했다. 대상은 △아발란체(AVAX) 네트워크의 Securitize Corp(SECZ) △이더리움(ETH) 네트워크의 Anvil(ANVL)·King Protocol(KING)·Nomina(NOM) △솔라나(SOL) 네트워크의 Dabba Network(DBT)·Securitize Corp·TYTL(TYTL) △스텔라루멘(XLM) 네트워크의 Alts ABF(PC000)다. Securitize Corp는 같은 티커로 아발란체와 솔라나에서 각각 지원 대상에 포함됐다. 발표된…",
+    "image": "",
     "categories": [
       "암호화폐"
     ]
@@ -15320,20 +15353,6 @@
     ]
   },
   {
-    "id": "aadb3b2c61",
-    "title": "[롱/숏] 롱 쌓는 개인, 숏 늘리는 고래… 솔라나·도지는 ‘극단 약세’, 지캐시는 ‘극단 강세’",
-    "link": "https://www.blockmedia.co.kr/archives/1123456",
-    "source": "블록미디어",
-    "sourceSite": "https://www.blockmedia.co.kr",
-    "author": "",
-    "published": "2026-08-03T04:08:33Z",
-    "summary": "[블록미디어 양원모 기자] 비트코인 가격이 약세를 보이는 가운데 디지털자산 파생시장에서 개인 투자자와 고래 투자자의 시각이 뚜렷하게 엇갈렸다. 주요 거래소 개인 투자자들은 롱 포지션을 유지한 반면, 고래 계정은 숏에 베팅하며 시장 전반에 경계감이 남아 있는 모습이다. 3일(현지시각) 코인글래스의 4시간 기준 테이커 매수·매도 거래량에 따르면 롱 거래 규모는 32억1000만달러(약 4조5884억원)로 전체 45.06%를 차지했다. 반면 숏 거래량은 39억1000만달러(약",
-    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-130432.jpg",
-    "categories": [
-      "마켓"
-    ]
-  },
-  {
     "id": "0b77ce5292",
     "title": "[롱/숏] 롱 쌓는 개인, 숏 늘리는 고래… 솔라나·도지는 ‘극단 약세’, 지캐시는 ‘극단 강세’",
     "link": "https://www.blockmedia.co.kr/archives/1123456?utm_source=general&utm_medium=rss",
@@ -15350,6 +15369,20 @@
       "롱",
       "바이낸스",
       "바이비트"
+    ]
+  },
+  {
+    "id": "aadb3b2c61",
+    "title": "[롱/숏] 롱 쌓는 개인, 숏 늘리는 고래… 솔라나·도지는 ‘극단 약세’, 지캐시는 ‘극단 강세’",
+    "link": "https://www.blockmedia.co.kr/archives/1123456",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "",
+    "published": "2026-08-03T04:08:33Z",
+    "summary": "[블록미디어 양원모 기자] 비트코인 가격이 약세를 보이는 가운데 디지털자산 파생시장에서 개인 투자자와 고래 투자자의 시각이 뚜렷하게 엇갈렸다. 주요 거래소 개인 투자자들은 롱 포지션을 유지한 반면, 고래 계정은 숏에 베팅하며 시장 전반에 경계감이 남아 있는 모습이다. 3일(현지시각) 코인글래스의 4시간 기준 테이커 매수·매도 거래량에 따르면 롱 거래 규모는 32억1000만달러(약 4조5884억원)로 전체 45.06%를 차지했다. 반면 숏 거래량은 39억1000만달러(약",
+    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-130432.jpg",
+    "categories": [
+      "마켓"
     ]
   },
   {
@@ -15507,20 +15540,6 @@
     ]
   },
   {
-    "id": "399c57b9c4",
-    "title": "[파생시황] 비트코인 숨 고르기에 롱·숏 ‘동반 타격’… 1억달러 연쇄 청산",
-    "link": "https://www.blockmedia.co.kr/archives/1123427",
-    "source": "블록미디어",
-    "sourceSite": "https://www.blockmedia.co.kr",
-    "author": "",
-    "published": "2026-08-03T03:10:34Z",
-    "summary": "[블록미디어 양원모 기자] 비트코인이 6만3000달러선에서 숨 고르기에 들어가자 파생시장도 방향을 잃었다. 상승을 기대한 투자자도, 하락에 베팅한 투자자도 모두 손실을 입었다. 시장이 어느 한쪽으로 기울지 못한 채 변동성만 키우는 모습이다. 3일(현지시각) 코인글래스에 따르면 최근 24시간 동안 디지털자산 시장에서 발생한 청산 규모는 1억301만달러(약 1473억원)를 기록했다. 청산된 투자자는 5만410명이다. 롱 포지션 청산은 5171만달러(약 740억원), 숏 포지션 청산은 5130만달러(약",
-    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-120352.jpg",
-    "categories": [
-      "마켓"
-    ]
-  },
-  {
     "id": "9e42180067",
     "title": "[파생시황] 비트코인 숨 고르기에 롱·숏 ‘동반 타격’… 1억달러 연쇄 청산",
     "link": "https://www.blockmedia.co.kr/archives/1123427?utm_source=general&utm_medium=rss",
@@ -15537,6 +15556,20 @@
       "숏",
       "청산",
       "코인글래스"
+    ]
+  },
+  {
+    "id": "399c57b9c4",
+    "title": "[파생시황] 비트코인 숨 고르기에 롱·숏 ‘동반 타격’… 1억달러 연쇄 청산",
+    "link": "https://www.blockmedia.co.kr/archives/1123427",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "",
+    "published": "2026-08-03T03:10:34Z",
+    "summary": "[블록미디어 양원모 기자] 비트코인이 6만3000달러선에서 숨 고르기에 들어가자 파생시장도 방향을 잃었다. 상승을 기대한 투자자도, 하락에 베팅한 투자자도 모두 손실을 입었다. 시장이 어느 한쪽으로 기울지 못한 채 변동성만 키우는 모습이다. 3일(현지시각) 코인글래스에 따르면 최근 24시간 동안 디지털자산 시장에서 발생한 청산 규모는 1억301만달러(약 1473억원)를 기록했다. 청산된 투자자는 5만410명이다. 롱 포지션 청산은 5171만달러(약 740억원), 숏 포지션 청산은 5130만달러(약",
+    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-120352.jpg",
+    "categories": [
+      "마켓"
     ]
   },
   {
@@ -15771,20 +15804,6 @@
     ]
   },
   {
-    "id": "64a30359cf",
-    "title": "스트래티지 또 비트코인 매도하나…299.843BTC 이동 포착",
-    "link": "https://www.blockmedia.co.kr/archives/1123390",
-    "source": "블록미디어",
-    "sourceSite": "https://www.blockmedia.co.kr",
-    "author": "",
-    "published": "2026-08-03T00:49:48Z",
-    "summary": "[블록미디어 명정선 기자] 스트래티지(전 마이크로스트래티지)가 보유한 것으로 추정되는 지갑에서 약 1900만달러 규모의 비트코인이 이동하면서 추가 매도 가능성에 시장의 관심이 쏠리고 있다. 온체인 분석 플랫폼 온체인 렌즈(Onchain Lens)는 2일(현지시각) 마이크로스트래티지와 연관된 지갑이 299.843BTC를 새로운 주소로 전송했다고 밝혔다. 이동된 물량의 가치는 약 1891만달러에 달한다. 온체인 데이터에 따르면 해당 수신 주소는 과거 갤럭시 디지털과 바이낸스, 코인베이스 등 주요",
-    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-094321.png",
-    "categories": [
-      "디지털 자산"
-    ]
-  },
-  {
     "id": "02bdb0f1b2",
     "title": "스트래티지 또 비트코인 매도하나…299.843BTC 이동 포착",
     "link": "https://www.blockmedia.co.kr/archives/1123390?utm_source=general&utm_medium=rss",
@@ -15801,6 +15820,20 @@
       "매도 가능성",
       "비트코인",
       "스트래티지"
+    ]
+  },
+  {
+    "id": "64a30359cf",
+    "title": "스트래티지 또 비트코인 매도하나…299.843BTC 이동 포착",
+    "link": "https://www.blockmedia.co.kr/archives/1123390",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "",
+    "published": "2026-08-03T00:49:48Z",
+    "summary": "[블록미디어 명정선 기자] 스트래티지(전 마이크로스트래티지)가 보유한 것으로 추정되는 지갑에서 약 1900만달러 규모의 비트코인이 이동하면서 추가 매도 가능성에 시장의 관심이 쏠리고 있다. 온체인 분석 플랫폼 온체인 렌즈(Onchain Lens)는 2일(현지시각) 마이크로스트래티지와 연관된 지갑이 299.843BTC를 새로운 주소로 전송했다고 밝혔다. 이동된 물량의 가치는 약 1891만달러에 달한다. 온체인 데이터에 따르면 해당 수신 주소는 과거 갤럭시 디지털과 바이낸스, 코인베이스 등 주요",
+    "image": "https://www.blockmedia.co.kr/wp-content/uploads/2026/08/20260803-094321.png",
+    "categories": [
+      "디지털 자산"
     ]
   },
   {
