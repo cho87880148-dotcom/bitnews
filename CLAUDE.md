@@ -44,7 +44,7 @@
 | `assets/js/main.js` | 슬라이드·탭·트렌딩 롤링 |
 | `guide/` | 바이낸스 가이드 소스 (`guide.json` + `pages/*.html`) |
 | `weekly/` | 주간 정리 소스 (`weekly.json` + `posts/*.html`). `.work/` 는 임시 글감 |
-| `data/articles.json` | **누적 기사. 지우면 과거 기사 페이지 전부 소멸** |
+| `data/articles.json` | **누적 기사. 지우면 과거 기사 페이지 전부 소멸** (상한은 `build.ps1` 의 `$KeepMax`) |
 | `dist/` | 생성 결과물. **직접 고치지 말 것** (매 빌드마다 삭제 후 재생성) |
 | `.github/workflows/update.yml` | 1시간마다 자동 수집 → GitHub Pages 배포 |
 | `.github/workflows/weekly-draft.yml` | **껐다(disabled_manually).** 주간 정리는 수동 발행 — 아래 참고 |
