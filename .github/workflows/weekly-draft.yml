@@ -81,6 +81,9 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # 이 줄이 없으면 액션이 Claude Code GitHub App 을 찾다가
+          # "Claude Code is not installed on this repository" 401 로 죽습니다.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
             .github/weekly-instructions.md 를 읽고 그대로 따라 주간 정리 기사를 작성하십시오.
 
