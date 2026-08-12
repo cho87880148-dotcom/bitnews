@@ -34,6 +34,10 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  # claude-code-action 이 시작할 때 OIDC 토큰을 받습니다. 이 줄이 없으면
+  # "Could not fetch an OIDC token" 으로 글쓰기 단계가 15초 만에 실패합니다.
+  # (2026-08-10 월요일 초고가 이 이유로 안 올라왔습니다)
+  id-token: write
 
 concurrency:
   group: weekly-draft
