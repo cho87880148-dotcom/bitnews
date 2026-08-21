@@ -234,8 +234,8 @@ $keywords = @($cfg.keywords)
 #    그러면 첫 화면도 자동으로 "비트뉴스" 로 돌아가고 사업자 정보 줄은 사라집니다.
 #    (templates\base.html 이나 이 아래 코드는 손댈 필요 없습니다)
 # ---------------------------------------------------------
-$tempHomeBrand   = 'Novacent'
-$tempHomeBizInfo = 'Company : Novacent | CEO : Hyunho Jo | Business Registration Number : 186-14-02804'
+$tempHomeBrand   = ''
+$tempHomeBizInfo = ''
 
 Write-Host ''
 Write-Host "  $siteName 사이트 생성 시작" -ForegroundColor Yellow
