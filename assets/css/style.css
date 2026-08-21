@@ -104,11 +104,11 @@ a { color: inherit; }
 }
 .header-link:hover { color: var(--accent); }
 
-/* 가이드 섹션으로 보내는 버튼 */
+/* 코인 거래소 섹션(/exchange/)으로 보내는 버튼 */
 .header-cta {
   padding: 0.45rem 0.95rem;
   border-radius: 999px;
-  background: #f0b90b;      /* 바이낸스 금색 — 가이드 쪽과 맞춥니다 */
+  background: #f0b90b;      /* 금색 — 거래소 순위 1위 배지와 맞춥니다 */
   color: #1a1300;
   font-size: 0.85rem;
   font-weight: 700;

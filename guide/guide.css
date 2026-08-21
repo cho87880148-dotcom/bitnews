@@ -1,5 +1,5 @@
 /* =========================================================
-   바이낸스 가이드 (/binance-guide/) 전용 스타일
+   코인 거래소 가이드 (/exchange/ 와 거래소별 가이드) 전용 스타일
 
    뉴스 홈과 분위기를 일부러 다르게 했습니다.
    뉴스는 밝은 화면, 가이드는 어두운 화면 + 바이낸스 금색입니다.
@@ -438,3 +438,159 @@ table.g-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-
   color: var(--g-weak);
 }
 .g-footer a { color: var(--g-gold); text-decoration: none; }
+
+/* =========================================================
+   거래소 순위 (/exchange/) — 허브 전용
+   순위 배지 색은 금·은·동으로 고정입니다. 거래소 상징색과 별개입니다.
+   ========================================================= */
+.g-rank-note {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--g-panel-2);
+  border: 1px dashed var(--g-line);
+  border-radius: var(--g-radius);
+  font-size: 0.84rem;
+  color: var(--g-weak);
+}
+
+.g-ranks { display: grid; gap: 1.1rem; margin-top: 1.5rem; }
+
+.g-rank {
+  position: relative;
+  padding: 1.3rem 1.4rem;
+  background: var(--g-panel);
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  border-left: 4px solid var(--rank-color, var(--g-line));
+}
+.g-rank--1 { --rank-color: #f0b90b; }   /* 금 */
+.g-rank--2 { --rank-color: #b9c0cf; }   /* 은 */
+.g-rank--3 { --rank-color: #cd8a4e; }   /* 동 */
+
+.g-rank-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+.g-rank-medal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.6rem;
+  height: 1.7rem;
+  padding-inline: 0.5rem;
+  border-radius: 999px;
+  background: var(--rank-color);
+  color: #10131a;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.g-rank-name { font-size: 1.2rem; font-weight: 800; }
+.g-rank-en { font-size: 0.8rem; color: var(--g-weak); font-weight: 600; }
+
+.g-rank-summary { margin-top: 0.7rem; font-size: 0.92rem; }
+
+.g-rank-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem 1.4rem;
+  margin-top: 1rem;
+}
+@media (max-width: 720px) {
+  .g-rank-cols { grid-template-columns: 1fr; }
+}
+.g-rank-cols h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--g-weak);
+  text-transform: uppercase;
+}
+.g-rank-good { list-style: none; display: grid; gap: 0.3rem; }
+.g-rank-good li {
+  position: relative;
+  padding-left: 1.05rem;
+  font-size: 0.86rem;
+}
+.g-rank-good li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--rank-color);
+  font-weight: 800;
+}
+.g-rank-watch { font-size: 0.86rem; color: var(--g-weak); }
+
+.g-rank-fees { display: grid; gap: 0.45rem; margin-top: 1rem; }
+.g-rank-fee {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  font-size: 0.86rem;
+  padding-block: 0.4rem;
+  border-top: 1px solid var(--g-line);
+}
+.g-rank-fee-label { min-width: 4.5rem; color: var(--g-weak); font-size: 0.8rem; }
+.g-rank-fee-value { font-weight: 700; }
+.g-rank-fee-note { color: var(--g-weak); font-size: 0.8rem; }
+
+.g-rank-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1.1rem;
+}
+.g-rank-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.05rem;
+  border-radius: 999px;
+  background: var(--rank-color);
+  color: #10131a;
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.g-rank-btn:hover { filter: brightness(1.08); }
+.g-rank-btn--ghost {
+  background: transparent;
+  color: var(--g-text);
+  border: 1px solid var(--g-line);
+  font-weight: 700;
+}
+.g-rank-btn--ghost:hover { border-color: var(--rank-color); filter: none; }
+.g-rank-code {
+  font-size: 0.8rem;
+  color: var(--g-weak);
+}
+.g-rank-code b {
+  color: var(--g-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: 0.06em;
+}
+
+/* 비교표 — 첫 열을 항목명으로 고정합니다 */
+.g-compare table.g-table { min-width: 620px; }
+.g-compare .g-table thead th:first-child { width: 8.5rem; }
+.g-compare .g-table td small { display: block; color: var(--g-weak); font-size: 0.78rem; margin-top: 0.2rem; }
+
+/* 거래소 가이드 안에서 다른 거래소로 보내는 칸 */
+.g-other { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.9rem; margin-top: 1.2rem; }
+.g-other a {
+  display: block;
+  padding: 1rem 1.1rem;
+  background: var(--g-panel);
+  border: 1px solid var(--g-line);
+  border-radius: var(--g-radius);
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+.g-other a:hover { border-color: var(--g-gold); }
+.g-other .g-other-rank { font-size: 0.75rem; font-weight: 800; color: var(--g-weak); letter-spacing: 0.06em; }
+.g-other .g-other-name { margin-top: 0.25rem; font-size: 1rem; font-weight: 700; }
+.g-other .g-other-desc { margin-top: 0.2rem; font-size: 0.82rem; color: var(--g-weak); }

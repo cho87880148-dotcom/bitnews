@@ -1114,59 +1114,72 @@ $cards
 }
 
 # =========================================================
-#  9-2. 바이낸스 가이드 섹션 (/binance-guide/)
+#  9-2. 코인 거래소 섹션 (/exchange/ + 거래소별 가이드)
 #
-#  guide\ 폴더의 내용을 dist\binance-guide\ 로 만들어 냅니다.
-#  글 내용은 guide\pages\*.html 에, 목차와 추천코드는 guide\guide.json 에 있습니다.
-#  가이드를 추가하려면 그 두 곳만 고치면 됩니다.
+#  guide\ 폴더의 내용을 dist\ 아래로 만들어 냅니다.
+#    dist\exchange\index.html   ← guide\hub.html        (거래소 순위 허브)
+#    dist\<거래소 dir>\*.html   ← guide\<거래소 id>\*.html (거래소별 7장)
+#
+#  순위·목차·추천코드는 전부 guide\guide.json 에 있습니다.
+#  거래소를 추가하려면 guide\<새 id>\ 폴더에 본문 조각 7개를 넣고
+#  guide.json 의 exchanges 에 한 칸 추가하면 됩니다. 이 파일은 고치지 않아도 됩니다.
+#  exchanges 에 적힌 순서가 그대로 1위·2위·3위가 됩니다.
 # =========================================================
 $guideDir = Join-Path $root 'guide'
-$guideUrls = @()   # 나중에 sitemap 에 넣으려고 모아둡니다
+$guideUrls = @()   # sitemap 용. @{ dir = ''; file = '' } 꼴로 모읍니다
 
 if (Test-Path $guideDir) {
     $gCfg = (Get-Content (Join-Path $guideDir 'guide.json') -Raw -Encoding UTF8) | ConvertFrom-Json
     $gTpl = Get-Content (Join-Path $guideDir 'template.html') -Raw -Encoding UTF8
-    $gOut = Join-Path $outPath $gCfg.section.dir
-    New-Item -ItemType Directory -Path $gOut -Force | Out-Null
 
-    Copy-Item (Join-Path $guideDir 'guide.css') -Destination $gOut -Force
-    Copy-Item (Join-Path $guideDir 'guide.js')  -Destination $gOut -Force
+    $gHub = $gCfg.hub
+    $gExs = @($gCfg.exchanges)
 
-    $refLink = $gCfg.referral.link
-    $refCode = $gCfg.referral.code
-    $ctaLabel = $gCfg.referral.ctaLabel
+    $gCssSrc = Join-Path $guideDir 'guide.css'
+    $gJsSrc  = Join-Path $guideDir 'guide.js'
 
-    # 모든 가이드에 똑같이 들어가는 가입 유도 카드
-    $ctaCard = @"
+    $gSideNote = '순서대로 읽으면 가입 → 입금 → 거래 흐름이 이어집니다.'
+
+    # ---------------------------------------------------------
+    #  거래소 한 곳의 가입 유도 카드
+    # ---------------------------------------------------------
+    function New-CtaCard {
+        param($Ex)
+        $chips = @()
+        foreach ($c in @($Ex.referral.chips)) {
+            $chips += ('          <span class="g-chip">{0}</span>' -f (Protect-Html $c))
+        }
+        $chipHtml = ($chips -join "`n")
+        # 바이비트는 "가입코드" 라고 부릅니다. guide.json 에 codeLabel 이 있으면 그걸 씁니다.
+        $codeLabel = $Ex.referral.codeLabel
+        if ([string]::IsNullOrWhiteSpace($codeLabel)) { $codeLabel = '추천코드' }
+        return @"
       <div class="g-cta-card">
         <span class="g-cta-tag">초보자용 시작 가이드</span>
-        <h2>추천코드를 적용해서<br />바이낸스 가입하기</h2>
-        <p>세계 최대 거래량의 글로벌 거래소로, 초보자도 가입 가능하고 모바일 앱 사용 편의성이 강점입니다.</p>
+        <h2>$(Protect-Html $codeLabel)를 적용해서<br />$(Protect-Html $Ex.name) 가입하기</h2>
+        <p>$(Protect-Html $Ex.referral.pitch)</p>
         <div class="g-chips">
-          <span class="g-chip">세계 최대 거래소</span>
-          <span class="g-chip">모바일 앱 사용 편리</span>
-          <span class="g-chip">한국어 지원</span>
-          <span class="g-chip">가입 5분 내외</span>
+$chipHtml
         </div>
         <div class="g-code-row">
-          <span>추천코드</span>
-          <span class="g-code">$(Protect-Html $refCode)</span>
-          <button class="g-copy" data-copy="$(Protect-Html $refCode)">복사</button>
+          <span>$(Protect-Html $codeLabel)</span>
+          <span class="g-code">$(Protect-Html $Ex.referral.code)</span>
+          <button class="g-copy" data-copy="$(Protect-Html $Ex.referral.code)">복사</button>
         </div>
-        <a class="g-cta-btn" href="$(Protect-Html $refLink)" target="_blank" rel="noopener nofollow sponsored">$(Protect-Html $ctaLabel) →</a>
+        <a class="g-cta-btn" href="$(Protect-Html $Ex.referral.link)" target="_blank" rel="noopener nofollow sponsored">$(Protect-Html $Ex.referral.ctaLabel) →</a>
         <p style="margin-top:0.8rem;font-size:0.8rem">
           할인율은 계정·지역·거래 상품에 따라 다릅니다. 가입 화면에서 실제 적용 내용을 확인하세요.
           본 페이지는 투자 권유가 아닌 정보 제공용 안내입니다.
         </p>
       </div>
 "@
+    }
 
-    # 목차 만들기 (index 포함)
-    $gPages = @($gCfg.pages)
-    function New-GuideNav {
-        param([string]$Current)
+    # 거래소 한 곳의 사이드바 목차
+    function New-GuideToc {
+        param($Ex, [string]$Current)
         $rows = @()
-        foreach ($pg in $gPages) {
+        foreach ($pg in @($Ex.pages)) {
             $cls = ''
             if ($pg.file -eq $Current) { $cls = ' class="is-current"' }
             $rows += ('          <li><a href="{0}.html"{1}><span class="g-toc-num">{2}</span>{3}</a></li>' -f `
@@ -1175,33 +1188,158 @@ if (Test-Path $guideDir) {
         return ($rows -join "`n")
     }
 
-    # 가이드 홈에 들어갈 카드 목록
-    $cardRows = @()
-    foreach ($pg in $gPages) {
-        $cardRows += @"
+    # 거래소 가이드 홈에 들어갈 카드 목록
+    function New-GuideCards {
+        param($Ex)
+        $rows = @()
+        foreach ($pg in @($Ex.pages)) {
+            $rows += @"
           <a class="g-card" href="$($pg.file).html">
             <span class="g-card-num">$($pg.num)</span>
             <h3>$(Protect-Html $pg.title)</h3>
             <p>$(Protect-Html $pg.subtitle)</p>
           </a>
 "@
+        }
+        return "        <div class=`"g-cards`">`n" + ($rows -join "`n") + "`n        </div>"
     }
-    $cardsHtml = "        <div class=`"g-cards`">`n" + ($cardRows -join "`n") + "`n        </div>"
 
-    # 가이드 한 장을 만들어 파일로 씁니다
+    # 가이드 홈 맨 아래 "다른 거래소도 보기"
+    function New-OtherExchanges {
+        param([string]$CurrentId)
+        $rows = @()
+        foreach ($ex in $gExs) {
+            if ($ex.id -eq $CurrentId) { continue }
+            $rows += @"
+          <a href="../$($ex.dir)/index.html">
+            <span class="g-other-rank">$($ex.rank)위</span>
+            <span class="g-other-name">$(Protect-Html $ex.name) 가이드</span>
+            <span class="g-other-desc">현물 $(Protect-Html $ex.specs.spot)</span>
+          </a>
+"@
+        }
+        $inner = ($rows -join "`n")
+        return @"
+      <section class="g-sec">
+        <h2>다른 거래소도 보기</h2>
+        <div class="g-other">
+$inner
+        </div>
+        <p class="g-side-note" style="margin-top:0.9rem"><a href="../$($gHub.dir)/index.html">코인 거래소 순위 전체 보기 →</a></p>
+      </section>
+"@
+    }
+
+    # ---------------------------------------------------------
+    #  허브에 들어갈 순위 카드와 비교표
+    # ---------------------------------------------------------
+    $gRankRows = @()
+    foreach ($ex in $gExs) {
+        $goods = @()
+        foreach ($g in @($ex.card.good)) {
+            $goods += ('                <li>{0}</li>' -f (Protect-Html $g))
+        }
+        $goodHtml = ($goods -join "`n")
+        $gRankRows += @"
+        <article class="g-rank g-rank--$($ex.rank)">
+          <div class="g-rank-head">
+            <span class="g-rank-medal">$($ex.rank)위</span>
+            <span class="g-rank-name">$(Protect-Html $ex.name)</span>
+            <span class="g-rank-en">$(Protect-Html $ex.nameEn)</span>
+          </div>
+          <p class="g-rank-summary">$(Protect-Html $ex.card.summary)</p>
+          <div class="g-rank-cols">
+            <div>
+              <h4>이런 점이 좋습니다</h4>
+              <ul class="g-rank-good">
+$goodHtml
+              </ul>
+            </div>
+            <div>
+              <h4>알아둘 점</h4>
+              <p class="g-rank-watch">$(Protect-Html $ex.card.watch)</p>
+            </div>
+          </div>
+          <div class="g-rank-fees">
+            <div class="g-rank-fee">
+              <span class="g-rank-fee-label">현물</span>
+              <span class="g-rank-fee-value">$(Protect-Html $ex.specs.spot)</span>
+              <span class="g-rank-fee-note">$(Protect-Html $ex.specs.spotNote)</span>
+            </div>
+            <div class="g-rank-fee">
+              <span class="g-rank-fee-label">선물</span>
+              <span class="g-rank-fee-value">$(Protect-Html $ex.specs.futures)</span>
+              <span class="g-rank-fee-note">$(Protect-Html $ex.specs.futuresNote)</span>
+            </div>
+          </div>
+          <div class="g-rank-actions">
+            <a class="g-rank-btn" href="$(Protect-Html $ex.referral.link)" target="_blank" rel="noopener nofollow sponsored">$(Protect-Html $ex.name) 가입하기 →</a>
+            <a class="g-rank-btn g-rank-btn--ghost" href="../$($ex.dir)/index.html">가이드 6편 보기</a>
+            <span class="g-rank-code">코드 <b>$(Protect-Html $ex.referral.code)</b></span>
+          </div>
+        </article>
+"@
+    }
+    $gRankHtml = "        <div class=`"g-ranks`">`n" + ($gRankRows -join "`n") + "`n        </div>"
+    $gRankNote = '      <p class="g-rank-note">' + (Protect-Html $gHub.rankNote) + '</p>'
+
+    # 비교표 — 한 줄 만들기
+    function New-CompareRow {
+        param([string]$Label, [string]$Key, [string]$NoteKey = '')
+        $tds = ''
+        foreach ($ex in $gExs) {
+            $cell = Protect-Html $ex.specs.$Key
+            if ($NoteKey -and $ex.specs.$NoteKey) {
+                $cell += '<small>' + (Protect-Html $ex.specs.$NoteKey) + '</small>'
+            }
+            $tds += ('<td>{0}</td>' -f $cell)
+        }
+        return ('              <tr><td>{0}</td>{1}</tr>' -f $Label, $tds)
+    }
+
+    $gCmpHead = ''
+    $gCmpCode = ''
+    foreach ($ex in $gExs) {
+        $gCmpHead += ('<th>{0}위 {1}</th>' -f $ex.rank, (Protect-Html $ex.name))
+        $gCmpCode += ('<td><b>{0}</b></td>' -f (Protect-Html $ex.referral.code))
+    }
+
+    $gCompare = @"
+        <div class="g-table-wrap g-compare">
+          <table class="g-table">
+            <thead><tr><th>구분</th>$gCmpHead</tr></thead>
+            <tbody>
+$(New-CompareRow -Label '현물 수수료' -Key 'spot' -NoteKey 'spotNote')
+$(New-CompareRow -Label '선물 수수료' -Key 'futures' -NoteKey 'futuresNote')
+$(New-CompareRow -Label '코인 입금' -Key 'deposit')
+$(New-CompareRow -Label '코인 출금' -Key 'withdraw')
+              <tr><td>가입 코드</td>$gCmpCode</tr>
+            </tbody>
+          </table>
+        </div>
+"@
+
+    # ---------------------------------------------------------
+    #  페이지 한 장을 만들어 파일로 씁니다 (허브·가이드 공용)
+    # ---------------------------------------------------------
     function Write-GuidePage {
-        param([string]$File, [string]$Title, [string]$Desc, [string]$Fragment, [string]$Current, [string]$NextHtml = '')
+        param(
+            [string]$OutDir, [string]$Dir, [string]$File,
+            [string]$Title, [string]$Desc, [string]$Fragment,
+            [string]$Badge, [string]$TocLabel, [string]$SideNote,
+            [string]$TocHtml, [string]$NavLinks, [string]$Crumb,
+            [string]$RefLink, [string]$CtaLabel,
+            [string]$Accent, [string]$AccentSoft,
+            [string]$Kind, $Crumbs = @(), [string]$NextHtml = ''
+        )
 
         $html = $gTpl
+
         $canonical = ''
         if ($baseUrl) {
-            $canonical = '<link rel="canonical" href="{0}/{1}/{2}.html" />' -f $baseUrl, $gCfg.section.dir, $File
+            $canonical = '<link rel="canonical" href="{0}/{1}/{2}.html" />' -f $baseUrl, $Dir, $File
         }
 
-        $body = $Fragment.Replace('{{CTA_CARD}}', $ctaCard).Replace('{{CARDS}}', $cardsHtml) + $NextHtml
-
-        $html = $html.Replace('{{TITLE}}',       (Protect-Html $Title))
-        $html = $html.Replace('{{DESCRIPTION}}', (Protect-Html $Desc))
         $gOgImage = ''
         if ($baseUrl) {
             $gOgImage = @'
@@ -1212,76 +1350,187 @@ if (Test-Path $guideDir) {
 '@ -f $baseUrl
         }
 
-        # 가이드 페이지의 구조화 데이터 — 이건 우리가 직접 쓴 글입니다
+        # 구조화 데이터 — 가이드는 우리가 직접 쓴 글입니다
         $gLd = ''
         if ($baseUrl) {
-            $gUrl = '{0}/{1}/{2}.html' -f $baseUrl, $gCfg.section.dir, $File
-            $gCrumbs = @(
-                @{ name = $siteName; url = "$baseUrl/" },
-                @{ name = $gCfg.section.name; url = ('{0}/{1}/index.html' -f $baseUrl, $gCfg.section.dir) }
-            )
-            if ($File -ne 'index') { $gCrumbs += @{ name = $Title; url = $gUrl } }
-            $gLd = New-JsonLd -Kind $(if ($File -eq 'index') { 'guideIndex' } else { 'guide' }) `
-                     -Url $gUrl -Headline $Title -Description $Desc -Crumbs $gCrumbs
+            $gUrl = '{0}/{1}/{2}.html' -f $baseUrl, $Dir, $File
+            $gLd = New-JsonLd -Kind $Kind -Url $gUrl -Headline $Title -Description $Desc -Crumbs $Crumbs
         }
 
-        $html = $html.Replace('{{CANONICAL}}',   $canonical)
-        $html = $html.Replace('{{JSONLD}}',      $gLd)
-        $html = $html.Replace('{{OG_IMAGE}}',    $gOgImage)
-        $html = $html.Replace('{{SITE_NAME}}',   (Protect-Html $siteName))
-        $html = $html.Replace('{{REF_LINK}}',    (Protect-Html $refLink))
-        $html = $html.Replace('{{CTA_LABEL}}',   (Protect-Html $ctaLabel))
-        $html = $html.Replace('{{NAV}}',         (New-GuideNav $Current))
-        $html = $html.Replace('{{CONTENT}}',     $body)
-        $html = $html.Replace('{{UPDATED}}',     $updatedLabel)
-        $html = $html.Replace('{{YEAR}}',        $nowUtc.AddHours(9).Year.ToString())
+        # 거래소마다 강조색이 다릅니다 (guide.css 의 --g-gold 를 덮어씁니다)
+        $accentStyle = ''
+        if ($Accent) { $accentStyle = ' style="--g-gold:{0};--g-gold-soft:{1}"' -f $Accent, $AccentSoft }
 
-        [System.IO.File]::WriteAllText((Join-Path $gOut ($File + '.html')), $html, (New-Object System.Text.UTF8Encoding($false)))
+        $html = $html.Replace('{{TITLE}}',        (Protect-Html $Title))
+        $html = $html.Replace('{{DESCRIPTION}}',  (Protect-Html $Desc))
+        $html = $html.Replace('{{CANONICAL}}',    $canonical)
+        $html = $html.Replace('{{JSONLD}}',       $gLd)
+        $html = $html.Replace('{{OG_IMAGE}}',     $gOgImage)
+        $html = $html.Replace('{{ACCENT_STYLE}}', $accentStyle)
+        $html = $html.Replace('{{SITE_NAME}}',    (Protect-Html $siteName))
+        $html = $html.Replace('{{HOME_HREF}}',    '../index.html')
+        $html = $html.Replace('{{BADGE}}',        (Protect-Html $Badge))
+        $html = $html.Replace('{{TOC_LABEL}}',    (Protect-Html $TocLabel))
+        $html = $html.Replace('{{SIDE_NOTE}}',    $SideNote)
+        $html = $html.Replace('{{NAV_LINKS}}',    $NavLinks)
+        $html = $html.Replace('{{CRUMB}}',        $Crumb)
+        $html = $html.Replace('{{REF_LINK}}',     (Protect-Html $RefLink))
+        $html = $html.Replace('{{CTA_LABEL}}',    (Protect-Html $CtaLabel))
+        $html = $html.Replace('{{NAV}}',          $TocHtml)
+        $html = $html.Replace('{{CONTENT}}',      ($Fragment + $NextHtml))
+        $html = $html.Replace('{{UPDATED}}',      $updatedLabel)
+        $html = $html.Replace('{{YEAR}}',         $nowUtc.AddHours(9).Year.ToString())
+
+        [System.IO.File]::WriteAllText((Join-Path $OutDir ($File + '.html')), $html, (New-Object System.Text.UTF8Encoding($false)))
     }
 
-    # 가이드 홈
-    # 탭 이름(=검색 결과 제목)은 guide.json 의 pageTitle 을 씁니다.
-    # 비어 있으면 "바이낸스 가이드 | 비트뉴스" 처럼 자동으로 만듭니다.
-    $gHomeTitle = $gCfg.section.pageTitle
-    if ([string]::IsNullOrWhiteSpace($gHomeTitle)) {
-        $gHomeTitle = '{0} | {1}' -f $gCfg.section.name, $siteName
-    }
-    $idxFrag = Get-Content (Join-Path (Join-Path $guideDir 'pages') 'index.html') -Raw -Encoding UTF8
-    Write-GuidePage -File 'index' -Title $gHomeTitle `
-                    -Desc $gCfg.section.description -Fragment $idxFrag -Current ''
-    $guideUrls += 'index'
+    # ---------------------------------------------------------
+    #  허브 (/exchange/index.html)
+    # ---------------------------------------------------------
+    $gHubOut = Join-Path $outPath $gHub.dir
+    New-Item -ItemType Directory -Path $gHubOut -Force | Out-Null
+    Copy-Item $gCssSrc -Destination $gHubOut -Force
+    Copy-Item $gJsSrc  -Destination $gHubOut -Force
 
-    # 각 가이드
-    for ($gi = 0; $gi -lt $gPages.Count; $gi++) {
-        $pg = $gPages[$gi]
-        $fragPath = Join-Path (Join-Path $guideDir 'pages') ($pg.file + '.html')
-        if (-not (Test-Path $fragPath)) {
-            Write-Host ("  가이드 본문 없음: {0}" -f $pg.file) -ForegroundColor DarkYellow
+    $hubFrag = Get-Content (Join-Path $guideDir 'hub.html') -Raw -Encoding UTF8
+    $hubFrag = $hubFrag.Replace('{{RANK_NOTE}}', $gRankNote)
+    $hubFrag = $hubFrag.Replace('{{RANK_CARDS}}', $gRankHtml)
+    $hubFrag = $hubFrag.Replace('{{COMPARE_TABLE}}', $gCompare)
+
+    $hubTocRows = @()
+    $hubNavRows = @()
+    foreach ($ex in $gExs) {
+        $hubTocRows += ('          <li><a href="../{0}/index.html"><span class="g-toc-num">{1}위</span>{2}</a></li>' -f `
+                         $ex.dir, $ex.rank, (Protect-Html $ex.name))
+        $hubNavRows += ('        <a class="g-nav-link" href="../{0}/index.html">{1}</a>' -f `
+                         $ex.dir, (Protect-Html $ex.name))
+    }
+
+    $gTop = $gExs[0]
+    $hubTitle = $gHub.pageTitle
+    if ([string]::IsNullOrWhiteSpace($hubTitle)) { $hubTitle = '{0} | {1}' -f $gHub.name, $siteName }
+
+    $hubCrumbs = @(
+        @{ name = $siteName;  url = "$baseUrl/" },
+        @{ name = $gHub.name; url = ('{0}/{1}/index.html' -f $baseUrl, $gHub.dir) }
+    )
+
+    Write-GuidePage -OutDir $gHubOut -Dir $gHub.dir -File 'index' `
+        -Title $hubTitle -Desc $gHub.description -Fragment $hubFrag `
+        -Badge $gHub.name -TocLabel '거래소 목록' `
+        -SideNote '순위는 이 사이트가 정한 소개 순서입니다. 거래소 이름을 누르면 가이드 6편으로 갑니다.' `
+        -TocHtml ($hubTocRows -join "`n") -NavLinks ($hubNavRows -join "`n") `
+        -Crumb ('<a href="../index.html">홈</a> / {0}' -f (Protect-Html $gHub.name)) `
+        -RefLink $gTop.referral.link -CtaLabel ('{0}위 {1} 가입하기' -f $gTop.rank, $gTop.name) `
+        -Accent $gTop.accent -AccentSoft $gTop.accentSoft `
+        -Kind 'guideIndex' -Crumbs $hubCrumbs
+
+    $guideUrls += @{ dir = $gHub.dir; file = 'index' }
+
+    # ---------------------------------------------------------
+    #  거래소별 가이드
+    # ---------------------------------------------------------
+    foreach ($ex in $gExs) {
+        $exSrc = Join-Path $guideDir $ex.id
+        if (-not (Test-Path $exSrc)) {
+            Write-Host ("  거래소 폴더 없음: guide\{0}" -f $ex.id) -ForegroundColor DarkYellow
             continue
         }
-        $frag = Get-Content $fragPath -Raw -Encoding UTF8
 
-        # 이전 / 다음 가이드 링크
-        $navLinks = @()
-        if ($gi -gt 0) {
-            $prevPg = $gPages[$gi - 1]
-            $navLinks += ('<a href="{0}.html"><span>← 이전</span>{1}</a>' -f $prevPg.file, (Protect-Html $prevPg.title))
-        }
-        if ($gi -lt $gPages.Count - 1) {
-            $nextPg = $gPages[$gi + 1]
-            $navLinks += ('<a href="{0}.html" style="text-align:right"><span>다음 →</span>{1}</a>' -f $nextPg.file, (Protect-Html $nextPg.title))
-        }
-        $nextHtml = ''
-        if ($navLinks.Count -gt 0) {
-            $nextHtml = "`n      <nav class=`"g-next`">`n        " + ($navLinks -join "`n        ") + "`n      </nav>"
-        }
+        $exOut = Join-Path $outPath $ex.dir
+        New-Item -ItemType Directory -Path $exOut -Force | Out-Null
+        Copy-Item $gCssSrc -Destination $exOut -Force
+        Copy-Item $gJsSrc  -Destination $exOut -Force
 
-        Write-GuidePage -File $pg.file -Title ('{0} | {1}' -f $pg.title, $siteName) `
-                        -Desc $pg.desc -Fragment $frag -Current $pg.file -NextHtml $nextHtml
-        $guideUrls += $pg.file
+        $ctaCard   = New-CtaCard -Ex $ex
+        $cardsHtml = New-GuideCards -Ex $ex
+        $otherHtml = New-OtherExchanges -CurrentId $ex.id
+
+        $exNavRows = @()
+        $exNavRows += ('        <a class="g-nav-link" href="../{0}/index.html">{1}</a>' -f $gHub.dir, (Protect-Html $gHub.name))
+        $exNavRows += ('        <a class="g-nav-link" href="index.html">{0} 홈</a>' -f (Protect-Html $ex.name))
+        $exNavLinks = ($exNavRows -join "`n")
+
+        $exCrumbHome = '<a href="../index.html">홈</a> / <a href="../{0}/index.html">{1}</a> / {2}' -f `
+                        $gHub.dir, (Protect-Html $gHub.name), (Protect-Html $ex.name)
+        $exCrumbPage = '<a href="../index.html">홈</a> / <a href="../{0}/index.html">{1}</a> / <a href="index.html">{2}</a>' -f `
+                        $gHub.dir, (Protect-Html $gHub.name), (Protect-Html $ex.name)
+
+        $exPages = @($ex.pages)
+
+        # 거래소 가이드 홈
+        $exIdxFrag = Get-Content (Join-Path $exSrc 'index.html') -Raw -Encoding UTF8
+        $exIdxFrag = $exIdxFrag.Replace('{{CTA_CARD}}', $ctaCard)
+        $exIdxFrag = $exIdxFrag.Replace('{{CARDS}}', $cardsHtml)
+        $exIdxFrag = $exIdxFrag.Replace('{{OTHER_EXCHANGES}}', $otherHtml)
+
+        $exTitle = $ex.pageTitle
+        if ([string]::IsNullOrWhiteSpace($exTitle)) { $exTitle = '{0} 가이드 | {1}' -f $ex.name, $siteName }
+
+        $exIdxCrumbs = @(
+            @{ name = $siteName;  url = "$baseUrl/" },
+            @{ name = $gHub.name; url = ('{0}/{1}/index.html' -f $baseUrl, $gHub.dir) },
+            @{ name = ('{0} 가이드' -f $ex.name); url = ('{0}/{1}/index.html' -f $baseUrl, $ex.dir) }
+        )
+
+        Write-GuidePage -OutDir $exOut -Dir $ex.dir -File 'index' `
+            -Title $exTitle -Desc $ex.description -Fragment $exIdxFrag `
+            -Badge $ex.name -TocLabel '가이드 목차' -SideNote $gSideNote `
+            -TocHtml (New-GuideToc -Ex $ex -Current '') -NavLinks $exNavLinks `
+            -Crumb $exCrumbHome `
+            -RefLink $ex.referral.link -CtaLabel $ex.referral.ctaLabel `
+            -Accent $ex.accent -AccentSoft $ex.accentSoft `
+            -Kind 'guideIndex' -Crumbs $exIdxCrumbs
+
+        $guideUrls += @{ dir = $ex.dir; file = 'index' }
+
+        # 각 가이드 6장
+        for ($gi = 0; $gi -lt $exPages.Count; $gi++) {
+            $pg = $exPages[$gi]
+            $fragPath = Join-Path $exSrc ($pg.file + '.html')
+            if (-not (Test-Path $fragPath)) {
+                Write-Host ("  가이드 본문 없음: guide\{0}\{1}" -f $ex.id, $pg.file) -ForegroundColor DarkYellow
+                continue
+            }
+            $frag = (Get-Content $fragPath -Raw -Encoding UTF8).Replace('{{CTA_CARD}}', $ctaCard)
+
+            # 이전 / 다음 가이드 링크
+            $stepLinks = @()
+            if ($gi -gt 0) {
+                $prevPg = $exPages[$gi - 1]
+                $stepLinks += ('<a href="{0}.html"><span>← 이전</span>{1}</a>' -f $prevPg.file, (Protect-Html $prevPg.title))
+            }
+            if ($gi -lt $exPages.Count - 1) {
+                $nextPg = $exPages[$gi + 1]
+                $stepLinks += ('<a href="{0}.html" style="text-align:right"><span>다음 →</span>{1}</a>' -f $nextPg.file, (Protect-Html $nextPg.title))
+            }
+            $nextHtml = ''
+            if ($stepLinks.Count -gt 0) {
+                $nextHtml = "`n      <nav class=`"g-next`">`n        " + ($stepLinks -join "`n        ") + "`n      </nav>"
+            }
+
+            $pgCrumbs = @(
+                @{ name = $siteName;  url = "$baseUrl/" },
+                @{ name = $gHub.name; url = ('{0}/{1}/index.html' -f $baseUrl, $gHub.dir) },
+                @{ name = ('{0} 가이드' -f $ex.name); url = ('{0}/{1}/index.html' -f $baseUrl, $ex.dir) },
+                @{ name = $pg.title;  url = ('{0}/{1}/{2}.html' -f $baseUrl, $ex.dir, $pg.file) }
+            )
+
+            Write-GuidePage -OutDir $exOut -Dir $ex.dir -File $pg.file `
+                -Title ('{0} | {1}' -f $pg.title, $siteName) -Desc $pg.desc -Fragment $frag `
+                -Badge $ex.name -TocLabel '가이드 목차' -SideNote $gSideNote `
+                -TocHtml (New-GuideToc -Ex $ex -Current $pg.file) -NavLinks $exNavLinks `
+                -Crumb $exCrumbPage `
+                -RefLink $ex.referral.link -CtaLabel $ex.referral.ctaLabel `
+                -Accent $ex.accent -AccentSoft $ex.accentSoft `
+                -Kind 'guide' -Crumbs $pgCrumbs -NextHtml $nextHtml
+
+            $guideUrls += @{ dir = $ex.dir; file = $pg.file }
+        }
     }
 
-    Write-Host ("  가이드 페이지 {0}개 생성 (/{1}/)" -f $guideUrls.Count, $gCfg.section.dir)
+    Write-Host ("  코인 거래소 페이지 {0}개 생성 (거래소 {1}곳 + 순위 허브 /{2}/)" -f `
+                 $guideUrls.Count, $gExs.Count, $gHub.dir)
 }
 
 # =========================================================
@@ -1315,9 +1564,10 @@ if ($baseUrl) {
         $lm = (ConvertTo-Utc $a.published).ToString('yyyy-MM-dd')
         [void]$urls.AppendLine("  <url><loc>$baseUrl/news/$($a.id).html</loc><lastmod>$lm</lastmod></url>")
     }
-    # 가이드 페이지도 검색엔진에 알립니다 (뉴스와 달리 잘 바뀌지 않으므로 monthly)
+    # 거래소 허브와 가이드 페이지도 검색엔진에 알립니다 (뉴스와 달리 잘 바뀌지 않으므로 monthly)
+    # $guideUrls 는 @{ dir = 'binance-guide'; file = '01-signup' } 꼴입니다
     foreach ($gu in $guideUrls) {
-        [void]$urls.AppendLine("  <url><loc>$baseUrl/binance-guide/$gu.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>")
+        [void]$urls.AppendLine("  <url><loc>$baseUrl/$($gu.dir)/$($gu.file).html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>")
     }
     # 주간 정리는 우리가 직접 쓴 글이라 우선순위를 높게 둡니다
     foreach ($wu in $weeklyUrls) {

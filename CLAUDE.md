@@ -1,7 +1,8 @@
 # 비트뉴스 (newhome)
 
 비트코인 뉴스를 언론사 RSS에서 자동 수집해 정적 HTML로 만드는 사이트.
-뒤에 `/binance-guide/` 리퍼럴 랜딩 페이지 세트가 붙어 있다.
+뒤에 **코인 거래소 리퍼럴 섹션**이 붙어 있다 — 순위 허브 `/exchange/` 한 장 +
+거래소별 가이드 7장씩(`/binance-guide/` `/bitget-guide/` `/bybit-guide/`).
 
 **이 폴더는 git 저장소가 아니다.** 세션 간 인수인계는 `worklog/YYYY-MM-DD.md` 로 한다.
 **새 세션을 시작하면 `worklog/` 의 가장 최근 파일부터 읽을 것.** 거기에 무엇을 왜 했는지,
@@ -42,7 +43,7 @@
 | `templates/base.html` | 뉴스 페이지 공통 껍데기 |
 | `assets/css/style.css` | 뉴스 쪽 스타일 (색은 맨 위 `:root`) |
 | `assets/js/main.js` | 슬라이드·탭·트렌딩 롤링 |
-| `guide/` | 바이낸스 가이드 소스 (`guide.json` + `pages/*.html`) |
+| `guide/` | 코인 거래소 섹션 소스. `guide.json`(순위·코드·목차) + `hub.html` + `<거래소 id>/*.html` |
 | `weekly/` | 주간 정리 소스 (`weekly.json` + `posts/*.html`). `.work/` 는 임시 글감 |
 | `data/articles.json` | **누적 기사. 지우면 과거 기사 페이지 전부 소멸** (상한은 `build.ps1` 의 `$KeepMax`) |
 | `dist/` | 생성 결과물. **직접 고치지 말 것** (매 빌드마다 삭제 후 재생성) |
@@ -52,6 +53,40 @@
 
 페이지 제목(브라우저 탭 = 구글 검색 결과의 파란 제목)은 한글 30자를 넘으면 잘린다.
 가이드 첫 화면 제목은 `guide/guide.json` 의 `pageTitle` 에 있다.
+
+---
+
+## 코인 거래소 섹션 (2026-08-21 개편)
+
+거래소 **한 곳이 아니라 여러 곳**을 다룬다. 전부 `guide/guide.json` 하나로 굴러간다.
+
+```
+dist/exchange/index.html      ← 순위 허브   (원본: guide/hub.html)
+dist/binance-guide/*.html     ← 1위 바이낸스 7장 (원본: guide/binance/)
+dist/bitget-guide/*.html      ← 2위 비트겟   7장 (원본: guide/bitget/)
+dist/bybit-guide/*.html       ← 3위 바이비트 7장 (원본: guide/bybit/)
+```
+
+- **순위는 `guide.json` 의 `exchanges` 배열 순서 그대로다.** 순서를 바꾸면 배지·표·목록이 전부 따라 바뀐다.
+- 거래소를 추가하려면 `guide/<새 id>/` 에 본문 조각 7개(`index` + 6장)를 넣고
+  `exchanges` 에 한 칸 추가하면 된다. **`build.ps1` 은 고칠 필요 없다.**
+- **`dir` 값(`binance-guide` 등)을 바꾸면 이미 색인된 주소가 깨진다.** 함부로 바꾸지 말 것.
+  주간정리 글도 `../binance-guide/05-futures.html` 로 링크하고 있다.
+- 거래소마다 강조색이 다르다. `accent`/`accentSoft` 를 `--g-gold` 에 덮어쓰는 방식이라
+  `guide.css` 는 한 벌만 있으면 된다. 순위 배지 색(금·은·동)은 이와 별개로 CSS 에 고정돼 있다.
+- 본문 조각 안에서 쓸 수 있는 자리표시자: `{{CTA_CARD}}`(전체), `{{CARDS}}`·`{{OTHER_EXCHANGES}}`(가이드 홈만),
+  `{{RANK_NOTE}}`·`{{RANK_CARDS}}`·`{{COMPARE_TABLE}}`(허브만).
+
+### 순위를 다룰 때 지킬 것 ★
+
+이건 **제휴 링크가 걸린 금융 콘텐츠**다. 순위 자체가 광고로 읽힐 수 있다.
+
+- 순위는 **"이 사이트가 정한 소개 순서"** 라고 매번 밝힌다. `guide.json` 의 `rankNote` 와
+  `template.html` 의 제휴 고지에 들어 있다. **이 문구를 빼지 말 것.**
+- **거래량 순위·점유율 같은 확인 안 된 수치를 순위 근거로 쓰지 않는다.**
+- 수수료 숫자는 사용자가 준 PDF나 공식 문서에서 확인한 것만 적는다.
+  바이낸스 선물 요율을 비교표에 **일부러 단일 수치로 적지 않았다** — 공식 안내가
+  상품·등급별로 나뉘어 있어 한 숫자로 옮기면 틀린 값이 된다. 그 자리를 숫자로 채우지 말 것.
 
 ---
 

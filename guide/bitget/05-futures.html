@@ -1,0 +1,111 @@
+      <h1 class="g-title">비트겟 선물거래</h1>
+      <p class="g-subtitle">USDT-M 자금 이동부터 롱숏·레버리지·청산까지</p>
+
+      <div class="g-intro">
+        <h2>먼저 알아둘 것</h2>
+        <p>
+          선물은 현물과 달리 <strong>레버리지와 강제청산</strong>이 있습니다.
+          작은 가격 변동도 높은 레버리지에서는 큰 손실로 이어질 수 있고,
+          반대 방향으로 크게 움직이면 <strong>투입한 증거금을 모두 잃을 수 있습니다.</strong>
+          처음에는 소액·낮은 레버리지로 구조를 익히는 것을 권합니다.
+        </p>
+      </div>
+
+      {{CTA_CARD}}
+
+      <section class="g-sec">
+        <h2>USDT-M 선물 거래 흐름</h2>
+        <ol class="g-steps">
+          <li>
+            <strong>자금 이동</strong>
+            <p>Assets → Transfer에서 Spot 계정의 USDT를 <strong>USDT-M Futures 계정</strong>으로 옮깁니다.</p>
+          </li>
+          <li>
+            <strong>거래쌍 선택</strong>
+            <p>Futures → USDT-M Futures로 들어가 BTCUSDT 등 거래할 종목을 선택합니다.</p>
+          </li>
+          <li>
+            <strong>마진 모드 선택</strong>
+            <p>
+              <strong>Cross</strong>는 계정의 가용 마진을 폭넓게 공유하고,
+              <strong>Isolated</strong>는 해당 포지션에 배정된 마진 중심으로 위험을 분리합니다.
+              처음에는 손실 범위가 눈에 보이는 Isolated가 이해하기 쉽습니다.
+            </p>
+          </li>
+          <li>
+            <strong>레버리지 설정</strong>
+            <p>
+              레버리지가 높을수록 같은 가격 변동에서 <strong>수익과 손실이 모두 크게 확대</strong>되고
+              청산 위험도 커집니다. 레버리지는 수익 배수가 아니라 위험 배수라고 생각하는 편이 안전합니다.
+            </p>
+          </li>
+          <li>
+            <strong>주문 방식과 수량 입력</strong>
+            <p>Market(시장가) 또는 Limit(지정가) 주문을 선택하고 수량을 입력합니다.</p>
+          </li>
+          <li>
+            <strong>롱 또는 숏 진입</strong>
+            <p>상승을 예상하면 <strong>Open Long</strong>, 하락을 예상하면 <strong>Open Short</strong>를 선택합니다.</p>
+          </li>
+          <li>
+            <strong>포지션 관리</strong>
+            <p>
+              Positions에서 진입가, 미실현 손익, 마진, <strong>예상 청산가</strong>를 확인하고
+              TP/SL(익절·손절)을 설정합니다.
+            </p>
+          </li>
+          <li>
+            <strong>포지션 종료</strong>
+            <p>Close로 포지션을 정리하고 실현 손익과 거래 수수료를 확인합니다.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="g-sec">
+        <h2>Cross와 Isolated 차이</h2>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead><tr><th>구분</th><th>마진 사용</th><th>성격</th></tr></thead>
+            <tbody>
+              <tr><td>Cross(교차)</td><td>계정의 가용 마진을 폭넓게 공유</td><td>청산이 늦게 올 수 있으나 손실이 계정 전체로 번질 수 있음</td></tr>
+              <tr><td>Isolated(격리)</td><td>해당 포지션에 배정된 마진 중심</td><td>손실 범위가 그 포지션에 한정되어 위험을 분리하기 쉬움</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>선물 거래에서 꼭 알아야 할 비용</h2>
+        <ul class="g-list">
+          <li>일반 비VIP 기준 <strong>Maker 0.02% / Taker 0.06%</strong>입니다.</li>
+          <li>진입과 종료 시 거래 수수료가 각각 발생할 수 있습니다.</li>
+          <li>무기한 선물은 별도로 <strong>펀딩비</strong>가 발생할 수 있습니다.</li>
+          <li>펀딩비는 보통 <strong>8시간 간격</strong>이지만 거래쌍별로 다를 수 있습니다.</li>
+        </ul>
+        <p class="g-side-note">자세한 내용은 <a href="04-fees.html">비트겟 수수료</a>에 정리해두었습니다.</p>
+      </section>
+
+      <section class="g-sec">
+        <h2>핵심 위험</h2>
+        <div class="g-note g-note--warn">
+          <strong>선물은 원금을 모두 잃을 수 있는 거래입니다.</strong>
+          레버리지가 높으면 몇 퍼센트의 가격 변동만으로도 강제청산될 수 있습니다.
+          진입 전에 <strong>예상 청산가</strong>와 <strong>손절 기준</strong>을 먼저 정하고,
+          잃어도 생활에 지장이 없는 금액으로만 시작하세요.
+        </div>
+        <ul class="g-list">
+          <li>청산가는 레버리지·마진 모드·추가 증거금에 따라 계속 바뀝니다.</li>
+          <li>손절(SL)을 걸지 않으면 자는 동안에도 포지션이 정리될 수 있습니다.</li>
+          <li>수수료와 펀딩비가 누적되면 방향이 맞아도 손실이 날 수 있습니다.</li>
+          <li>이 페이지는 투자 권유가 아니며, 선물거래를 권하는 내용이 아닙니다.</li>
+        </ul>
+      </section>
+
+      <section class="g-sec">
+        <h2>공식 안내 참고</h2>
+        <ul class="g-links">
+          <li><a href="https://www.bitget.com/support/articles/12560603808135" target="_blank" rel="noopener nofollow">Bitget Beginner&rsquo;s Guide — How to Trade Futures?</a></li>
+          <li><a href="https://www.bitget.com/support/articles/12560603809455" target="_blank" rel="noopener nofollow">Key Futures Trading Terms and How to Use Them</a></li>
+          <li><a href="https://www.bitget.com/support/articles/12560603807893" target="_blank" rel="noopener nofollow">Bitget Beginner&rsquo;s Guide — What Are Futures?</a></li>
+        </ul>
+      </section>

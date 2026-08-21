@@ -47,7 +47,9 @@
 - 사실 나열이 아니라 **"그래서 이게 왜 중요한가"** 를 짚어주는 글입니다.
 - 담백하고 차분한 문체.
 - 초보자가 걸릴 만한 용어(청산, 펀딩비, 시드 등)는 `wk-note` 상자로 따로 설명하십시오.
-- 관련 내용이 `binance-guide/` 에 있으면 링크하십시오. (예: `../binance-guide/05-futures.html`)
+- 관련 내용이 거래소 가이드에 있으면 링크하십시오.
+  (예: `../binance-guide/05-futures.html`, `../bitget-guide/04-fees.html`, `../exchange/index.html`)
+  거래소 폴더는 `binance-guide` / `bitget-guide` / `bybit-guide` 세 개이고 파일명은 셋 다 같습니다.
 
 ---
 

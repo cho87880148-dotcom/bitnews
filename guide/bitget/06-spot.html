@@ -1,0 +1,117 @@
+      <h1 class="g-title">비트겟 현물거래</h1>
+      <p class="g-subtitle">거래쌍 선택·시장가와 지정가 차이·미체결 주문 확인</p>
+
+      <div class="g-intro">
+        <h2>현물 거래란?</h2>
+        <p>
+          현물은 실제 코인을 직접 매수·매도하는 방식입니다.
+          일반 현물 거래는 선물처럼 <strong>포지션 청산가나 펀딩비가 없으며</strong>,
+          매수한 코인은 Spot 자산으로 그대로 보유됩니다.
+          단, 별도의 <strong>Spot Margin</strong> 상품은 레버리지 구조가 있으므로 일반 현물과 구분해야 합니다.
+        </p>
+      </div>
+
+      {{CTA_CARD}}
+
+      <section class="g-sec">
+        <h2>현물 거래 순서</h2>
+        <ol class="g-steps">
+          <li>
+            <strong>Trade → Spot</strong>
+            <p>비트겟에서 현물 거래 화면으로 이동합니다.</p>
+          </li>
+          <li>
+            <strong>거래쌍 선택</strong>
+            <p>
+              검색창에서 거래쌍을 선택합니다. 예: <strong>BTC/USDT</strong>.
+              앞이 사려는 코인, 뒤가 결제에 쓰는 자산입니다.
+            </p>
+          </li>
+          <li>
+            <strong>주문 방식 선택</strong>
+            <p>
+              <strong>Market(시장가)</strong>은 현재 가능한 가격으로 빠르게 체결되고,
+              <strong>Limit(지정가)</strong>은 원하는 가격을 지정해 시장이 그 가격에 도달할 때 체결됩니다.
+            </p>
+          </li>
+          <li>
+            <strong>수량·금액 입력 후 주문</strong>
+            <p>매수 또는 매도할 수량·금액을 입력하고 Buy 또는 Sell을 누릅니다.</p>
+          </li>
+          <li>
+            <strong>주문 상태 확인</strong>
+            <p>
+              Limit 주문은 <strong>Open Orders</strong>에서 대기 상태를 확인하고,
+              체결·취소 내역은 <strong>Order History</strong>에서 확인합니다.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="g-sec">
+        <h2>시장가와 지정가</h2>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead><tr><th>구분</th><th>장점</th><th>주의</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Market(시장가)</td>
+                <td>바로 체결됨</td>
+                <td>변동성이 큰 구간에서는 예상 가격과 실제 평균 체결 가격이 달라지는 슬리피지가 생길 수 있음</td>
+              </tr>
+              <tr>
+                <td>Limit(지정가)</td>
+                <td>가격을 통제하기 쉬움</td>
+                <td>시장이 지정 가격에 도달하지 않으면 체결되지 않을 수 있음</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>수수료와 주문 시 주의점</h2>
+        <ul class="g-list">
+          <li>일반 현물 기본 수수료는 <strong>Maker 0.10% / Taker 0.10%</strong>입니다.</li>
+          <li>
+            <strong>BGB로 현물 거래 수수료를 결제하도록 설정하면 20% 할인</strong>되어
+            기본 0.08% 수준이 적용될 수 있습니다.
+          </li>
+          <li>매수와 매도에 각각 수수료가 발생할 수 있습니다.</li>
+          <li>실제 적용 요율은 계정 등급과 거래쌍에 따라 달라집니다.</li>
+        </ul>
+        <p class="g-side-note">수수료 구조는 <a href="04-fees.html">비트겟 수수료</a>에 더 자세히 정리했습니다.</p>
+      </section>
+
+      <section class="g-sec">
+        <h2>현물과 선물의 차이 한 줄 정리</h2>
+        <div class="g-note">
+          <strong>현물</strong> — 코인을 직접 사고 보유하는 거래.<br />
+          <strong>선물</strong> — 가격 방향에 포지션을 잡고 레버리지를 사용할 수 있는 파생상품 거래.<br />
+          초보자는 두 상품의 <strong>계정과 위험 구조가 다르다</strong>는 점부터 구분하는 것이 중요합니다.
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>자주 발생하는 실수</h2>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead><tr><th>실수</th><th>대처</th></tr></thead>
+            <tbody>
+              <tr><td>지정가 주문을 넣고 체결됐다고 착각</td><td>Open Orders에서 대기 중인지 먼저 확인</td></tr>
+              <tr><td>급등락 구간에서 시장가로 큰 금액 주문</td><td>슬리피지 발생 가능. 나눠서 주문하거나 지정가 사용</td></tr>
+              <tr><td>Spot Margin을 일반 현물로 착각</td><td>차입·레버리지가 있는 별도 상품이므로 계정을 구분</td></tr>
+              <tr><td>수수료를 빼지 않고 수익 계산</td><td>매수·매도 양쪽에 수수료가 붙는다는 점을 반영</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>공식 안내 참고</h2>
+        <ul class="g-links">
+          <li><a href="https://www.bitget.com/academy/bitget-spot-trading-beginner-guide-latest" target="_blank" rel="noopener nofollow">Beginner&rsquo;s Guide to Spot Trading on Bitget</a></li>
+          <li><a href="https://www.bitget.com/support/articles/12560603819490" target="_blank" rel="noopener nofollow">현물·마진·선물 거래의 차이</a></li>
+          <li><a href="https://www.bitget.com/support" target="_blank" rel="noopener nofollow">Bitget 고객지원 센터</a></li>
+        </ul>
+      </section>

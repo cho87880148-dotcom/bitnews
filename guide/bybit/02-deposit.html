@@ -1,0 +1,113 @@
+      <h1 class="g-title">바이비트 입금 방법</h1>
+      <p class="g-subtitle">네트워크 일치와 Memo/Tag 확인이 전부입니다</p>
+
+      <div class="g-intro">
+        <h2>가장 많이 사용하는 방법</h2>
+        <p>
+          일반적인 코인 입금은 외부 거래소 또는 개인지갑에서 바이비트의 입금 주소로 전송하는 <strong>온체인 방식</strong>입니다.
+          바이비트 자체 온체인 입금 수수료는 없지만,
+          <strong>보내는 쪽에서 출금·네트워크 수수료가 발생</strong>할 수 있습니다.
+        </p>
+      </div>
+
+      {{CTA_CARD}}
+
+      <section class="g-sec">
+        <h2>입금 순서</h2>
+        <ol class="g-steps">
+          <li>
+            <strong>Assets → Deposit 선택</strong>
+            <p>바이비트에서 입금 메뉴로 이동한 뒤 <strong>Crypto Deposit</strong>을 선택합니다.</p>
+          </li>
+          <li>
+            <strong>입금할 코인 선택</strong>
+            <p>USDT, BTC, ETH 등 원하는 자산을 선택합니다.</p>
+          </li>
+          <li>
+            <strong>네트워크 선택</strong>
+            <p>
+              TRC20, ERC20 등 표시되는 네트워크 중
+              <strong>보내는 거래소와 동일한 네트워크</strong>를 선택합니다.
+            </p>
+          </li>
+          <li>
+            <strong>입금 주소 복사</strong>
+            <p>
+              표시된 바이비트 입금 주소를 복사합니다.
+              <strong>XRP·XLM·TON 등 일부 자산은 Memo/Tag도 함께 확인</strong>해야 합니다.
+            </p>
+          </li>
+          <li>
+            <strong>외부 거래소에서 출금</strong>
+            <p>
+              보내는 거래소의 출금 화면에 주소와 네트워크, 필요 시 Memo/Tag를 정확히 입력한 뒤 전송합니다.
+            </p>
+          </li>
+          <li>
+            <strong>입금 반영 확인</strong>
+            <p>
+              필요한 블록체인 컨펌이 완료되면 자산이 반영됩니다.
+              기본적으로 <strong>Funding Account</strong>로 입금되며,
+              설정에 따라 UTA 등으로 자동 이동할 수 있습니다.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="g-sec">
+        <h2>입금 시 가장 중요한 3가지</h2>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead><tr><th>확인</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><td>① 코인·네트워크 일치</td><td>코인 종류와 네트워크가 양쪽에서 완전히 같아야 합니다</td></tr>
+              <tr><td>② Memo/Tag</td><td>필요한 자산은 누락하거나 잘못 입력하면 복구가 어렵거나 지연될 수 있습니다</td></tr>
+              <tr><td>③ 트래블룰</td><td>국내 거래소에서 전송하는 경우 트래블룰·출금 허용 정책 및 수취인 확인 절차가 추가될 수 있습니다</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="g-note g-note--warn">
+          <strong>처음 보내는 주소라면 소액 테스트부터 하세요.</strong>
+          네트워크나 Memo/Tag가 잘못되면 복구가 어렵습니다.
+          소액을 먼저 보내 반영을 확인한 뒤 본 전송하는 것이 가장 안전합니다.
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>자금이 어느 계정에 들어왔는지 확인</h2>
+        <p>
+          바이비트는 자산이 여러 계정으로 나뉘어 있습니다.
+          입금은 기본적으로 <strong>Funding Account</strong>로 들어오고,
+          거래를 하려면 <strong>Unified Trading Account(UTA)</strong>로 옮겨야 하는 경우가 있습니다.
+        </p>
+        <div class="g-note">
+          <strong>&ldquo;입금은 됐는데 거래 화면에 잔액이 없다&rdquo;</strong>는 대부분 이 경우입니다.
+          자산이 사라진 것이 아니라 다른 계정에 있는 것이므로
+          Assets 화면에서 계정 간 이체(Transfer)를 하면 됩니다.
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>자주 발생하는 실수</h2>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead><tr><th>실수</th><th>결과와 대처</th></tr></thead>
+            <tbody>
+              <tr><td>네트워크를 다르게 선택</td><td>복구가 어렵거나 별도 처리 필요. 전송 전 양쪽 화면을 나란히 확인</td></tr>
+              <tr><td>Memo/Tag 누락</td><td>반영 지연 또는 복구 곤란. 필요 자산인지 먼저 확인</td></tr>
+              <tr><td>거래 화면에 잔액이 안 보임</td><td>Funding 계정에 있을 수 있음. UTA로 이체</td></tr>
+              <tr><td>컨펌 전에 미반영이라고 판단</td><td>네트워크 혼잡 시 지연 가능. TxID로 진행 상태 확인</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>공식 안내 참고</h2>
+        <ul class="g-links">
+          <li><a href="https://www.bybit.com/en/help-center/article/How-to-make-a-deposit" target="_blank" rel="noopener nofollow">How to Make a Deposit on Bybit</a></li>
+          <li><a href="https://www.bybit.com/en/help-center/article/Bybit-Deposit-FAQ" target="_blank" rel="noopener nofollow">FAQ — On-Chain Crypto Deposits</a></li>
+          <li><a href="https://www.bybit.com/en-US/help-center/" target="_blank" rel="noopener nofollow">Bybit Help Center</a></li>
+        </ul>
+      </section>

@@ -1,0 +1,124 @@
+      <h1 class="g-title">바이비트 수수료</h1>
+      <p class="g-subtitle">현물 0.1%·선물 0.02/0.055%와 펀딩비, 입출금 비용</p>
+
+      <div class="g-intro">
+        <h2>핵심 요약</h2>
+        <p>
+          2026년 8월 기준, 일반 <strong>비VIP</strong> 사용자가 가장 자주 접하는 기본 수수료입니다.
+          현물은 <strong>Maker·Taker 모두 0.1000%</strong>,
+          일반 무기한·선물은 <strong>Maker 0.0200% / Taker 0.0550%</strong>가 기본값입니다.
+          실제 적용 요율은 <strong>My Fee Rate 화면</strong>이 최종 기준입니다.
+        </p>
+      </div>
+
+      {{CTA_CARD}}
+
+      <section class="g-sec">
+        <h2>기본 거래 수수료</h2>
+        <div class="g-table-wrap">
+          <table class="g-table">
+            <thead><tr><th>구분</th><th>Maker</th><th>Taker</th></tr></thead>
+            <tbody>
+              <tr><td>현물 Spot</td><td>0.1000%</td><td>0.1000%</td></tr>
+              <tr><td>일반 Perpetual / Futures</td><td>0.0200%</td><td>0.0550%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>수수료 종류 요약</h2>
+        <ol class="g-steps">
+          <li>
+            <strong>현물 거래 수수료</strong>
+            <p>
+              체결된 주문에만 부과됩니다.
+              <strong>미체결 또는 취소된 수량에는 거래 수수료가 없습니다.</strong>
+            </p>
+          </li>
+          <li>
+            <strong>선물·무기한 거래 수수료</strong>
+            <p>
+              일반 비VIP 기준 Maker 0.0200%, Taker 0.0550%가 기본값이며
+              상품·지역에 따라 달라질 수 있습니다.
+            </p>
+          </li>
+          <li>
+            <strong>펀딩비</strong>
+            <p>
+              무기한 계약은 정해진 시점에 롱·숏 보유자 사이에서 Funding Fee가 교환될 수 있습니다.
+              <strong>고정 수수료가 아니라 당시 펀딩률에 따라 달라집니다.</strong>
+            </p>
+          </li>
+          <li>
+            <strong>입금 수수료</strong>
+            <p>
+              바이비트의 일반 온체인 코인 입금 자체 수수료는 없지만,
+              보내는 거래소·네트워크에서 수수료가 발생할 수 있습니다.
+            </p>
+          </li>
+          <li>
+            <strong>출금 수수료</strong>
+            <p>
+              온체인 출금은 코인과 체인별로 정해진 수수료가 적용되며 출금 화면에서 실시간 확인할 수 있습니다.
+              <strong>바이비트 계정 간 Internal Transfer는 출금 수수료가 없습니다.</strong>
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="g-sec">
+        <h2>Maker와 Taker 차이</h2>
+        <ul class="g-list">
+          <li><strong>Maker</strong> — 호가에 남아 유동성을 추가하는 주문. 일반적으로 수수료가 낮습니다.</li>
+          <li><strong>Taker</strong> — 기존 주문을 즉시 체결해 유동성을 가져가는 주문.</li>
+        </ul>
+        <div class="g-note">
+          <strong>지정가 주문이라도 즉시 체결되면 Taker로 처리될 수 있습니다.</strong>
+          현재 호가와 겹치는 가격에 지정가를 넣으면 바로 체결되기 때문입니다.
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>현물 수수료 계산</h2>
+        <div class="g-note">
+          <strong>계산식</strong><br />
+          거래 수수료 = 체결 금액 &times; 적용 수수료율<br />
+          예: 1,000 USDT 거래에 0.1%가 적용되면 수수료는 1 USDT입니다.
+        </div>
+        <ul class="g-list">
+          <li>매수와 매도에 각각 수수료가 발생할 수 있습니다.</li>
+          <li>취소한 주문에는 거래 수수료가 붙지 않습니다.</li>
+          <li>실제 부과된 금액은 Trade History에서 확인합니다.</li>
+        </ul>
+      </section>
+
+      <section class="g-sec">
+        <h2>반드시 확인할 점</h2>
+        <ul class="g-list">
+          <li><strong>VIP 등급이 올라가면 거래 수수료가 낮아질 수 있습니다.</strong></li>
+          <li>
+            실제 적용 요율은 지역·계정·상품에 따라 다를 수 있으므로
+            <strong>My Fee Rate 화면이 최종 기준</strong>입니다.
+          </li>
+          <li>
+            <strong>Pre-Market Perpetual, Innovation Zone</strong> 등 일부 특별 상품은
+            일반 선물 수수료와 다를 수 있습니다.
+          </li>
+        </ul>
+
+        <div class="g-note g-note--warn">
+          <strong>수수료보다 청산이 먼저입니다.</strong>
+          선물에서 실제로 자산을 잃는 주된 원인은 수수료가 아니라 강제청산입니다.
+          비용 계산에 앞서 <a href="05-futures.html">선물거래 위험</a>을 먼저 확인하세요.
+        </div>
+      </section>
+
+      <section class="g-sec">
+        <h2>공식 안내 참고</h2>
+        <ul class="g-links">
+          <li><a href="https://www.bybit.com/en/help-center/article/Bybit-Fees-You-Need-to-Know" target="_blank" rel="noopener nofollow">Bybit&rsquo;s Fees That You Need to Know</a></li>
+          <li><a href="https://www.bybit.com/en/help-center/article/Trading-Fee-Structure" target="_blank" rel="noopener nofollow">Bybit Trading Fee Structure</a></li>
+          <li><a href="https://www.bybit.com/en-US/help-center/s/article/Bybit-Spot-Fees-Explained" target="_blank" rel="noopener nofollow">Spot Trading: Fees Explained</a></li>
+        </ul>
+      </section>

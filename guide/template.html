@@ -21,16 +21,16 @@
 
   <link rel="stylesheet" href="guide.css" />
 </head>
-<body class="guide-body">
+<body class="guide-body"{{ACCENT_STYLE}}>
 
   <header class="g-header">
     <div class="g-header-inner">
-      <a class="g-logo" href="../index.html">
-        {{SITE_NAME}}<span class="g-badge">GUIDE</span>
+      <a class="g-logo" href="{{HOME_HREF}}">
+        {{SITE_NAME}}<span class="g-badge">{{BADGE}}</span>
       </a>
       <nav class="g-nav">
-        <button class="g-nav-toggle" data-toc-toggle>가이드 목차</button>
-        <a class="g-nav-link" href="index.html">가이드 홈</a>
+        <button class="g-nav-toggle" data-toc-toggle>{{TOC_LABEL}}</button>
+{{NAV_LINKS}}
         <a class="g-cta-top" href="{{REF_LINK}}" target="_blank" rel="noopener nofollow sponsored">{{CTA_LABEL}}</a>
       </nav>
     </div>
@@ -45,12 +45,12 @@
         <ul class="g-toc">
 {{NAV}}
         </ul>
-        <p class="g-side-note">순서대로 읽으면 가입 → 입금 → 거래 흐름이 이어집니다.</p>
+        <p class="g-side-note">{{SIDE_NOTE}}</p>
       </div>
     </aside>
 
     <main class="g-main">
-      <p class="g-crumb"><a href="../index.html">홈</a> / <a href="index.html">가이드</a></p>
+      <p class="g-crumb">{{CRUMB}}</p>
 {{CONTENT}}
 
       <!-- 모든 가이드 아래에 공통으로 붙는 고지 -->
@@ -60,6 +60,7 @@
           이 페이지의 가입 링크는 제휴 링크입니다. 링크를 통해 가입하거나 거래하면 게시자에게 수익이 발생할 수 있습니다.
           수수료 할인·페이백·리워드는 계정, 지역, 거래 상품과 프로모션 조건에 따라 달라질 수 있으므로
           <strong>가입 화면에서 실제 내용을 직접 확인</strong>하세요.
+          거래소 소개 순서는 이 사이트가 정한 것이며 공신력 있는 기관의 평가나 순위가 아닙니다.
         </p>
         <h2>투자 위험 안내</h2>
         <p>
@@ -76,7 +77,7 @@
 
   <footer class="g-footer">
     <div class="g-footer-inner">
-      <p>© {{YEAR}} {{SITE_NAME}} · <a href="../index.html">비트코인 뉴스 홈</a></p>
+      <p>© {{YEAR}} {{SITE_NAME}} · <a href="{{HOME_HREF}}">비트코인 뉴스 홈</a></p>
     </div>
   </footer>
 
