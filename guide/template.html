@@ -25,13 +25,15 @@
 
   <header class="g-header">
     <div class="g-header-inner">
-      <a class="g-logo" href="{{HOME_HREF}}">
-        {{SITE_NAME}}<span class="g-badge">{{BADGE}}</span>
-      </a>
+      <!-- 이름과 배지는 가는 곳이 다릅니다. 비트뉴스=뉴스 홈, 배지=이 섹션의 홈 -->
+      <div class="g-brand">
+        <a class="g-logo" href="{{HOME_HREF}}">{{SITE_NAME}}</a>
+        <a class="g-badge" href="{{BADGE_HREF}}">{{BADGE}}</a>
+      </div>
       <nav class="g-nav">
         <button class="g-nav-toggle" data-toc-toggle>{{TOC_LABEL}}</button>
 {{NAV_LINKS}}
-        <a class="g-cta-top" href="{{REF_LINK}}" target="_blank" rel="noopener nofollow sponsored">{{CTA_LABEL}}</a>
+{{CTA_TOP}}
       </nav>
     </div>
   </header>

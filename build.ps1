@@ -1330,7 +1330,9 @@ $(New-CompareRow -Label '코인 출금' -Key 'withdraw')
             [string]$TocHtml, [string]$NavLinks, [string]$Crumb,
             [string]$RefLink, [string]$CtaLabel,
             [string]$Accent, [string]$AccentSoft,
-            [string]$Kind, $Crumbs = @(), [string]$NextHtml = ''
+            [string]$Kind, $Crumbs = @(), [string]$NextHtml = '',
+            [string]$BadgeHref = 'index.html',
+            [switch]$HideCtaTop
         )
 
         $html = $gTpl
@@ -1368,14 +1370,27 @@ $(New-CompareRow -Label '코인 출금' -Key 'withdraw')
         $html = $html.Replace('{{OG_IMAGE}}',     $gOgImage)
         $html = $html.Replace('{{ACCENT_STYLE}}', $accentStyle)
         $html = $html.Replace('{{SITE_NAME}}',    (Protect-Html $siteName))
+        # 머리말의 "비트뉴스" 와 그 옆 배지는 **별개의 링크**입니다.
+        #   비트뉴스 → 언제나 뉴스 홈 (꼬리말의 "비트코인 뉴스 홈" 도 같은 곳)
+        #   배지     → 그 배지가 가리키는 섹션의 홈
+        #              허브에서는 "코인 거래소" → 허브 자기 자신,
+        #              가이드에서는 "비트겟" → 비트겟 가이드 홈.
+        # 배지에 거래소 이름이 적혀 있는데 뉴스 홈으로 튀면 눌린 곳과 도착지가 어긋납니다.
         $html = $html.Replace('{{HOME_HREF}}',    '../index.html')
+        $html = $html.Replace('{{BADGE_HREF}}',   $BadgeHref)
         $html = $html.Replace('{{BADGE}}',        (Protect-Html $Badge))
         $html = $html.Replace('{{TOC_LABEL}}',    (Protect-Html $TocLabel))
         $html = $html.Replace('{{SIDE_NOTE}}',    $SideNote)
         $html = $html.Replace('{{NAV_LINKS}}',    $NavLinks)
         $html = $html.Replace('{{CRUMB}}',        $Crumb)
-        $html = $html.Replace('{{REF_LINK}}',     (Protect-Html $RefLink))
-        $html = $html.Replace('{{CTA_LABEL}}',    (Protect-Html $CtaLabel))
+        # 머리말 오른쪽 가입 버튼.
+        # 허브(/exchange/)는 거래소 세 곳 버튼이 이미 있어서 이걸 숨깁니다(-HideCtaTop).
+        $ctaTop = ''
+        if ($RefLink -and -not $HideCtaTop) {
+            $ctaTop = '        <a class="g-cta-top" href="{0}" target="_blank" rel="noopener nofollow sponsored">{1}</a>' -f `
+                        (Protect-Html $RefLink), (Protect-Html $CtaLabel)
+        }
+        $html = $html.Replace('{{CTA_TOP}}',      $ctaTop)
         $html = $html.Replace('{{NAV}}',          $TocHtml)
         $html = $html.Replace('{{CONTENT}}',      ($Fragment + $NextHtml))
         $html = $html.Replace('{{UPDATED}}',      $updatedLabel)
@@ -1402,8 +1417,10 @@ $(New-CompareRow -Label '코인 출금' -Key 'withdraw')
     foreach ($ex in $gExs) {
         $hubTocRows += ('          <li><a href="../{0}/index.html"><span class="g-toc-num">{1}위</span>{2}</a></li>' -f `
                          $ex.dir, $ex.rank, (Protect-Html $ex.name))
-        $hubNavRows += ('        <a class="g-nav-link" href="../{0}/index.html">{1}</a>' -f `
-                         $ex.dir, (Protect-Html $ex.name))
+        # 허브 머리말은 거래소 이름 대신 **바로 가입 링크로 가는 색 버튼**입니다.
+        # 색은 순위 배지와 같은 금·은·동입니다 (아래 순위 카드의 가입 버튼과 맞춥니다).
+        $hubNavRows += ('        <a class="g-nav-join g-nav-join--{0}" href="{1}" target="_blank" rel="noopener nofollow sponsored">{2} 가입</a>' -f `
+                         $ex.rank, (Protect-Html $ex.referral.link), (Protect-Html $ex.name))
     }
 
     $gTop = $gExs[0]
@@ -1423,7 +1440,7 @@ $(New-CompareRow -Label '코인 출금' -Key 'withdraw')
         -Crumb ('<a href="../index.html">홈</a> / {0}' -f (Protect-Html $gHub.name)) `
         -RefLink $gTop.referral.link -CtaLabel ('{0}위 {1} 가입하기' -f $gTop.rank, $gTop.name) `
         -Accent $gTop.accent -AccentSoft $gTop.accentSoft `
-        -Kind 'guideIndex' -Crumbs $hubCrumbs
+        -Kind 'guideIndex' -Crumbs $hubCrumbs -HideCtaTop
 
     $guideUrls += @{ dir = $gHub.dir; file = 'index' }
 
@@ -1446,9 +1463,11 @@ $(New-CompareRow -Label '코인 출금' -Key 'withdraw')
         $cardsHtml = New-GuideCards -Ex $ex
         $otherHtml = New-OtherExchanges -CurrentId $ex.id
 
+        # 머리말 링크는 "코인 거래소 홈" 하나만 둡니다.
+        # 그 거래소의 가이드 홈으로는 빵부스러기(홈 / 코인 거래소 / 거래소명)와
+        # 왼쪽 목차로 갈 수 있어서 버튼을 두 개 두면 오히려 헷갈립니다.
         $exNavRows = @()
-        $exNavRows += ('        <a class="g-nav-link" href="../{0}/index.html">{1}</a>' -f $gHub.dir, (Protect-Html $gHub.name))
-        $exNavRows += ('        <a class="g-nav-link" href="index.html">{0} 홈</a>' -f (Protect-Html $ex.name))
+        $exNavRows += ('        <a class="g-nav-link" href="../{0}/index.html">{1} 홈</a>' -f $gHub.dir, (Protect-Html $gHub.name))
         $exNavLinks = ($exNavRows -join "`n")
 
         $exCrumbHome = '<a href="../index.html">홈</a> / <a href="../{0}/index.html">{1}</a> / {2}' -f `

@@ -53,15 +53,19 @@ img { max-width: 100%; display: block; }
   gap: 1rem;
   flex-wrap: wrap;
 }
-.g-logo {
+/* 이름과 배지는 별개의 링크입니다 — 비트뉴스는 뉴스 홈, 배지는 이 섹션의 홈으로 갑니다 */
+.g-brand {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+}
+.g-logo {
   font-weight: 800;
   font-size: 1.05rem;
   text-decoration: none;
   letter-spacing: -0.02em;
 }
+.g-logo:hover { color: var(--g-gold); }
 .g-badge {
   padding: 0.1rem 0.5rem;
   border: 1px solid var(--g-gold);
@@ -70,7 +74,10 @@ img { max-width: 100%; display: block; }
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.06em;
+  text-decoration: none;
+  white-space: nowrap;
 }
+.g-badge:hover { background: var(--g-gold-soft); }
 .g-nav {
   display: flex;
   align-items: center;
@@ -104,6 +111,24 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
 }
 .g-cta-top:hover { filter: brightness(1.08); }
+
+/* 허브(/exchange/) 머리말의 거래소별 가입 버튼.
+   누르면 가이드가 아니라 곧바로 가입 링크로 갑니다.
+   색은 순위 배지·순위 카드 가입 버튼과 같은 금·은·동입니다. */
+.g-nav-join {
+  padding: 0.55rem 1.05rem;
+  border-radius: 8px;
+  background: var(--join-color, var(--g-gold));
+  color: #10131a;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.g-nav-join:hover { filter: brightness(1.08); }
+.g-nav-join--1 { --join-color: #f0b90b; }   /* 금 */
+.g-nav-join--2 { --join-color: #b9c0cf; }   /* 은 */
+.g-nav-join--3 { --join-color: #cd8a4e; }   /* 동 */
 
 /* ---------- 2단 배치 ---------- */
 .g-layout {
