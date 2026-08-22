@@ -1561,8 +1561,18 @@ function Save-Text {
     [System.IO.File]::WriteAllText($full, $Text, (New-Object System.Text.UTF8Encoding($false)))
 }
 
+# 검색엔진에게 "어디를 보면 되는지" 알려주는 줄입니다.
+#
+# ★ feed.xml 도 반드시 같이 알려야 합니다 (2026-08-22 추가)
+#   네이버는 sitemap 뿐 아니라 **RSS 도 수집 경로로 씁니다.**
+#   이 사이트는 뉴스가 1시간마다 올라오는데, sitemap 만 알려주면
+#   새 기사를 늦게 가져갑니다. feed.xml 은 원래 만들고 있었으면서
+#   robots.txt 에 적지 않아 알려주지 못하고 있었습니다.
+#   (옆 폴더 test/bnguide 는 처음부터 둘 다 적어뒀습니다)
 $sitemapLine = ''
-if ($baseUrl) { $sitemapLine = "Sitemap: $baseUrl/sitemap.xml" }
+if ($baseUrl) {
+    $sitemapLine = "Sitemap: $baseUrl/sitemap.xml`nSitemap: $baseUrl/feed.xml"
+}
 Save-Text 'robots.txt' @"
 User-agent: *
 Allow: /
