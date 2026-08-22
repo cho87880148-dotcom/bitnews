@@ -4,7 +4,13 @@
 뒤에 **코인 거래소 리퍼럴 섹션**이 붙어 있다 — 순위 허브 `/exchange/` 한 장 +
 거래소별 가이드 7장씩(`/binance-guide/` `/bitget-guide/` `/bybit-guide/`).
 
-**이 폴더는 git 저장소가 아니다.** 세션 간 인수인계는 `worklog/YYYY-MM-DD.md` 로 한다.
+**이 폴더는 git 저장소다.** (`origin` = github.com/cho87880148-dotcom/bitnews, 브랜치 `main`)
+`main` 에 push 하면 **GitHub Actions 가 빌드해서 배포**한다. 배포 스크립트를 따로 돌리지 않는다.
+세션 간 인수인계는 git 기록과 함께 `worklog/YYYY-MM-DD.md` 로 한다.
+
+> 옆 폴더 `test`(bnguide)와 `novacent` 는 git 이 **없다**. 여기만 있다.
+> 예전 이 문서에 "git 저장소가 아니다"라고 적혀 있었는데 사실이 아니었다 (2026-08-22 수정).
+
 **새 세션을 시작하면 `worklog/` 의 가장 최근 파일부터 읽을 것.** 거기에 무엇을 왜 했는지,
 어디서 막혔는지가 전부 적혀 있다.
 

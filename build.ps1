@@ -1078,7 +1078,7 @@ $frag
                    -Title $wTitle `
                    -Description $post.desc -Content $content -OgType 'article' `
                    -BasePrefix '../' -Ticker $tickerSub -JsonLd $weeklyLd
-        $weeklyUrls += $post.slug
+        $weeklyUrls += @{ slug = $post.slug; lastmod = [string]$post.published }
     }
 
     # 주간 정리 목록 페이지
@@ -1104,11 +1104,28 @@ $cards
     </div>
 "@
 
+    # 구조화 데이터 — 이 목록만 빠져 있었습니다 (다른 페이지는 전부 있음)
+    $wIndexLd = ''
+    $wIndexUrl = ''
+    if ($baseUrl) {
+        $wIndexUrl = '{0}/{1}/index.html' -f $baseUrl, $wCfg.section.dir
+        $wIndexLd = New-JsonLd -Kind 'list' -Url $wIndexUrl `
+                        -Headline '주간 정리' -Description $wCfg.section.description `
+                        -Crumbs @( @{ name = '홈'; url = ($baseUrl + '/') },
+                                   @{ name = '주간 정리'; url = $wIndexUrl } )
+    }
+
     Write-Page -RelPath ('{0}/index.html' -f $wCfg.section.dir) `
                -Title ('주간 정리 | {0}' -f $siteName) `
                -Description $wCfg.section.description -Content $wIndex `
-               -BasePrefix '../' -Ticker $tickerSub
-    $weeklyUrls += 'index'
+               -BasePrefix '../' -Ticker $tickerSub -JsonLd $wIndexLd
+
+    # 목록의 lastmod 는 가장 최근 글의 발행일입니다
+    $wNewest = ''
+    if (@($wPosts).Count -gt 0) {
+        $wNewest = [string](@($wPosts) | ForEach-Object { [string]$_.published } | Sort-Object -Descending | Select-Object -First 1)
+    }
+    $weeklyUrls += @{ slug = 'index'; lastmod = $wNewest }
 
     Write-Host ("  주간 정리 {0}개 생성 (/{1}/)" -f $weeklyUrls.Count, $wCfg.section.dir)
 }
@@ -1126,7 +1143,16 @@ $cards
 #  exchanges 에 적힌 순서가 그대로 1위·2위·3위가 됩니다.
 # =========================================================
 $guideDir = Join-Path $root 'guide'
-$guideUrls = @()   # sitemap 용. @{ dir = ''; file = '' } 꼴로 모읍니다
+$guideUrls = @()   # sitemap 용. @{ dir = ''; file = ''; lastmod = '' } 꼴로 모읍니다
+
+# 가이드가 마지막으로 바뀐 날 — sitemap 의 lastmod 에 씁니다.
+#
+# ⚠️ 파일 수정시각(LastWriteTime)을 쓰면 안 됩니다.
+#    git 은 파일 시각을 보존하지 않아서, Actions 가 코드를 내려받는 순간
+#    모든 파일이 "오늘" 이 됩니다. 그러면 안 바뀐 22쪽을 매번 바뀌었다고
+#    검색엔진에 알리게 되고, lastmod 를 아예 안 믿게 만듭니다.
+#    그래서 guide.json 에 손으로 적어둔 날짜를 씁니다.
+$guideUpdated = ''   # 값은 아래에서 guide.json 을 읽은 뒤에 채웁니다
 
 if (Test-Path $guideDir) {
     $gCfg = (Get-Content (Join-Path $guideDir 'guide.json') -Raw -Encoding UTF8) | ConvertFrom-Json
@@ -1134,6 +1160,10 @@ if (Test-Path $guideDir) {
 
     $gHub = $gCfg.hub
     $gExs = @($gCfg.exchanges)
+
+    # ★ 여기서 채워야 합니다. 위(파일 읽기 전)에서 하면 늘 빈 값이 되어
+    #   가이드 22쪽에 lastmod 가 조용히 안 들어갑니다.
+    if ($gHub.updated) { $guideUpdated = [string]$gHub.updated }
 
     $gCssSrc = Join-Path $guideDir 'guide.css'
     $gJsSrc  = Join-Path $guideDir 'guide.js'
@@ -1442,7 +1472,7 @@ $(New-CompareRow -Label '코인 출금' -Key 'withdraw')
         -Accent $gTop.accent -AccentSoft $gTop.accentSoft `
         -Kind 'guideIndex' -Crumbs $hubCrumbs -HideCtaTop
 
-    $guideUrls += @{ dir = $gHub.dir; file = 'index' }
+    $guideUrls += @{ dir = $gHub.dir; file = 'index'; lastmod = $guideUpdated }
 
     # ---------------------------------------------------------
     #  거래소별 가이드
@@ -1501,7 +1531,7 @@ $(New-CompareRow -Label '코인 출금' -Key 'withdraw')
             -Accent $ex.accent -AccentSoft $ex.accentSoft `
             -Kind 'guideIndex' -Crumbs $exIdxCrumbs
 
-        $guideUrls += @{ dir = $ex.dir; file = 'index' }
+        $guideUrls += @{ dir = $ex.dir; file = 'index'; lastmod = $guideUpdated }
 
         # 각 가이드 6장
         for ($gi = 0; $gi -lt $exPages.Count; $gi++) {
@@ -1544,7 +1574,7 @@ $(New-CompareRow -Label '코인 출금' -Key 'withdraw')
                 -Accent $ex.accent -AccentSoft $ex.accentSoft `
                 -Kind 'guide' -Crumbs $pgCrumbs -NextHtml $nextHtml
 
-            $guideUrls += @{ dir = $ex.dir; file = $pg.file }
+            $guideUrls += @{ dir = $ex.dir; file = $pg.file; lastmod = $guideUpdated }
         }
     }
 
@@ -1585,7 +1615,13 @@ if ($baseUrl) {
     $urls = New-Object System.Text.StringBuilder
     [void]$urls.AppendLine('<?xml version="1.0" encoding="UTF-8"?>')
     [void]$urls.AppendLine('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
-    [void]$urls.AppendLine("  <url><loc>$baseUrl/</loc><changefreq>hourly</changefreq><priority>1.0</priority></url>")
+    # 홈의 lastmod 는 가장 최근 기사의 날짜입니다 (홈이 그 기사를 보여주므로)
+    $homeLm = ''
+    if (@($articles).Count -gt 0) {
+        $newestUtc = @($articles) | ForEach-Object { ConvertTo-Utc $_.published } | Sort-Object -Descending | Select-Object -First 1
+        if ($newestUtc) { $homeLm = '<lastmod>' + $newestUtc.ToString('yyyy-MM-dd') + '</lastmod>' }
+    }
+    [void]$urls.AppendLine("  <url><loc>$baseUrl/</loc>$homeLm<changefreq>hourly</changefreq><priority>1.0</priority></url>")
     # ★ page-2.html 같은 목록 페이지는 사이트맵에 넣지 않습니다 (2026-08-22)
     #
     #   목록 페이지에는 그 페이지만의 내용이 없습니다. 기사 제목을 모아 보여줄 뿐이고,
@@ -1604,11 +1640,15 @@ if ($baseUrl) {
     # 거래소 허브와 가이드 페이지도 검색엔진에 알립니다 (뉴스와 달리 잘 바뀌지 않으므로 monthly)
     # $guideUrls 는 @{ dir = 'binance-guide'; file = '01-signup' } 꼴입니다
     foreach ($gu in $guideUrls) {
-        [void]$urls.AppendLine("  <url><loc>$baseUrl/$($gu.dir)/$($gu.file).html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>")
+        $lm = ''
+        if ($gu.lastmod) { $lm = '<lastmod>' + $gu.lastmod + '</lastmod>' }
+        [void]$urls.AppendLine("  <url><loc>$baseUrl/$($gu.dir)/$($gu.file).html</loc>$lm<changefreq>monthly</changefreq><priority>0.8</priority></url>")
     }
     # 주간 정리는 우리가 직접 쓴 글이라 우선순위를 높게 둡니다
     foreach ($wu in $weeklyUrls) {
-        [void]$urls.AppendLine("  <url><loc>$baseUrl/weekly/$wu.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>")
+        $lm = ''
+        if ($wu.lastmod) { $lm = '<lastmod>' + $wu.lastmod + '</lastmod>' }
+        [void]$urls.AppendLine("  <url><loc>$baseUrl/weekly/$($wu.slug).html</loc>$lm<changefreq>weekly</changefreq><priority>0.9</priority></url>")
     }
     [void]$urls.AppendLine('</urlset>')
     Save-Text 'sitemap.xml' $urls.ToString()
