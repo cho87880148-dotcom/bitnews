@@ -1586,9 +1586,17 @@ if ($baseUrl) {
     [void]$urls.AppendLine('<?xml version="1.0" encoding="UTF-8"?>')
     [void]$urls.AppendLine('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
     [void]$urls.AppendLine("  <url><loc>$baseUrl/</loc><changefreq>hourly</changefreq><priority>1.0</priority></url>")
-    for ($p = 2; $p -le $totalPages; $p++) {
-        [void]$urls.AppendLine("  <url><loc>$baseUrl/page-$p.html</loc><changefreq>daily</changefreq></url>")
-    }
+    # ★ page-2.html 같은 목록 페이지는 사이트맵에 넣지 않습니다 (2026-08-22)
+    #
+    #   목록 페이지에는 그 페이지만의 내용이 없습니다. 기사 제목을 모아 보여줄 뿐이고,
+    #   그 기사들은 각자 /news/*.html 로 이미 사이트맵에 들어가 있습니다.
+    #
+    #   검색엔진이 하루에 훑는 양은 정해져 있습니다. 목록 페이지 166개를 훑는 만큼
+    #   정작 새 기사와 가이드가 늦게 발견됩니다.
+    #
+    #   ⚠️ 페이지 자체는 그대로 만듭니다. 지우는 것이 아닙니다.
+    #      "다음 페이지" 링크로 사람도 검색엔진도 계속 타고 들어갈 수 있습니다.
+    #      사이트맵에서 "여기부터 보라"고 **먼저 알려주지만 않는 것**입니다.
     foreach ($a in $articles) {
         $lm = (ConvertTo-Utc $a.published).ToString('yyyy-MM-dd')
         [void]$urls.AppendLine("  <url><loc>$baseUrl/news/$($a.id).html</loc><lastmod>$lm</lastmod></url>")

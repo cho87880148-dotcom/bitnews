@@ -176,12 +176,74 @@
     start();
   }
 
+  // -------------------------------------------------------
+  //  4) 썸네일이 깨졌을 때 ₿ 자리표시로 바꾸기
+  //
+  //  뉴스 썸네일은 우리 서버에 사본이 없습니다. 언론사 서버
+  //  (f1.tokenpost.kr · cdn.blockmedia.co.kr)에서 바로 불러옵니다.
+  //  상대가 사진을 지우거나 주소를 바꾸면 깨진 이미지 아이콘이 그대로 보입니다.
+  //  기사에 원래 사진이 없을 때 쓰는 ₿ 표시로 바꿔 끼웁니다.
+  //
+  //  ⚠️ img 의 error 는 위로 전파되지 않습니다(버블링이 없습니다).
+  //     그래서 addEventListener 의 세 번째 인자를 true 로 주어
+  //     내려가는 단계(캡처)에서 잡습니다. 이걸 빼면 아무것도 안 잡힙니다.
+  //
+  //  ⚠️ 이 스크립트는 </body> 바로 앞에서 실행됩니다. 그때는 이미
+  //     실패가 끝난 이미지가 있을 수 있어 듣기만 해서는 놓칩니다.
+  //     그래서 한 번 훑어보는 단계를 같이 둡니다.
+  // -------------------------------------------------------
+  function replaceBrokenImage(img) {
+    if (!img || img.dataset.fallbackDone) { return; }
+    img.dataset.fallbackDone = '1';
+
+    var el = null;
+    if (img.classList.contains('slide-img')) {
+      el = document.createElement('div');
+      el.className = 'slide-img slide-img-empty';
+    } else if (img.classList.contains('card-thumb')) {
+      el = document.createElement('div');
+      el.className = 'card-thumb-empty';
+    } else if (img.closest('.mini-thumb')) {
+      el = document.createElement('span');
+      el.className = 'mini-thumb-empty';
+    } else if (img.closest('.ticker-item')) {
+      el = document.createElement('span');
+      el.className = 'ticker-thumb-empty';
+    }
+
+    // 기사 본문의 큰 사진(article-thumb)에는 자리표시가 없습니다.
+    // 억지로 만들지 않고 그냥 뺍니다 — 사진 없는 기사와 같은 모습이 됩니다.
+    if (!el) {
+      if (img.parentNode) { img.parentNode.removeChild(img); }
+      return;
+    }
+
+    el.textContent = '₿';
+    if (img.parentNode) { img.parentNode.replaceChild(el, img); }
+  }
+
+  function initImageFallback() {
+    document.addEventListener('error', function (e) {
+      var t = e.target;
+      if (t && t.tagName === 'IMG') { replaceBrokenImage(t); }
+    }, true);
+
+    // 이미 실패가 끝난 것 줍기
+    // (complete 가 true 인데 naturalWidth 가 0 이면 못 불러온 것입니다)
+    var imgs = document.querySelectorAll('img');
+    for (var i = 0; i < imgs.length; i++) {
+      if (imgs[i].complete && imgs[i].naturalWidth === 0) {
+        replaceBrokenImage(imgs[i]);
+      }
+    }
+  }
+
   // 페이지가 다 그려진 뒤에 시작합니다
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
-      initSlider(); initTabs(); initRank();
+      initSlider(); initTabs(); initRank(); initImageFallback();
     });
   } else {
-    initSlider(); initTabs(); initRank();
+    initSlider(); initTabs(); initRank(); initImageFallback();
   }
 })();
