@@ -1,12 +1,78 @@
 [
   {
+    "id": "a635bb1a0a",
+    "title": "도지코인 24시간 10% 반등, ETF 순유출과 엇갈렸다",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/402176",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "이준한",
+    "published": "2026-09-03T18:54:31.0000000Z",
+    "summary": "도지코인(DOGE)이 9월 3일 장중 0.08956달러까지 오르며 0.08달러대 후반을 회복했다. 24시간 기준 상승률은 10.0%였지만, 대형 지갑 매집설과 ETF 순유출, 엇갈린 기술 분석이 동시에 제기되며 반등의 성격을 둘러싼 해석은 갈렸다. 코인게코(CoinGecko) 실시간 가격 화면에서 DOGE는 0.08956달러(약 122원)를 기록했다. 24시간 거래 범위는 0.08089~0.08987달러(약 110~122원), 24시간 거래대금은 9억4629만 달러(약 1조2879억원)로 집계됐다. 코인게이프(CoinGape)는 분석 기사에서 DOGE가 2.77% 오른 0.088달러(약 120원)에 거래됐고, 대형 지갑이 최근 5일간 4억 DOGE를 사들였다고 전했다. 벤징가(Benzinga)도 알리…",
+    "image": "https://f1.tokenpost.kr/2026/09/cilmku1gt7.jpg",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "cebe92f095",
+    "title": "비트코인 6~8년 주기론, ETF 자금이 쟁점",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/402171",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "서도윤",
+    "published": "2026-09-03T18:31:32.0000000Z",
+    "summary": "비트코인(BTC)의 가격 흐름을 4년 반감기 주기로 설명해 온 시장 해석에 다시 논쟁이 붙었다. 현물 ETF와 기업 보유 물량, 거시 유동성이 커지면서 반감기보다 더 긴 6~8년 리듬이 형성될 수 있다는 분석이다. 크립토슬레이트(CryptoSlate)는 윌리 우(Willy Woo) 비트코인 온체인 애널리스트가 3일 X에서 비트코인이 전통 금융의 단기 부채 사이클에 가까운 6~8년 주기로 옮겨갈 수 있다고 말했다고 전했다. 우의 발언은 반감기가 사라졌다는 뜻이 아니라, 반감기의 공급 충격이 기관 자금 흐름에 비해 작아졌다는 문제 제기에 가깝다. 반감기는 여전히 비트코인 공급 구조의 핵심 장치다. 2024년 4월 반감기 이후 블록 보상은 3.125 BTC로... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/09/g7yeixt4ok.jpg",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "c867a8d633",
+    "title": "시타델, 엑스알피 ETF 투자 확대…콜옵션 764% 급증",
+    "link": "https://www.blockmedia.co.kr/archives/1135857?utm_source=general&utm_medium=rss",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "심영재 특파원",
+    "published": "2026-09-03T17:50:15.0000000Z",
+    "summary": "[멕시코=심영재 특파원] 켄 그리핀의 시타델 어드바이저스가 2분기 엑스알피(XRP) 상장지수펀드(ETF) 투자 규모를 크게 늘린 것으로 나타났다. 시타델은 미국에 상장된 여러 엑스알피 ETF를 직접 보유하는 동시에 콜옵션 포지션을 확대했다. 특히 볼래틸리티 셰어스 2x 엑스알피 ETF(XRPT)의 콜옵션 포지션은 1분기 9040계약에서 2분기 7만8075계약으로 764% 증가했다. 다만 시타델은 일부 ETF에서 풋옵션도 늘려 상승 방향에만 일방적으로 베팅하기보다 헤지 전략을 병행한 것으로 [...]",
+    "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/08/reuters-rc2mrmakume7.jpg",
+    "categories": [
+      "디지털 자산",
+      "골드만삭스",
+      "시타델 어드바이저스",
+      "엑스알피 ETF",
+      "콜옵션",
+      "풋옵션"
+    ]
+  },
+  {
+    "id": "e46ec42a35",
+    "title": "하이퍼리퀴드 HYPE 고래 매집…90달러 가능성 거론",
+    "link": "https://www.blockmedia.co.kr/archives/1135843?utm_source=general&utm_medium=rss",
+    "source": "블록미디어",
+    "sourceSite": "https://www.blockmedia.co.kr",
+    "author": "심영재 특파원",
+    "published": "2026-09-03T16:54:32.0000000Z",
+    "summary": "[멕시코=심영재 특파원] 하이퍼리퀴드(HYPE)에 대규모 지갑 매수가 이어지는 가운데 HIP-3 업그레이드가 새로운 가격 변수로 주목받고 있다. 한 지갑은 3510만달러 상당의 HYPE를 추가 매수했고, 새로 생성된 다른 지갑도 766만달러 상당의 HYPE를 팔콘X에서 인출했다. 코인피디아는 3일(현지시각) 고래 매수와 HIP-3 도입이 HYPE에 대한 관심을 높이고 있다고 전했다. 다만 해당 지갑들의 매수가 장기 보유 목적이나 마켓메이킹, 다른 전략 가운데 어떤 [...]",
+    "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/07/20260723-021831.jpg",
+    "categories": [
+      "디지털 자산",
+      "HIP-3",
+      "HYPE",
+      "고래 매수",
+      "퍼프 시장",
+      "하이퍼리퀴드"
+    ]
+  },
+  {
     "id": "17fc67bb73",
     "title": "엔비디아, 허깅페이스 129억달러에 인수…AI 소프트웨어 확대",
     "link": "https://www.blockmedia.co.kr/archives/1135839?utm_source=general&utm_medium=rss",
     "source": "블록미디어",
     "sourceSite": "https://www.blockmedia.co.kr",
     "author": "심영재 특파원",
-    "published": "2026-09-03T16:34:40.0000000Z",
+    "published": "2026-09-03T16:34:40Z",
     "summary": "[멕시코=심영재 특파원] 엔비디아가 인공지능(AI) 오픈소스 플랫폼 허깅페이스를 129억3000만달러에 인수한다. 허깅페이스는 1800만명 이상의 개발자가 이용하며 300만개 이상의 AI 모델을 호스팅하는 플랫폼이다. 젠슨 황 엔비디아 최고경영자(CEO)는 인수 이후에도 허깅페이스를 전체 AI 생태계를 위한 개방형 플랫폼으로 유지하겠다고 밝혔다. 개발자들은 기존처럼 모델과 프레임워크, 클라우드, 컴퓨팅 플랫폼을 선택할 수 있으며 엔비디아 하드웨어 사용도 의무화하지 않을 방침이다. 코인텔레그래프와 크립토폴리탄에 따르면 엔비디아는 [...]",
     "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/08/reuters-rc2qrla53g3j.jpg",
     "categories": [
@@ -25,7 +91,7 @@
     "source": "블록미디어",
     "sourceSite": "https://www.blockmedia.co.kr",
     "author": "심영재 특파원",
-    "published": "2026-09-03T16:08:53.0000000Z",
+    "published": "2026-09-03T16:08:53Z",
     "summary": "[멕시코=심영재 특파원]",
     "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/02/20260221-000315.jpg",
     "categories": [
@@ -40,7 +106,7 @@
     "source": "토큰포스트",
     "sourceSite": "https://www.tokenpost.kr",
     "author": "김하린",
-    "published": "2026-09-03T16:07:54.0000000Z",
+    "published": "2026-09-03T16:07:54Z",
     "summary": "암호화폐 파생상품 시장에서 24시간 동안 4억5400만 달러(약 6179억원) 규모의 포지션이 강제 청산됐다. 가격 하락에 베팅한 숏 포지션 청산액이 전체의 80%를 넘었다. PANews는 3일 코인글래스(CoinGlass) 데이터를 인용해 이같이 전했다. 롱 포지션 청산액은 8777만9200달러(약 1195억원), 숏 포지션 청산액은 3억6600만 달러(약 4981억원)였다. 숏 청산액은 롱 청산액의 약 4.2배였다. 청산은 레버리지 거래에서 손실이 담보 기준을 넘을 때 거래소가 포지션을 강제로 닫는 절차다. 롱은 가격 상승에, 숏은 가격 하락에 베팅하는 포지션이다. 이번 집계에서는 가격 하락을 예상한 거래가 더 큰 폭으로 정리됐다. 자산별로는 비트코인(BTC)... 더보기",
     "image": "https://f1.tokenpost.kr/2026/09/enc5f0m5t2.jpg",
     "categories": [
@@ -54,7 +120,7 @@
     "source": "블록미디어",
     "sourceSite": "https://www.blockmedia.co.kr",
     "author": "심영재 특파원",
-    "published": "2026-09-03T15:52:42.0000000Z",
+    "published": "2026-09-03T15:52:42Z",
     "summary": "[멕시코=심영재 특파원] 디지털자산(가상자산) 시장에서 비트코인보다 알트코인의 상승폭이 크게 나타나고 있다. 코인피디아에 따르면 전체 디지털자산 시가총액은 전일 대비 0.9% 증가한 2조7000억달러를 기록했다. 거래량은 735억달러다. 비트코인이 같은 기간 4.8% 상승한 반면 지캐시(ZEC)는 13.24%, 엑스알피(XRP)는 8.54%, 바이낸스코인(BNB)은 4.83% 상승했다. 코인피디아는 최근 움직임을 비트코인 주도의 전면적인 상승보다 알트코인으로 자금이 이동하는 흐름에 가깝다고 평가했다. 코인피디아는 3일(현지시각) 전체 디지털자산 시가총액이 2조7000억달러로 [...]",
     "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/09/20260903-113120.png",
     "categories": [
@@ -73,7 +139,7 @@
     "source": "블록미디어",
     "sourceSite": "https://www.blockmedia.co.kr",
     "author": "심영재 특파원",
-    "published": "2026-09-03T15:21:06.0000000Z",
+    "published": "2026-09-03T15:21:06Z",
     "summary": "[멕시코=심영재 특파원] 비트코인과 이더리움, XRP 등 주요 디지털자산 가격이 급등하면서 단시간에 4억달러가 넘는 숏 포지션(매도 베팅)이 강제 청산됐다. 이는 지정학적 긴장으로 인한 하락세에서 벗어나 시장이 빠르게 반등한 결과로 풀이된다. 디지털자산 시장, 숏 스퀴즈로 급등 3일(현지시각) 비트코인은 일주일 만에 8만달러를 돌파하며 7만6200달러까지 떨어졌던 가격을 회복했다. 이더리움은 2500달러에 육박했으며, XRP는 하루 만에 9% 상승하는 등 주요 알트코인(비트코인 [...]",
     "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/08/20260828-160426-scaled.jpg",
     "categories": [
@@ -92,7 +158,7 @@
     "source": "토큰포스트",
     "sourceSite": "https://www.tokenpost.kr",
     "author": "강이안",
-    "published": "2026-09-03T15:04:55.0000000Z",
+    "published": "2026-09-03T15:04:55Z",
     "summary": "암호화폐 시장이 상승세를 보이는 가운데 비트코인과 이더리움은 모두 24시간 기준 상승했다. 비트코인 점유율은 확대된 반면 이더리움 점유율은 소폭 낮아졌고, 파생상품 거래량은 감소해 단기 관망 심리도 함께 나타났다. 주요 시세 토큰포스트마켓에 따르면 2026년 9월 4일 오전 12시 2분(KST) 기준 비트코인은 전날 대비 5.05% 상승한 80,867.87달러(약 1억 1,007만 원)에 거래되고 있다. 이더리움은 전날 대비 4.48% 오른 2,494.33달러(약 339만 원)를 기록했다. 상위권 알트코인 가격 변동 상위권 알트코인은 대부분 상승하고 있다. XRP +9.10%▲, BNB +5.35%▲, 솔라나 +6.32%▲, 트론 +1.58%▲, 도지코인 +8.10%▲, 하이퍼리퀴드... 더보기",
     "image": "https://f1.tokenpost.kr/2026/09/nl9ygn6xgo.png",
     "categories": [
@@ -106,7 +172,7 @@
     "source": "블록미디어",
     "sourceSite": "https://www.blockmedia.co.kr",
     "author": "심영재 특파원",
-    "published": "2026-09-03T14:56:23.0000000Z",
+    "published": "2026-09-03T14:56:23Z",
     "summary": "[멕시코=심영재 특파원]",
     "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/02/20260221-000315.jpg",
     "categories": [
@@ -121,7 +187,7 @@
     "source": "블록미디어",
     "sourceSite": "https://www.blockmedia.co.kr",
     "author": "심영재 특파원",
-    "published": "2026-09-03T14:55:10.0000000Z",
+    "published": "2026-09-03T14:55:10Z",
     "summary": "[멕시코=심영재 특파원] 일본 엔화가 강세를 보이면서 미국 달러가 주요 통화 대비 약세를 나타내고 있다. 달러 약세는 현재 비트코인과 금 가격을 지지하고 있다. 비트코인은 8만달러에 근접했다. 다만 엔화 상승 속도가 지나치게 빨라질 경우 상황은 반전될 수 있다. 저금리 엔화를 조달해 주식과 채권, 디지털자산(가상자산) 등에 투자했던 엔 캐리 트레이드가 청산되면서 비트코인을 포함한 위험자산에 매도 압력이 커질 수 [...]",
     "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/08/20260824-054840.png",
     "categories": [
@@ -140,7 +206,7 @@
     "source": "블록미디어",
     "sourceSite": "https://www.blockmedia.co.kr",
     "author": "심영재 특파원",
-    "published": "2026-09-03T14:34:28.0000000Z",
+    "published": "2026-09-03T14:34:28Z",
     "summary": "[멕시코=심영재 특파원]",
     "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/02/20260221-000315.jpg",
     "categories": [
@@ -154,7 +220,7 @@
     "source": "토큰포스트",
     "sourceSite": "https://www.tokenpost.kr",
     "author": "류하진",
-    "published": "2026-09-03T14:09:28.0000000Z",
+    "published": "2026-09-03T14:09:28Z",
     "summary": "비트코인(BTC) 창시자 사토시 나카모토를 다루는 7000만 달러(약 959억원) 규모 영화가 후반 작업에 들어갔다. 크레이그 라이트(Craig Wright)를 사토시 정체성 논란의 중심 인물로 그리는 설정이 알려지면서 제작 소식은 암호화폐 업계의 오래된 논쟁으로 번졌다. 비트코인닷컴 뉴스는 3일 영화 제목을 ‘비트코인(Bitcoin)’으로 전하고 더그 라이먼(Doug Liman) 감독이 연출을 맡았다고 보도했다. 출연진에는 갈 가돗(Gal Gadot), 케이시 애플렉(Casey Affleck), 피트 데이비슨(Pete Davidson), 이슬라 피셔(Isla Fisher)가 포함됐다. 더랩(TheWrap)은 같은 작품을 ‘비트코인: 킬링 사토시(Bitcoin: Killing Satoshi)’로 소개했다.…",
     "image": "https://f1.tokenpost.kr/2026/09/mw24s6lxce.jpg",
     "categories": [
@@ -168,7 +234,7 @@
     "source": "블록미디어",
     "sourceSite": "https://www.blockmedia.co.kr",
     "author": "심영재 특파원",
-    "published": "2026-09-03T13:56:50.0000000Z",
+    "published": "2026-09-03T13:56:50Z",
     "summary": "[멕시코=심영재 특파원] 비트코인이 7만8000달러 부근의 주요 기술적 저항선에 접근한 가운데 도널드 트럼프 미국 대통령의 이란전 종식 가능성이 새로운 변수로 떠올랐다. 코인피디아가 인용한 시장 분석에 따르면 비트코인이 7만8000달러에 위치한 지수이동평균(EMA) 리본을 돌파하면 10만달러를 향한 상승 가능성이 열릴 수 있다. 반대로 주간 종가가 7만달러 아래로 밀리면 최근 저점을 다시 시험할 위험이 있다는 분석이다. 비트코인의 향방은 기술적 저항선뿐 [...]",
     "image": "https://cdn.blockmedia.co.kr/wp-content/uploads/2026/05/20260530-102037-scaled.jpg",
     "categories": [
@@ -1397,20 +1463,6 @@
     ]
   },
   {
-    "id": "558a6ae9e8",
-    "title": "블록체인 분절, 합의 구조 차이가 키웠다",
-    "link": "https://www.tokenpost.kr/news/blockchain/401931",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "김미래",
-    "published": "2026-09-02T19:12:18Z",
-    "summary": "퍼미션리스 블록체인의 합의 구조 차이가 네트워크와 유동성 분절을 키우고 있다는 국제결제은행(BIS)의 진단이 나왔다. 탈중앙화와 보안, 확장성을 동시에 얻기 어려운 구조가 여러 L1과 L2의 공존으로 이어졌다는 분석이다. 국제결제은행은 7월 6일 발간한 Bulletin 126 ‘Blockchain consensus mechanisms and fragmentation’에서 이같이 밝혔다. 보고서는 퍼미션리스 블록체인이 중앙 중개자 의존을 줄이지만 검증자 보상, 참여 비용, 조정 방식이 체인마다 달라 서로 다른 균형점을 만든다고 설명했다. 비트코인(BTC)과 이더리움(ETH) 이후 분산원장기술 기반 활동은 결제, 탈중앙화금융, 디지털자산 시장으로 넓어졌지만 하나의 확장형... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/09/9nazh4lgyu.jpg",
-    "categories": [
-      "블록체인"
-    ]
-  },
-  {
     "id": "dc9da5ec0e",
     "title": "15억달러 토큰화 전략, 로열티 볼트 초기 대상",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/401930",
@@ -1422,6 +1474,20 @@
     "image": "https://f1.tokenpost.kr/2026/09/lzrlo6dijx.jpg",
     "categories": [
       "암호화폐"
+    ]
+  },
+  {
+    "id": "558a6ae9e8",
+    "title": "블록체인 분절, 합의 구조 차이가 키웠다",
+    "link": "https://www.tokenpost.kr/news/blockchain/401931",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "김미래",
+    "published": "2026-09-02T19:12:18Z",
+    "summary": "퍼미션리스 블록체인의 합의 구조 차이가 네트워크와 유동성 분절을 키우고 있다는 국제결제은행(BIS)의 진단이 나왔다. 탈중앙화와 보안, 확장성을 동시에 얻기 어려운 구조가 여러 L1과 L2의 공존으로 이어졌다는 분석이다. 국제결제은행은 7월 6일 발간한 Bulletin 126 ‘Blockchain consensus mechanisms and fragmentation’에서 이같이 밝혔다. 보고서는 퍼미션리스 블록체인이 중앙 중개자 의존을 줄이지만 검증자 보상, 참여 비용, 조정 방식이 체인마다 달라 서로 다른 균형점을 만든다고 설명했다. 비트코인(BTC)과 이더리움(ETH) 이후 분산원장기술 기반 활동은 결제, 탈중앙화금융, 디지털자산 시장으로 넓어졌지만 하나의 확장형... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/09/9nazh4lgyu.jpg",
+    "categories": [
+      "블록체인"
     ]
   },
   {
@@ -3630,20 +3696,6 @@
     ]
   },
   {
-    "id": "eba0205920",
-    "title": "김치프리미엄 1%대, 일주일째 양수권 유지",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/401537",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "김하린",
-    "published": "2026-09-01T06:57:32Z",
-    "summary": "비트코인(BTC)의 국내외 가격 차이를 뜻하는 김치프리미엄이 약 1% 수준으로 올라 일주일째 양수권을 유지했다. 국내 최대 원화 거래소 업비트의 BTC 원화 가격이 1일 기준 바이낸스 달러 가격보다 높게 형성된 것이다. 블룸버그는 BTC의 한국 시장 프리미엄이 일주일째 이어지며 5월 초 이후 가장 긴 양수 구간을 기록했다고 보도했다. 김치프리미엄은 국내 거래소 가격이 해외 거래소 가격보다 높으면 양수, 낮으면 음수로 표시된다. BTC는 9월 초 약 7만9000달러(약 1억815만원) 수준에서 거래됐다. 8월에는 한때 8만 달러(약 1억952만원)를 넘어섰다. 미국 현물 비트코인 ETF에는 8월 17일 주간 약 19억2000만 달러(약 2조6285억원)가... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/09/qeo8418lqv.jpg",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "ae4cb42b6b",
     "title": "러셀 2000 ETF, 8월 신호 뒤 조정 경고",
     "link": "https://www.tokenpost.kr/news/market/401539",
@@ -3655,6 +3707,20 @@
     "image": "https://f1.tokenpost.kr/2026/09/jxxz5zh6ea.jpg",
     "categories": [
       "마켓"
+    ]
+  },
+  {
+    "id": "eba0205920",
+    "title": "김치프리미엄 1%대, 일주일째 양수권 유지",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/401537",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "김하린",
+    "published": "2026-09-01T06:57:32Z",
+    "summary": "비트코인(BTC)의 국내외 가격 차이를 뜻하는 김치프리미엄이 약 1% 수준으로 올라 일주일째 양수권을 유지했다. 국내 최대 원화 거래소 업비트의 BTC 원화 가격이 1일 기준 바이낸스 달러 가격보다 높게 형성된 것이다. 블룸버그는 BTC의 한국 시장 프리미엄이 일주일째 이어지며 5월 초 이후 가장 긴 양수 구간을 기록했다고 보도했다. 김치프리미엄은 국내 거래소 가격이 해외 거래소 가격보다 높으면 양수, 낮으면 음수로 표시된다. BTC는 9월 초 약 7만9000달러(약 1억815만원) 수준에서 거래됐다. 8월에는 한때 8만 달러(약 1억952만원)를 넘어섰다. 미국 현물 비트코인 ETF에는 8월 17일 주간 약 19억2000만 달러(약 2조6285억원)가... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/09/qeo8418lqv.jpg",
+    "categories": [
+      "암호화폐"
     ]
   },
   {
@@ -4140,20 +4206,6 @@
     ]
   },
   {
-    "id": "c9d7f132a6",
-    "title": "KB운용, 낸드 ETF 출시…삼성전자 19.71%",
-    "link": "https://www.tokenpost.kr/news/market/401411",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "서도윤",
-    "published": "2026-09-01T00:28:09Z",
-    "summary": "KB자산운용이 인공지능(AI) 데이터 저장 수요를 겨냥한 ‘RISE 글로벌AI낸드메모리반도체’ 상장지수펀드(ETF)를 1일 출시했다. 국내 증시에 상장된 낸드 메모리 밸류체인 집중형 ETF로는 첫 사례다. KB자산운용은 이 상품이 글로벌 상장 기업 가운데 낸드 플래시를 직접 생산하거나 낸드 기반 저장 솔루션·인프라 사업을 하는 기업에 투자한다고 밝혔다. 투자 대상은 한국, 미국, 일본에 상장된 10개 종목이다. RISE 글로벌AI낸드메모리반도체는 ‘iSelect 글로벌AI낸드메모리반도체지수’를 기초지수로 삼는 패시브 ETF다. KB자산운용 상품 정보 기준 상장일은 2026년 9월 1일, 종목번호는 0233N0이다. 순자산 규모는 100억170만7508원,... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/09/sul3d41c3c.jpg",
-    "categories": [
-      "마켓"
-    ]
-  },
-  {
     "id": "331382723a",
     "title": "4.1만 BTC 순숏, 시카고상품거래소에 쌓였다",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/401409",
@@ -4165,6 +4217,20 @@
     "image": "https://f1.tokenpost.kr/2026/09/bte25ce7n6.jpg",
     "categories": [
       "암호화폐"
+    ]
+  },
+  {
+    "id": "c9d7f132a6",
+    "title": "KB운용, 낸드 ETF 출시…삼성전자 19.71%",
+    "link": "https://www.tokenpost.kr/news/market/401411",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "서도윤",
+    "published": "2026-09-01T00:28:09Z",
+    "summary": "KB자산운용이 인공지능(AI) 데이터 저장 수요를 겨냥한 ‘RISE 글로벌AI낸드메모리반도체’ 상장지수펀드(ETF)를 1일 출시했다. 국내 증시에 상장된 낸드 메모리 밸류체인 집중형 ETF로는 첫 사례다. KB자산운용은 이 상품이 글로벌 상장 기업 가운데 낸드 플래시를 직접 생산하거나 낸드 기반 저장 솔루션·인프라 사업을 하는 기업에 투자한다고 밝혔다. 투자 대상은 한국, 미국, 일본에 상장된 10개 종목이다. RISE 글로벌AI낸드메모리반도체는 ‘iSelect 글로벌AI낸드메모리반도체지수’를 기초지수로 삼는 패시브 ETF다. KB자산운용 상품 정보 기준 상장일은 2026년 9월 1일, 종목번호는 0233N0이다. 순자산 규모는 100억170만7508원,... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/09/sul3d41c3c.jpg",
+    "categories": [
+      "마켓"
     ]
   },
   {
@@ -4400,20 +4466,6 @@
     ]
   },
   {
-    "id": "7772f5bb43",
-    "title": "[모닝 시세브리핑] 암호화폐 시장 혼조세… 비트코인 78,929달러, 이더리움 2,481달러",
-    "link": "https://www.tokenpost.kr/news/briefing/401330",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "정민석",
-    "published": "2026-08-31T20:12:18Z",
-    "summary": "암호화폐 시장이 혼조세를 보이는 가운데 비트코인은 올랐지만 이더리움은 내렸다. 비트코인 점유율은 확대된 반면 이더리움 점유율은 소폭 낮아졌고, 파생상품 거래량은 늘어 단기 매매 수요도 함께 확대됐다. 주요 시세 토큰포스트마켓에 따르면 2026년 9월 1일 오전 5시 9분(KST) 기준 비트코인은 전날 대비 0.07% 상승한 78,929.36달러(약 1억 797만 원)에 거래되고 있다. 이더리움은 전날 대비 0.98% 내린 2,480.63달러(약 339만 원)를 기록했다. 상위권 알트코인 가격 변동 상위권 알트코인은 대체로 약세를 보이고 있다. XRP -1.59%▼, BNB -1.20%▼, 솔라나 -2.00%▼, 트론 -2.01%▼, 도지코인 -2.97%▼, 하이퍼리퀴드 +1.60%▲를... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/gx8acam6av.png",
-    "categories": [
-      "브리핑"
-    ]
-  },
-  {
     "id": "43ee73b28c",
     "title": "93일 국채 제한, 스테이블코인은 장기채 해법 아니다",
     "link": "https://www.tokenpost.kr/news/economy/401331",
@@ -4425,6 +4477,20 @@
     "image": "https://f1.tokenpost.kr/2026/08/0og9vdzjde.jpg",
     "categories": [
       "경제"
+    ]
+  },
+  {
+    "id": "7772f5bb43",
+    "title": "[모닝 시세브리핑] 암호화폐 시장 혼조세… 비트코인 78,929달러, 이더리움 2,481달러",
+    "link": "https://www.tokenpost.kr/news/briefing/401330",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "정민석",
+    "published": "2026-08-31T20:12:18Z",
+    "summary": "암호화폐 시장이 혼조세를 보이는 가운데 비트코인은 올랐지만 이더리움은 내렸다. 비트코인 점유율은 확대된 반면 이더리움 점유율은 소폭 낮아졌고, 파생상품 거래량은 늘어 단기 매매 수요도 함께 확대됐다. 주요 시세 토큰포스트마켓에 따르면 2026년 9월 1일 오전 5시 9분(KST) 기준 비트코인은 전날 대비 0.07% 상승한 78,929.36달러(약 1억 797만 원)에 거래되고 있다. 이더리움은 전날 대비 0.98% 내린 2,480.63달러(약 339만 원)를 기록했다. 상위권 알트코인 가격 변동 상위권 알트코인은 대체로 약세를 보이고 있다. XRP -1.59%▼, BNB -1.20%▼, 솔라나 -2.00%▼, 트론 -2.01%▼, 도지코인 -2.97%▼, 하이퍼리퀴드 +1.60%▲를... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/gx8acam6av.png",
+    "categories": [
+      "브리핑"
     ]
   },
   {
@@ -4587,20 +4653,6 @@
     ]
   },
   {
-    "id": "cb0fd8c2d1",
-    "title": "XRP ETF 순유입 18억달러, 기관 보유 확인",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/401302",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "이준한",
-    "published": "2026-08-31T19:08:07Z",
-    "summary": "리플(XRP) 현물 상장지수펀드(ETF)의 누적 순유입액이 18억 달러(약 2조4786억원)에 도달했다. 리플 가격 흐름이 상대적으로 약했던 구간에도 ETF 자금은 순유입 기조를 이어간 것으로 전해졌다. 우블록체인은 한국시간 1일 오전 3시21분께 제임스 세이파트(James Seyffart) 블룸버그 인텔리전스 ETF 애널리스트의 X 게시글을 토대로 이 같은 자금 흐름을 전했다. 세이파트는 XRP 현물 ETF 자금 흐름이 순유입 추세를 유지하고 있으며 누적 순유입액이 18억 달러에 이르렀다고 밝혔다. 2분기 13F 문서에서는 골드만삭스(Goldman Sachs), 제인스트리트(Jane Street), 밀레니엄(Millennium)이 XRP 현물 ETF 주요 기관 보유자 명단에 포함된... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/a5y3f2izzo.jpg",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "031c692e7d",
     "title": "코인베이스 5일 28% 오른 뒤 목표가 196달러",
     "link": "https://www.tokenpost.kr/news/market/401303",
@@ -4612,6 +4664,20 @@
     "image": "https://f1.tokenpost.kr/2026/08/zzpaj63fq4.jpg",
     "categories": [
       "마켓"
+    ]
+  },
+  {
+    "id": "cb0fd8c2d1",
+    "title": "XRP ETF 순유입 18억달러, 기관 보유 확인",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/401302",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "이준한",
+    "published": "2026-08-31T19:08:07Z",
+    "summary": "리플(XRP) 현물 상장지수펀드(ETF)의 누적 순유입액이 18억 달러(약 2조4786억원)에 도달했다. 리플 가격 흐름이 상대적으로 약했던 구간에도 ETF 자금은 순유입 기조를 이어간 것으로 전해졌다. 우블록체인은 한국시간 1일 오전 3시21분께 제임스 세이파트(James Seyffart) 블룸버그 인텔리전스 ETF 애널리스트의 X 게시글을 토대로 이 같은 자금 흐름을 전했다. 세이파트는 XRP 현물 ETF 자금 흐름이 순유입 추세를 유지하고 있으며 누적 순유입액이 18억 달러에 이르렀다고 밝혔다. 2분기 13F 문서에서는 골드만삭스(Goldman Sachs), 제인스트리트(Jane Street), 밀레니엄(Millennium)이 XRP 현물 ETF 주요 기관 보유자 명단에 포함된... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/a5y3f2izzo.jpg",
+    "categories": [
+      "암호화폐"
     ]
   },
   {
@@ -4676,20 +4742,6 @@
     ]
   },
   {
-    "id": "56b666b75a",
-    "title": "그록서 암호화폐 매수·대출 기능 제공 시작",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/401258",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "서도윤",
-    "published": "2026-08-31T16:43:11Z",
-    "summary": "X의 인공지능(AI) 챗봇 그록(Grok)에서 암호화폐를 사고 빌리는 기능이 열렸다. AI 대화창이 단순 답변을 넘어 결제와 온체인 거래 요청을 처리하는 통로로 넓어지고 있다. 문페이(MoonPay)는 한국시간 1일 결제·지갑 도구 페이박스(PayBox)를 X의 기본 챗봇 그록 안에 연동했다고 밝혔다. 포춘은 이번 서비스가 전 세계에서 제공되며 여러 블록체인 네트워크의 암호화폐 거래를 지원한다고 전했다. 이용자는 그록 대화창에서 암호화폐 거래를 요청하고, 페이박스가 준비한 거래를 패스키로 승인하는 방식으로 자금을 이동할 수 있다. 문페이는 발표문에서 “그록이 거래를 준비한다. 사용자가 패스키로 승인한다. 돈이 이동한다”고... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/pvd04mabwf.png",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "9588cd84af",
     "title": "테라울프 CEO, 주식 13만7500주 매각 공시",
     "link": "https://www.tokenpost.kr/news/ai/401259",
@@ -4701,6 +4753,20 @@
     "image": "https://f1.tokenpost.kr/2026/08/0jdlt068p7.png",
     "categories": [
       "인공지능"
+    ]
+  },
+  {
+    "id": "56b666b75a",
+    "title": "그록서 암호화폐 매수·대출 기능 제공 시작",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/401258",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "서도윤",
+    "published": "2026-08-31T16:43:11Z",
+    "summary": "X의 인공지능(AI) 챗봇 그록(Grok)에서 암호화폐를 사고 빌리는 기능이 열렸다. AI 대화창이 단순 답변을 넘어 결제와 온체인 거래 요청을 처리하는 통로로 넓어지고 있다. 문페이(MoonPay)는 한국시간 1일 결제·지갑 도구 페이박스(PayBox)를 X의 기본 챗봇 그록 안에 연동했다고 밝혔다. 포춘은 이번 서비스가 전 세계에서 제공되며 여러 블록체인 네트워크의 암호화폐 거래를 지원한다고 전했다. 이용자는 그록 대화창에서 암호화폐 거래를 요청하고, 페이박스가 준비한 거래를 패스키로 승인하는 방식으로 자금을 이동할 수 있다. 문페이는 발표문에서 “그록이 거래를 준비한다. 사용자가 패스키로 승인한다. 돈이 이동한다”고... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/pvd04mabwf.png",
+    "categories": [
+      "암호화폐"
     ]
   },
   {
@@ -6074,20 +6140,6 @@
     ]
   },
   {
-    "id": "8bdbc68fb7",
-    "title": "숏청산 65억달러, 비트코인 9월 수요 시험대",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/400752",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "서지우",
-    "published": "2026-08-30T15:20:39Z",
-    "summary": "비트코인(BTC)의 8월 반등은 새 현물 수요만으로 설명하기보다 대규모 숏 청산과 상장지수펀드(ETF) 유입이 겹친 결과로 나타났다. 최근 2주 암호화폐 시장 청산액 97억1000만 달러(약 13조3824억원) 가운데 숏 청산은 65억5000만 달러(약 9조259억원)였다. 글래스노드(Glassnode)는 8월 26일 주간 보고서에서 8월 19일을 자사 집계 기준 2019년 이후 최대 하루 숏 청산일로 적었다. 스퀴즈 구간 전체 청산액의 85%는 숏 포지션이었다. 글래스노드는 해당 청산 피드가 주요 중앙화 거래소를 집계하며 하이퍼리퀴드(Hyperliquid)는 포함하지 않는다고 밝혔다. AMBCrypto는 8월 30일 기사에서 최근 2주 동안 암호화폐 시장에서 97억1000만... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/i8rfh76mq3.jpg",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "f814386b04",
     "title": "BTC·나스닥 격차 54.3%, 반복 가능성 거론",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/400751",
@@ -6097,6 +6149,20 @@
     "published": "2026-08-30T15:20:39Z",
     "summary": "비트코인(BTC)이 나스닥 대비 2026년 현재 약 -54.3% 뒤처졌다는 분석이 나왔다. 2018년과 2022년에도 더 큰 폭의 상대 약세 구간이 있었다는 비교다. 블록비트는 30일 렉트 펜서(Rekt Fencer) 애널리스트가 BTC와 나스닥의 3일선 비율 차트를 제시했다고 전했다. 이 차트에는 BTC가 나스닥 대비 크게 밀린 세 구간으로 2018년 약 -84.9%, 2022년 약 -80.7%, 2026년 현재 약 -54.3%가 표시됐다. 렉트 펜서는 앞선 두 차례에는 비트코인이 나스닥 대비 크게 뒤처진 뒤 강한 독립 상승이 나타났다고 말했다. 그는 현재 비율도 다시 큰 폭으로 내려왔다며 역사적 패턴이 세 번째로 반복될 가능성을 거론했다. 다만 이 발언은 특정 가격 도달이나... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/i8j2ccp6xr.jpg",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "8bdbc68fb7",
+    "title": "숏청산 65억달러, 비트코인 9월 수요 시험대",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/400752",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "서지우",
+    "published": "2026-08-30T15:20:39Z",
+    "summary": "비트코인(BTC)의 8월 반등은 새 현물 수요만으로 설명하기보다 대규모 숏 청산과 상장지수펀드(ETF) 유입이 겹친 결과로 나타났다. 최근 2주 암호화폐 시장 청산액 97억1000만 달러(약 13조3824억원) 가운데 숏 청산은 65억5000만 달러(약 9조259억원)였다. 글래스노드(Glassnode)는 8월 26일 주간 보고서에서 8월 19일을 자사 집계 기준 2019년 이후 최대 하루 숏 청산일로 적었다. 스퀴즈 구간 전체 청산액의 85%는 숏 포지션이었다. 글래스노드는 해당 청산 피드가 주요 중앙화 거래소를 집계하며 하이퍼리퀴드(Hyperliquid)는 포함하지 않는다고 밝혔다. AMBCrypto는 8월 30일 기사에서 최근 2주 동안 암호화폐 시장에서 97억1000만... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/i8rfh76mq3.jpg",
     "categories": [
       "암호화폐"
     ]
@@ -6303,20 +6369,6 @@
     ]
   },
   {
-    "id": "4dc3f7362d",
-    "title": "비트겟, 牛来 무기한계약 상장…10배 지원",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/400719",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "서지우",
-    "published": "2026-08-30T13:37:14Z",
-    "summary": "비트겟(Bitget)이 牛来USDT 무기한계약을 상장하고 최대 10배 레버리지를 지원한다. 계약 거래 봇도 함께 개방됐다. 비트겟은 공식 공지에서 30일 기준 牛来USDT 선물 거래와 선물 거래 봇을 출시했다고 밝혔다. 오데일리(Odaily)도 같은 날 오후 2시25분 한국시간 기준 비트겟의 牛来 무기한계약 상장 소식을 전했다. 해당 상품의 기초자산은 牛来, 결제자산은 테더(USDT)다. 계약 조건은 △호가 단위 0.00001 △최대 레버리지 10배 △펀딩비 정산 주기 4시간 △거래 시간 24시간으로 제시됐다. 무기한계약은 만기일이 정해져 있지 않은 선물 상품이다. 레버리지를 이용할 수 있어 가격 변동에 따른 손익 변동폭이 커질 수 있다. 비트겟은 시장... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/986ly0bzh6.jpg",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "4c06596e3c",
     "title": "15~50% 금속 관세, 북미 공급망 비용 부담 가능성",
     "link": "https://www.tokenpost.kr/news/economy/400720",
@@ -6328,6 +6380,20 @@
     "image": "https://f1.tokenpost.kr/2026/08/xuwrcawdnn.jpg",
     "categories": [
       "경제"
+    ]
+  },
+  {
+    "id": "4dc3f7362d",
+    "title": "비트겟, 牛来 무기한계약 상장…10배 지원",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/400719",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "서지우",
+    "published": "2026-08-30T13:37:14Z",
+    "summary": "비트겟(Bitget)이 牛来USDT 무기한계약을 상장하고 최대 10배 레버리지를 지원한다. 계약 거래 봇도 함께 개방됐다. 비트겟은 공식 공지에서 30일 기준 牛来USDT 선물 거래와 선물 거래 봇을 출시했다고 밝혔다. 오데일리(Odaily)도 같은 날 오후 2시25분 한국시간 기준 비트겟의 牛来 무기한계약 상장 소식을 전했다. 해당 상품의 기초자산은 牛来, 결제자산은 테더(USDT)다. 계약 조건은 △호가 단위 0.00001 △최대 레버리지 10배 △펀딩비 정산 주기 4시간 △거래 시간 24시간으로 제시됐다. 무기한계약은 만기일이 정해져 있지 않은 선물 상품이다. 레버리지를 이용할 수 있어 가격 변동에 따른 손익 변동폭이 커질 수 있다. 비트겟은 시장... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/986ly0bzh6.jpg",
+    "categories": [
+      "암호화폐"
     ]
   },
   {
@@ -6968,20 +7034,6 @@
     ]
   },
   {
-    "id": "885923a57d",
-    "title": "샌드위치 봇 750만달러, 승인 권한에 뚫렸다",
-    "link": "https://www.tokenpost.kr/news/blockchain/400618",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "서지우",
-    "published": "2026-08-30T05:45:17Z",
-    "summary": "이더리움(ETH) 샌드위치 봇 jaredfromsubway.eth가 자동화된 승인 로직을 역이용당해 최소 750만달러(약 103억원)를 잃었다. 수익 기회를 찾는 봇의 속도와 반복 승인 구조가 되레 공격 통로가 됐다. 블록에이드(Blockaid)는 6월 20일 발생한 사건에서 공격자가 66개 가짜 토큰 계약과 가짜 유동성 풀을 만들어 봇을 유인했다고 밝혔다. 체이널리시스(Chainalysis)는 같은 사건을 6월 20~21일 이어진 역방향 허니팟으로 설명하며, 탈취 자금이 이더리움과 스테이블코인에서 이더리움으로 바뀐 뒤 토네이도캐시(Tornado Cash)를 거쳤다고 밝혔다. MEV는 블록에 들어갈 거래의 순서, 삽입, 배제를 이용해 얻는 가치를 뜻한다. 샌드위치 공격은... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/zmut8oh5qy.jpg",
-    "categories": [
-      "블록체인"
-    ]
-  },
-  {
     "id": "d4fd1b889a",
     "title": "0.0102% 넘은 이더리움 펀딩비, BTC는 중립",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/400617",
@@ -6993,6 +7045,20 @@
     "image": "https://f1.tokenpost.kr/2026/08/6wnm3xm2at.jpg",
     "categories": [
       "암호화폐"
+    ]
+  },
+  {
+    "id": "885923a57d",
+    "title": "샌드위치 봇 750만달러, 승인 권한에 뚫렸다",
+    "link": "https://www.tokenpost.kr/news/blockchain/400618",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "서지우",
+    "published": "2026-08-30T05:45:17Z",
+    "summary": "이더리움(ETH) 샌드위치 봇 jaredfromsubway.eth가 자동화된 승인 로직을 역이용당해 최소 750만달러(약 103억원)를 잃었다. 수익 기회를 찾는 봇의 속도와 반복 승인 구조가 되레 공격 통로가 됐다. 블록에이드(Blockaid)는 6월 20일 발생한 사건에서 공격자가 66개 가짜 토큰 계약과 가짜 유동성 풀을 만들어 봇을 유인했다고 밝혔다. 체이널리시스(Chainalysis)는 같은 사건을 6월 20~21일 이어진 역방향 허니팟으로 설명하며, 탈취 자금이 이더리움과 스테이블코인에서 이더리움으로 바뀐 뒤 토네이도캐시(Tornado Cash)를 거쳤다고 밝혔다. MEV는 블록에 들어갈 거래의 순서, 삽입, 배제를 이용해 얻는 가치를 뜻한다. 샌드위치 공격은... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/zmut8oh5qy.jpg",
+    "categories": [
+      "블록체인"
     ]
   },
   {
@@ -8476,20 +8542,6 @@
     ]
   },
   {
-    "id": "53c07e73b0",
-    "title": "뉴라이 3일 400배 상승, 포모 계정 5곳 상위권",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/400338",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "이준한",
-    "published": "2026-08-29T09:31:27Z",
-    "summary": "중국 영화 제목에서 출발한 뉴라이(牛来) 밈코인이 비엔비 스마트 체인(BSC)에서 거래되며 3일 만에 400배 상승했다. 시가총액은 GMGN 시세 기준 4000만 달러(약 551억원)에 근접했다. 블록비츠(BlockBeats)는 뉴라이 밈코인이 주말 이후 빠르게 올랐고, 기사 작성 시점 기준 시가총액이 4000만 달러에 가까워졌다고 보도했다. 같은 기간 상승폭은 400배로 제시됐다. 이번 흐름에서 눈에 띄는 대목은 가격보다 참여자 구조다. 블록비츠는 GMGN 수익 순위를 살펴본 결과 중국어권 가상자산 인플루언서들의 최대 이익 주소가 8만 달러(약 1억1024만원)에 못 미쳤고, 수익 상위 6개 주소 중 5개가 포모(FOMO) 플랫폼 계정이었다고... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/se4w7dhti5.jpg",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "c75e52b2f0",
     "title": "10년물 4.70%, 비트코인 대체자산 논쟁 재점화",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/400337",
@@ -8499,6 +8551,20 @@
     "published": "2026-08-29T09:31:27Z",
     "summary": "미국 장기 국채 금리 상승과 인공지능(AI) 인프라 투자 확대가 맞물리며 금과 비트코인(BTC)을 둘러싼 대체자산 논의가 다시 커지고 있다. 장기채를 누가, 어느 금리에서 받아줄지가 달러 유동성과 위험자산 가격 해석의 중심으로 옮겨갔다는 분석이다. 우블록체인은 29일 오후 6시4분 IOSG 필자 Momir의 글을 전재했다. Momir는 미국이 국채시장 안정과 AI 투자 사이클을 우선할 경우 높은 물가 압력이 더 오래 남을 수 있다고 봤다. IOSG는 8월 24일 기준 미국 10년물 국채 금리가 약 4.70%, 30년물 금리가 한때 5.23% 안팎까지 올랐다고 제시했다. 이는 본지가 앞서 전한 미국 10년물 국채금리의 5% 재접근 논쟁과도 맞물리는... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/opnsidji5z.jpg",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "53c07e73b0",
+    "title": "뉴라이 3일 400배 상승, 포모 계정 5곳 상위권",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/400338",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "이준한",
+    "published": "2026-08-29T09:31:27Z",
+    "summary": "중국 영화 제목에서 출발한 뉴라이(牛来) 밈코인이 비엔비 스마트 체인(BSC)에서 거래되며 3일 만에 400배 상승했다. 시가총액은 GMGN 시세 기준 4000만 달러(약 551억원)에 근접했다. 블록비츠(BlockBeats)는 뉴라이 밈코인이 주말 이후 빠르게 올랐고, 기사 작성 시점 기준 시가총액이 4000만 달러에 가까워졌다고 보도했다. 같은 기간 상승폭은 400배로 제시됐다. 이번 흐름에서 눈에 띄는 대목은 가격보다 참여자 구조다. 블록비츠는 GMGN 수익 순위를 살펴본 결과 중국어권 가상자산 인플루언서들의 최대 이익 주소가 8만 달러(약 1억1024만원)에 못 미쳤고, 수익 상위 6개 주소 중 5개가 포모(FOMO) 플랫폼 계정이었다고... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/se4w7dhti5.jpg",
     "categories": [
       "암호화폐"
     ]
@@ -12979,20 +13045,6 @@
     ]
   },
   {
-    "id": "6f9faf10d8",
-    "title": "멘틀 볼트, 실물자산 수익 디파이로 넓혔다",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/397604",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "정민석",
-    "published": "2026-08-25T15:48:47Z",
-    "summary": "멘틀(MNT)이 멘틀 볼트를 디파이(DeFi·탈중앙 금융) 영역으로 확장했다. 스테이블코인 보유자가 멘틀 네트워크에서 실물연계자산(RWA) 기반 변동 수익 전략에 접근할 수 있게 하는 구조다. 선차오 테크플로우(深潮 TechFlow)는 멘틀이 25일 멘틀 볼트의 사업 범위를 바이비트 기반 중앙화 금융 플랫폼에서 온체인 예치 수익 상품으로 넓혔다고 전했다. 보도 시각은 중국시간 25일 오후 3시20분, 한국시간으로는 25일 오후 4시20분이다. 이번 확장에는 Grove, CIAN, Fluxion이 참여했다. 확장된 멘틀 볼트는 이용자가 멘틀에서 유에스디코인(USDC)과 USDT0를 예치하고 기초 전략에서 발생하는 변동 수익을 받는 방식이다. 기초 전략에는 Sky... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/lq9g4dvf9l.jpg",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "f672b08fc1",
     "title": "멘틀 볼트, 비수탁 스테이블코인 금고 출시",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/397605",
@@ -13002,6 +13054,20 @@
     "published": "2026-08-25T15:48:47Z",
     "summary": "멘틀(MNT) 볼트가 스테이블코인 보유자를 겨냥한 비수탁형 수익 금고를 내놓고 중앙화금융(CeFi) 기반 상품에서 탈중앙화금융(DeFi) 영역으로 확장했다. 포사이트뉴스는 26일 한국시간 멘틀 볼트가 Grove, CIAN, Fluxion과 함께 유에스디코인(USDC)·USDT0 예치형 금고를 출시했다고 전했다. 이용자는 멘틀 네트워크에서 유에스디코인이나 USDT0를 예치하고 sUSDS 기반 전략을 통해 변동 수익을 받을 수 있다. 이번 금고는 비수탁 구조를 앞세웠다. 이용자 자산을 중앙화 거래소 계정에 맡기는 방식이 아니라 온체인 금고에 예치하는 형태다. 전략은 CIAN이 구성하고, Grove는 Sky Savings Rate 기반 자본을 제공하며, Fluxion은 유동성 진입... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/fa3sc69sz5.jpg",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "6f9faf10d8",
+    "title": "멘틀 볼트, 실물자산 수익 디파이로 넓혔다",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/397604",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "정민석",
+    "published": "2026-08-25T15:48:47Z",
+    "summary": "멘틀(MNT)이 멘틀 볼트를 디파이(DeFi·탈중앙 금융) 영역으로 확장했다. 스테이블코인 보유자가 멘틀 네트워크에서 실물연계자산(RWA) 기반 변동 수익 전략에 접근할 수 있게 하는 구조다. 선차오 테크플로우(深潮 TechFlow)는 멘틀이 25일 멘틀 볼트의 사업 범위를 바이비트 기반 중앙화 금융 플랫폼에서 온체인 예치 수익 상품으로 넓혔다고 전했다. 보도 시각은 중국시간 25일 오후 3시20분, 한국시간으로는 25일 오후 4시20분이다. 이번 확장에는 Grove, CIAN, Fluxion이 참여했다. 확장된 멘틀 볼트는 이용자가 멘틀에서 유에스디코인(USDC)과 USDT0를 예치하고 기초 전략에서 발생하는 변동 수익을 받는 방식이다. 기초 전략에는 Sky... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/lq9g4dvf9l.jpg",
     "categories": [
       "암호화폐"
     ]
@@ -13779,20 +13845,6 @@
     ]
   },
   {
-    "id": "d0e1b7f2b6",
-    "title": "바이낸스, 26일 현물 거래쌍 3개 추가한다",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/397445",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "서도윤",
-    "published": "2026-08-25T10:21:26Z",
-    "summary": "바이낸스(Binance)가 26일 오후 5시 한국시간부터 현물시장에 USDC/ARS, ACE/USDC, PUMP/U 거래쌍 3개를 추가한다. 같은 거래쌍에는 현물 알고리즘 거래 기능도 함께 열린다. 바이낸스는 공식 공지에서 2026년 8월 26일 오후 5시 한국시간에 해당 현물 거래쌍을 개설한다고 밝혔다. 이번 공지는 신규 코인 단독 상장보다 거래쌍 확대 성격이 강하다. 거래쌍은 두 자산을 서로 사고파는 개별 시장으로, 같은 토큰이라도 기준 자산에 따라 호가와 주문 장부가 따로 형성된다. USDC/ARS는 유에스디코인(USDC)을 ARS와 거래하는 구조다. ACE/USDC는 ACE를 유에스디코인 기준으로 사고팔 수 있게 하는 거래쌍이고, PUMP/U는 PUMP를 U 기준으로... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/nmz7l763y4.jpg",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "c7dbc28762",
     "title": "모조, 27일 AI 거래앱 제한 베타 시작한다",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/397446",
@@ -13802,6 +13854,20 @@
     "published": "2026-08-25T10:21:26Z",
     "summary": "비트겟 전 임원 포리스트 바이(Forest Bai)가 AI 거래앱 모조(Mojo)를 내놓고 가상자산 거래 도구 시장에 진입했다. 사용자가 자연어로 거래 의도를 입력하면 데이터 확인, 리서치, 의사결정, 거래 실행을 한 화면에서 처리하는 구조를 내세웠다. 포사이트뉴스는 25일 오후 7시13분(한국시간) 바이가 퇴사 후 창업에 나서 모조를 출시했다고 전했다. 바이는 포사이트벤처스(Foresight Ventures) 공동창업자이자 더블록(The Block) 이사회 의장으로 소개됐다. 모조는 현물, RWA, 무기한 선물, 폴리마켓(Polymarket) 예측시장 등 여러 거래 대상을 지원하는 AI 거래앱으로 제시됐다. 핵심은 거래 실행 전 과정을 하나의 AI 입구로 묶는다는... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/01155lf6kw.jpg",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "d0e1b7f2b6",
+    "title": "바이낸스, 26일 현물 거래쌍 3개 추가한다",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/397445",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "서도윤",
+    "published": "2026-08-25T10:21:26Z",
+    "summary": "바이낸스(Binance)가 26일 오후 5시 한국시간부터 현물시장에 USDC/ARS, ACE/USDC, PUMP/U 거래쌍 3개를 추가한다. 같은 거래쌍에는 현물 알고리즘 거래 기능도 함께 열린다. 바이낸스는 공식 공지에서 2026년 8월 26일 오후 5시 한국시간에 해당 현물 거래쌍을 개설한다고 밝혔다. 이번 공지는 신규 코인 단독 상장보다 거래쌍 확대 성격이 강하다. 거래쌍은 두 자산을 서로 사고파는 개별 시장으로, 같은 토큰이라도 기준 자산에 따라 호가와 주문 장부가 따로 형성된다. USDC/ARS는 유에스디코인(USDC)을 ARS와 거래하는 구조다. ACE/USDC는 ACE를 유에스디코인 기준으로 사고팔 수 있게 하는 거래쌍이고, PUMP/U는 PUMP를 U 기준으로... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/nmz7l763y4.jpg",
     "categories": [
       "암호화폐"
     ]
@@ -14102,20 +14168,6 @@
     ]
   },
   {
-    "id": "b36ed024bc",
-    "title": "8만3000달러 저항, 비트코인 추세 전환 시험대",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/397400",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "류하진",
-    "published": "2026-08-25T09:11:27Z",
-    "summary": "비트코인(BTC)이 8만달러선을 회복했지만 8만3000달러 부근 저항을 넘지 못한 채 추세 전환 여부를 시험받고 있다. 365일 이동평균과 청산대, 공급대, 과매수 신호가 같은 가격대에 겹치면서 단기 반등보다 안착 여부가 핵심 변수로 떠올랐다. 유투데이는 25일 BTC가 6만3000~6만4000달러대에서 반등한 뒤 8만~8만1000달러 구간에 머물고 있다고 전했다. 크립토퀀트(CryptoQuant)가 추정한 365일 이동평균은 8만3057달러로 제시됐다. 365일 이동평균은 최근 1년 가격 흐름을 평균화해 장기 추세를 보는 지표다. 가격이 이 선 아래에 머문다는 것은 연간 평균 가격을 아직 회복하지 못했다는 뜻이다. 단기 반등이 나왔더라도 장기 추세... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/apc7e0bvn6.jpg",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "17d622408d",
     "title": "매출 49% 감소한 두나무·빗썸, 수수료 경쟁 재점화",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/397399",
@@ -14125,6 +14177,20 @@
     "published": "2026-08-25T09:11:27Z",
     "summary": "국내 양대 가상자산 거래소의 올해 상반기 매출이 전년 동기 대비 49% 안팎 줄었다. 거래대금 감소가 수수료 수익을 누르면서 두나무와 빗썸 모두 영업이익이 80% 안팎 감소했다. 25일 금융감독원 전자공시시스템에 따르면, 업비트 운영사 두나무의 올해 상반기 영업수익은 4081억원으로 전년 동기보다 49.1% 감소했다. 영업이익은 1115억원으로 79.7% 줄었고, 당기순이익은 1084억원으로 74.1% 감소했다. 빗썸의 상반기 영업수익은 1688억원으로 48.7% 줄었다. 영업이익은 149억원으로 83.4% 감소했고, 당기순손실 1087억원을 기록하며 적자 전환했다. 양사 실적 둔화는 본지가 앞서 전한 국내 양대 거래소의 매출 감소 흐름과 같은 맥락에... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/0bzhen7197.jpg",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "b36ed024bc",
+    "title": "8만3000달러 저항, 비트코인 추세 전환 시험대",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/397400",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "류하진",
+    "published": "2026-08-25T09:11:27Z",
+    "summary": "비트코인(BTC)이 8만달러선을 회복했지만 8만3000달러 부근 저항을 넘지 못한 채 추세 전환 여부를 시험받고 있다. 365일 이동평균과 청산대, 공급대, 과매수 신호가 같은 가격대에 겹치면서 단기 반등보다 안착 여부가 핵심 변수로 떠올랐다. 유투데이는 25일 BTC가 6만3000~6만4000달러대에서 반등한 뒤 8만~8만1000달러 구간에 머물고 있다고 전했다. 크립토퀀트(CryptoQuant)가 추정한 365일 이동평균은 8만3057달러로 제시됐다. 365일 이동평균은 최근 1년 가격 흐름을 평균화해 장기 추세를 보는 지표다. 가격이 이 선 아래에 머문다는 것은 연간 평균 가격을 아직 회복하지 못했다는 뜻이다. 단기 반등이 나왔더라도 장기 추세... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/apc7e0bvn6.jpg",
     "categories": [
       "암호화폐"
     ]
@@ -24940,20 +25006,6 @@
     ]
   },
   {
-    "id": "ea7aaacb3d",
-    "title": "하이브, 연간 BTC 생산 104% 늘렸다",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/395238",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "이도현",
-    "published": "2026-08-21T15:45:07Z",
-    "summary": "하이브디지털테크놀로지스(HIVE Digital Technologies·$HIVE)가 2026회계연도에 비트코인(BTC) 생산량을 두 배 이상 늘렸지만, 회계연도 말 보유 BTC는 150개로 줄었다. 채굴 확대와 고성능컴퓨팅(HPC)·AI 인프라 투자가 함께 진행됐다. 하이브는 6월 2일 2026회계연도 실적 발표에서 3월 31일 종료 회계연도에 2885 BTC를 채굴했다고 밝혔다. 전년 1414 BTC보다 104% 늘어난 규모다. 같은 기간 매출은 2억9780만 달러(약 4154억원)로 전년 대비 158% 증가했다. 이 가운데 디지털화폐 채굴 매출은 2억7830만 달러(약 3882억원), HPC 호스팅 매출은 1950만 달러(약 272억원)였다. 생산 증가는 해시레이트 확대가 이끌었다. 하이브는... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/ytf5crklqk.jpg",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "bb44943f6d",
     "title": "스트레티지 7.67% 상승, 나스닥100 엇갈렸다",
     "link": "https://www.tokenpost.kr/news/market/395237",
@@ -24965,6 +25017,20 @@
     "image": "https://f1.tokenpost.kr/2026/08/bnc4u17gv5.jpg",
     "categories": [
       "마켓"
+    ]
+  },
+  {
+    "id": "ea7aaacb3d",
+    "title": "하이브, 연간 BTC 생산 104% 늘렸다",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/395238",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "이도현",
+    "published": "2026-08-21T15:45:07Z",
+    "summary": "하이브디지털테크놀로지스(HIVE Digital Technologies·$HIVE)가 2026회계연도에 비트코인(BTC) 생산량을 두 배 이상 늘렸지만, 회계연도 말 보유 BTC는 150개로 줄었다. 채굴 확대와 고성능컴퓨팅(HPC)·AI 인프라 투자가 함께 진행됐다. 하이브는 6월 2일 2026회계연도 실적 발표에서 3월 31일 종료 회계연도에 2885 BTC를 채굴했다고 밝혔다. 전년 1414 BTC보다 104% 늘어난 규모다. 같은 기간 매출은 2억9780만 달러(약 4154억원)로 전년 대비 158% 증가했다. 이 가운데 디지털화폐 채굴 매출은 2억7830만 달러(약 3882억원), HPC 호스팅 매출은 1950만 달러(약 272억원)였다. 생산 증가는 해시레이트 확대가 이끌었다. 하이브는... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/ytf5crklqk.jpg",
+    "categories": [
+      "암호화폐"
     ]
   },
   {
@@ -25380,20 +25446,6 @@
     ]
   },
   {
-    "id": "972f1f8a77",
-    "title": "16억5000만달러 실현이익, 비트코인 수요 시험대",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/395165",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "서도윤",
-    "published": "2026-08-21T14:15:09Z",
-    "summary": "비트코인(BTC) 투자자의 하루 실현이익이 16억5000만 달러(약 2조3020억원)로 2026년 들어 최대치를 기록했다. 높은 가격대에서 이익을 확정한 물량이 늘면서 시장의 수요 흡수력이 시험대에 올랐다는 분석이다. 다크포스트(Darkfost) 크립토퀀트(CryptoQuant) 애널리스트는 8월 20일 기준 BTC 시장의 하루 누적 실현이익이 약 16억5000만 달러에 달했다고 밝혔다고 오데일리는 21일 오후 3시9분(한국시간) 전했다. 실현이익은 투자자가 보유 코인을 취득가보다 높은 가격에 이동하거나 처분하면서 장부상 이익이 실제 이익으로 바뀐 규모를 뜻한다. 이번 수치는 BTC 보유자 일부가 고점권에서 이익을 확정하고 있음을 보여준다. 온체인... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/xadcbyjflv.png",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "086e1dfa49",
     "title": "1조6300억원, 블랙록 ETF 주소로 BTC·ETH 유입",
     "link": "https://www.tokenpost.kr/news/cryptocurrency/395166",
@@ -25408,15 +25460,15 @@
     ]
   },
   {
-    "id": "0cd415a0c7",
-    "title": "비트코인 7만6522달러, ETF 유입 속 차익실현",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/395162",
+    "id": "972f1f8a77",
+    "title": "16억5000만달러 실현이익, 비트코인 수요 시험대",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/395165",
     "source": "토큰포스트",
     "sourceSite": "https://www.tokenpost.kr",
-    "author": "김민준",
-    "published": "2026-08-21T14:13:22Z",
-    "summary": "비트코인(BTC)이 한국시간 21일 오후 11시 기준 7만6522.29달러에 거래되며 전일 대비 8.9% 올랐다. 미국 현물 비트코인 ETF 자금 유입과 거시 유동성 기대가 가격을 밀어 올렸지만, 온체인에서는 단기 보유자 차익실현 물량도 함께 늘었다. AMBCrypto는 BTC가 7만달러 저항선을 넘어 7만6522.29달러까지 올랐다고 보도했다. 이후 공개 보도에서는 BTC가 7만7380달러에서 7만9463달러 구간까지 추가 상승한 사례도 전해졌다. 이번 상승의 직접 배경으로는 미국 재무부의 장기물 국채 재매입 확대, 미 증권거래위원회(SEC)의 새 암호화폐 관련 제안, 도널드 트럼프(Donald Trump) 미국 대통령과 업계 인사의 백악관 회동이 거론됐다.... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/uw1louz014.png",
+    "author": "서도윤",
+    "published": "2026-08-21T14:15:09Z",
+    "summary": "비트코인(BTC) 투자자의 하루 실현이익이 16억5000만 달러(약 2조3020억원)로 2026년 들어 최대치를 기록했다. 높은 가격대에서 이익을 확정한 물량이 늘면서 시장의 수요 흡수력이 시험대에 올랐다는 분석이다. 다크포스트(Darkfost) 크립토퀀트(CryptoQuant) 애널리스트는 8월 20일 기준 BTC 시장의 하루 누적 실현이익이 약 16억5000만 달러에 달했다고 밝혔다고 오데일리는 21일 오후 3시9분(한국시간) 전했다. 실현이익은 투자자가 보유 코인을 취득가보다 높은 가격에 이동하거나 처분하면서 장부상 이익이 실제 이익으로 바뀐 규모를 뜻한다. 이번 수치는 BTC 보유자 일부가 고점권에서 이익을 확정하고 있음을 보여준다. 온체인... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/xadcbyjflv.png",
     "categories": [
       "암호화폐"
     ]
@@ -25431,6 +25483,20 @@
     "published": "2026-08-21T14:13:22Z",
     "summary": "미국 단기국채 비중이 유통 가능 채무의 23%로 높아지면서 비트코인(BTC)을 달러 약세의 헤지 수단으로 보는 해석이 다시 제기됐다. 미국 정부의 차입 구조가 짧은 만기에 더 노출되면서 금리와 달러 흐름이 BTC 가격 해석에 함께 들어왔다는 분석이다. 매슈 시겔(Matthew Sigel) 반에크(VanEck) 디지털자산 리서치 책임자가 미국 재무부의 단기국채 의존 확대를 지적했다고 비트코인 뉴스는 X에서 전했다. 시겔 책임자는 단기국채 비중이 재무부 차입자문위원회(TBAC)가 제시한 15~20% 범위를 웃돈다고 봤다. 재무부 차입자문위원회가 제시한 단기국채 비중 권고 범위는 15~20%로 전해졌다. 현재 23%라는 비중은 이 권고 범위의 상단을... 더보기",
     "image": "https://f1.tokenpost.kr/2026/08/nejm3cc10r.jpg",
+    "categories": [
+      "암호화폐"
+    ]
+  },
+  {
+    "id": "0cd415a0c7",
+    "title": "비트코인 7만6522달러, ETF 유입 속 차익실현",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/395162",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "김민준",
+    "published": "2026-08-21T14:13:22Z",
+    "summary": "비트코인(BTC)이 한국시간 21일 오후 11시 기준 7만6522.29달러에 거래되며 전일 대비 8.9% 올랐다. 미국 현물 비트코인 ETF 자금 유입과 거시 유동성 기대가 가격을 밀어 올렸지만, 온체인에서는 단기 보유자 차익실현 물량도 함께 늘었다. AMBCrypto는 BTC가 7만달러 저항선을 넘어 7만6522.29달러까지 올랐다고 보도했다. 이후 공개 보도에서는 BTC가 7만7380달러에서 7만9463달러 구간까지 추가 상승한 사례도 전해졌다. 이번 상승의 직접 배경으로는 미국 재무부의 장기물 국채 재매입 확대, 미 증권거래위원회(SEC)의 새 암호화폐 관련 제안, 도널드 트럼프(Donald Trump) 미국 대통령과 업계 인사의 백악관 회동이 거론됐다.... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/uw1louz014.png",
     "categories": [
       "암호화폐"
     ]
@@ -28375,20 +28441,6 @@
     ]
   },
   {
-    "id": "8350abdb15",
-    "title": "비트코인 24시간 12% 반등, 수요 지표 동시 플러스",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/394433",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "최윤서",
-    "published": "2026-08-20T13:56:33Z",
-    "summary": "비트코인(BTC)이 6만2000~6만5000달러 박스권을 벗어나 24시간 동안 12% 안팎 반등했다. 초기 대형 보유자의 파생상품 포지션과 현물 수요가 함께 움직였는지가 시장의 쟁점으로 떠올랐다. 크립토포테이토(CryptoPotato)는 BTC가 최근 몇 주 동안 6만5000달러(약 9042만원) 아래에서 횡보했고 6만2000~6만5000달러 범위에 머물렀다고 보도했다. 이후 19일 오후 가격이 급히 움직였으며, 미국 재무부 조치와 백악관 크립토 행사가 배경으로 거론됐지만 원인을 두고는 해석이 갈린다고 전했다. 주기영(Ki Young Ju) 크립토퀀트(CryptoQuant) 최고경영자(CEO)는 20일 X 게시글에서 “OG 고래들은 여전히 비트코인 강세장이 언제 시작되는지 아는... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/jxl3sqdxxg.png",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
     "id": "5ef1078696",
     "title": "클래리티법·RLUSD 호재 대기… 중장기 3.4달러 재탈환 기대감",
     "link": "https://www.blockmedia.co.kr/archives/1129997?utm_source=general&utm_medium=rss",
@@ -28405,6 +28457,20 @@
       "미결제약정",
       "엑스알피",
       "코인피디아"
+    ]
+  },
+  {
+    "id": "8350abdb15",
+    "title": "비트코인 24시간 12% 반등, 수요 지표 동시 플러스",
+    "link": "https://www.tokenpost.kr/news/cryptocurrency/394433",
+    "source": "토큰포스트",
+    "sourceSite": "https://www.tokenpost.kr",
+    "author": "최윤서",
+    "published": "2026-08-20T13:56:33Z",
+    "summary": "비트코인(BTC)이 6만2000~6만5000달러 박스권을 벗어나 24시간 동안 12% 안팎 반등했다. 초기 대형 보유자의 파생상품 포지션과 현물 수요가 함께 움직였는지가 시장의 쟁점으로 떠올랐다. 크립토포테이토(CryptoPotato)는 BTC가 최근 몇 주 동안 6만5000달러(약 9042만원) 아래에서 횡보했고 6만2000~6만5000달러 범위에 머물렀다고 보도했다. 이후 19일 오후 가격이 급히 움직였으며, 미국 재무부 조치와 백악관 크립토 행사가 배경으로 거론됐지만 원인을 두고는 해석이 갈린다고 전했다. 주기영(Ki Young Ju) 크립토퀀트(CryptoQuant) 최고경영자(CEO)는 20일 X 게시글에서 “OG 고래들은 여전히 비트코인 강세장이 언제 시작되는지 아는... 더보기",
+    "image": "https://f1.tokenpost.kr/2026/08/jxl3sqdxxg.png",
+    "categories": [
+      "암호화폐"
     ]
   },
   {
@@ -29632,48 +29698,6 @@
     "published": "2026-08-20T07:06:28Z",
     "summary": "미국 비트코인 현물 ETF 시장이 3거래일 연속 순유입을 기록했다. 소소밸류 집계에 따르면 8월 19일(현지시간) 기준 미국 비트코인 현물 ETF 시장은 5억1719만 달러의 일간 순유입을 기록했다. 지난 8월 17일부터 이날까지 3거래일 연속 순유입이 이어지고 있다. 전일(8월 18일, 1억8930만 달러 순유입) 대비 약 2.7배로 유입폭이 확대됐다. 누적 순유입 규모는 527억9238만 달러로 집계됐다. 전체 12개 ETF 가운데 유입은 ▲블랙록 IBIT 2억8474만 달러 ▲아크·21셰어스 ARKB 7771만 달러 ▲피델리티 FBTC 6241만 달러 ▲비트와이즈 BITB 3560만 달러 ▲그레이스케일 GBTC 2118만 달러 ▲그레이스케일 BTC 1966만 달러 ▲모건스탠리 MSBT 998만...…",
     "image": "https://f1.tokenpost.kr/2026/08/1obk2sz0uh.png",
-    "categories": [
-      "암호화폐"
-    ]
-  },
-  {
-    "id": "ac0fc20140",
-    "title": "[저녁 시세브리핑] 암호화폐 시장 상승세… 비트코인 69,808달러, 이더리움 2,261달러",
-    "link": "https://www.tokenpost.kr/news/briefing/394137",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "최윤서",
-    "published": "2026-08-20T07:02:56Z",
-    "summary": "암호화폐 시장이 상승세를 보이는 가운데 비트코인과 이더리움은 모두 24시간 기준 상승했다. 비트코인 점유율은 확대된 반면 이더리움 점유율은 함께 높아졌고, 파생상품 거래량은 늘어 단기 매매 수요도 함께 확대됐다. 주요 시세 토큰포스트마켓에 따르면 2026년 8월 20일 오후 4시 0분(KST) 기준 비트코인은 전날 대비 8.59% 상승한 69,808.04달러(약 9,710만 원)에 거래되고 있다. 이더리움은 전날 대비 18.03% 오른 2,261.01달러(약 314만 원)를 기록했다. 상위권 알트코인 가격 변동 상위권 알트코인은 대부분 상승하고 있다. XRP +10.58%▲, BNB +4.60%▲, 솔라나 +11.40%▲, 트론 +0.03%▲, 도지코인 +7.37%▲, 하이퍼리퀴드 +23.14%▲를...…",
-    "image": "https://f1.tokenpost.kr/2026/08/kce9u35mxg.png",
-    "categories": [
-      "브리핑"
-    ]
-  },
-  {
-    "id": "8f22c7aa4f",
-    "title": "[저녁 뉴스브리핑] 28.9억달러 청산, 숏 93% 外",
-    "link": "https://www.tokenpost.kr/news/briefing/394135",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "김하린",
-    "published": "2026-08-20T07:02:29Z",
-    "summary": "암호화폐 시장에서 28억9769만달러가 청산됐다. 코인글래스(CoinGlass)에 따르면 2026년 8월 20일 오후 3시56분(KST) 기준 암호화폐 시장에서 28억9769만달러(약 4조307억원) 규모의 레버리지 포지션이 청산됐다. 이 가운데 숏 청산이 26억9687만달러(약 3조7514억원)로 전체의 93.07%를 차지했다. 롱 청산은 2억82만달러(약 2794억원)였다. 비트코인(BTC)이 7.1% 올랐다. PANews는 20일 크립토퀀트(CryptoQuant) 애널리스트 다크포스트(Darkfost)를 인용해 단기 보유자가 거래소로 보낸 차익실현 비트코인(BTC)이 4만4300개를 넘었다고 전했다. BTC는 7.1% 올라 2월 이후 가장 큰 일일 상승률을 기록했다. 다크포스트는 BTC가 단기...…",
-    "image": "https://f1.tokenpost.kr/2026/08/rqlboflh7l.jpg",
-    "categories": [
-      "브리핑"
-    ]
-  },
-  {
-    "id": "359e6a7af9",
-    "title": "업비트·빗썸 상반기 매출 49% 안팎 감소",
-    "link": "https://www.tokenpost.kr/news/cryptocurrency/394134",
-    "source": "토큰포스트",
-    "sourceSite": "https://www.tokenpost.kr",
-    "author": "이준한",
-    "published": "2026-08-20T07:01:55Z",
-    "summary": "국내 양대 가상자산 거래소인 업비트와 빗썸의 2026년 상반기 매출이 전년 동기 대비 49% 안팎 줄었다. 거래대금 감소가 수수료 수익을 흔들면서 매출과 영업이익이 동시에 꺾였다. 금융감독원 전자공시시스템 반기보고서에 따르면, 업비트 운영사 두나무는 2026년 상반기 연결 기준 영업수익 4081억원을 기록했다. 지난해 같은 기간 8019억원보다 49.1% 감소한 수치다. 두나무의 상반기 영업이익은 1115억원으로 전년 동기 5491억원보다 79.7% 줄었다. 당기순이익은 1084억원으로 74.1% 감소했다. 빗썸도 같은 흐름을 보였다. 빗썸의 상반기 매출은 1688억원으로 전년 동기보다 48.7% 줄었다. 빗썸의 영업이익은 149억원으로 83.4%... 더보기",
-    "image": "https://f1.tokenpost.kr/2026/08/1yzuumj6sl.jpg",
     "categories": [
       "암호화폐"
     ]
